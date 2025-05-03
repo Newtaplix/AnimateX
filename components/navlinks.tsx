@@ -24,14 +24,14 @@ const Navlinks = ({ list }:ListProps) => {
         <div>
             <p className='text-center text-gray-500 text-xs mb-3'>/{current}</p>
         </div>
-        <div className='flex p-2 px-4 relative border border-gray-300 rounded-full'>
+        <div className='flex p-2 py-1 md:py-2 md:px-4 relative border border-gray-300 rounded-full'>
             {
                 linkslist.map((items, i) => 
                 <motion.div key={i}
                 onClick={() => setChoosen(i)}
                 onMouseEnter={() => setSelected(i)}
                 onMouseLeave={() => setSelected(choosen)}
-                className='text-black bg-transparent cursor-pointer z-10 font-bold flex items-center justify-center text-center relative px-4 py-1 rounded-full'>
+                className='text-black bg-transparent cursor-pointer text-xs md:text-xl z-10 font-bold flex items-center justify-center text-center relative px-2 md:px-4 py-1 rounded-full'>
                 <motion.span 
                 animate={{
                     color: selected === i ? "white" : "black"

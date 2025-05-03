@@ -55,8 +55,10 @@ const Create = () => {
                 transition={{
                     duration: 0.2
                 }}
-                
-                className='rounded-2xl w-64 overflow-hidden bg-black p-0'>
+                style={{
+                    borderRadius: "1rem"
+                }}
+                className='w-64 overflow-hidden bg-black p-0'>
                     <div className='flex justify-between px-2 py-1 mt-2 items-center'>
                         {
                             isOpen && 
@@ -87,6 +89,9 @@ const Create = () => {
                             onMouseEnter={() => setIsHovered(i)}
                             onMouseLeave={() => setIsHovered(-1)}
                             whileHover={{ scale: isHovered === i ? 1.1 : 1}}
+                            animate={{
+                                scale: isHovered === i ? 1.1 : 1,
+                            }}
                             className='bg-white cursor-pointer p-2 text-gray-800 rounded-lg flex flex-col items-center justify-center gap-1'>
                                 <motion.span
                                 animate={{x: isHovered === i ? [0, -5 , 5, 0] : 0}}>{item.icon}</motion.span>
@@ -114,7 +119,10 @@ const Create = () => {
                     duration: 0.3
                 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className='bg-black w-fit m-auto text-white font-bold flex items-center gap-2 px-3 py-1 cursor-pointer rounded-full'>
+                style={{
+                    borderRadius: "1rem"
+                }}
+                className='bg-black w-fit m-auto text-white font-bold flex items-center gap-2 px-3 py-1 cursor-pointer'>
                     { !isOpen && <motion.span
                                 layoutId='sign'
                                 >+</motion.span>}
