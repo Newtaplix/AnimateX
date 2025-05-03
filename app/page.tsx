@@ -30,19 +30,25 @@ export default function Home() {
   ]
   const ListComponents = [
     {
-    item: <CheckOut quantity="4" text="Checkout"/>
+      item: <CheckOut quantity="4" text="Checkout"/>,
+      difficulty: "Easy"
+    },
+    
+    {
+      item: <Counter/>,
+      difficulty: "Easy"
     },
     {
-      item: <Counter/>
+      item: <Navlinks list={linkslist}/>,
+      difficulty: "Normal"
     },
     {
-      item: <Navlinks list={linkslist}/>
+      item: <Create/>,
+      difficulty: "Hard"
     },
     {
-      item: <Create/>
-    },
-    {
-      item: <Choose/>
+      item: <Choose/>,
+      difficulty: "Hard"
     }
            
   ]
@@ -50,8 +56,9 @@ export default function Home() {
     <>
         {
           ListComponents.map((item, i) => 
-            <div key={i} className="w-full flex items-center justify-center p-5">
-                <div className="w-full md:w-170 bg-white min-h-60 md:h-100 lg:h-100 shadow-md border border-gray-300 rounded-md mt-10 md:mt-20 flex text-center items-center justify-center">
+            <div key={i} className="w-full flex items-center justify-center p-5 relative">
+                
+                <div className="w-full md:w-170 bg-white min-h-60 md:h-100 lg:h-100 relative shadow-md border border-gray-300 rounded-md mt-10 md:mt-20 flex text-center items-center justify-center">
                   {item.item}
                 </div>
             </div>

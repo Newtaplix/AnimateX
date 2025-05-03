@@ -4,6 +4,7 @@ import { ShoppingCart } from 'lucide-react'
 import { Button } from './ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 
+
 interface checkOutProp{
     text: string,
     quantity: string
@@ -11,6 +12,7 @@ interface checkOutProp{
 const CheckOut = ({text, quantity}:checkOutProp) => {
     const [isFocus, setIsFocus] = useState(false)
   return (
+   <>
     <div className='relative z-10'>
             <Button 
                 onClick={() => setIsFocus(!isFocus)}
@@ -57,6 +59,7 @@ const CheckOut = ({text, quantity}:checkOutProp) => {
                 </motion.div>
             </AnimatePresence>
         </div>
+   </>
   )
 }
 

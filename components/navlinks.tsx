@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+
 interface listContent{
     text: string,
     link: string
@@ -20,6 +21,8 @@ const Navlinks = ({ list }:ListProps) => {
 
     const current = choosen > -1 ? linkslist[choosen].text : "default"
   return (
+   <>
+    
     <div>
         <div>
             <p className='text-center text-gray-500 text-xs mb-3'>/{current}</p>
@@ -68,6 +71,7 @@ const Navlinks = ({ list }:ListProps) => {
             }
         </div>
   </div>
+   </>
   )
 }
 

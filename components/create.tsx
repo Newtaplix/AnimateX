@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { X, Folder, Trophy, Flag, Bell, ListCheck, File } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+
 const Create = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isHovered, setIsHovered] = useState<number>(-1)
@@ -35,6 +36,8 @@ const Create = () => {
 
     ]
   return (
+    <>
+    
     <div>
         <AnimatePresence>
             {
@@ -136,6 +139,7 @@ const Create = () => {
             }
         </AnimatePresence>
     </div>
+    </>
   )
 }
 

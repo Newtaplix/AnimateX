@@ -25,6 +25,8 @@ const Counter = () => {
         }
     }
   return (
+    <>
+    
     <div>
         <div className='flex gap-4 font-bold items-center'>
             <Button onClick={handleSubtract} 
@@ -74,6 +76,7 @@ const Counter = () => {
             className='rounded-full w-8 h-8 text-xl p-2 cursor-pointer'>+</Button>
         </div>
     </div>
+    </>
   )
 }
 
