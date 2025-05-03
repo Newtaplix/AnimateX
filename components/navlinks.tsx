@@ -31,7 +31,7 @@ const Navlinks = ({ list }:ListProps) => {
                 onClick={() => setChoosen(i)}
                 onMouseEnter={() => setSelected(i)}
                 onMouseLeave={() => setSelected(choosen)}
-                className='text-black bg-transparent cursor-pointer text-xs md:text-xl z-10 font-bold flex items-center justify-center text-center relative px-2 md:px-4 py-1 rounded-full'>
+                className='text-black bg-transparent cursor-pointer text-xs md:text-[16px] z-10 font-bold flex items-center justify-center text-center relative px-2 md:px-4 py-1 rounded-full'>
                 <motion.span 
                 animate={{
                     color: selected === i ? "white" : "black"
