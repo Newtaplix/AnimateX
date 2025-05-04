@@ -59,7 +59,8 @@ const Choose = () => {
                    
                     {
                         choosenSkillList.length === 0 ?
-                        <motion.span className='text-xs text-gray-400'>No skill selected (max: 6)</motion.span> :
+                        <motion.span
+                         className='text-xs text-gray-400'>No skill selected (max: 6)</motion.span> :
                         choosenSkillList.map((item) => 
                         <motion.span 
                         layoutId={`${item}`}
@@ -68,7 +69,10 @@ const Choose = () => {
                             duration: 0.4,
                             ease: "easeInOut",
                         }}
-                        key={`${item}`} className='cursor-pointer h-fit bg-gray-200 rounded-full flex gap-2 items-center py-1 px-2 text-xs'>
+                        style = {{
+                            borderRadius: "16px"
+                        }}
+                        key={`${item}`} className='cursor-pointer h-fit bg-gray-200 flex gap-2 items-center py-1 px-2 text-xs'>
                             {item}
                             <motion.span
                             initial={{
@@ -114,7 +118,10 @@ const Choose = () => {
                             duration: 0.4,
                             ease: "easeInOut",
                         }}
-                        key={`${item}`}  onClick={() => handleadd(item)} className='cursor-pointer bg-gray-200 rounded-full py-1 px-2'>
+                        style = {{
+                            borderRadius: "20px"
+                        }}
+                        key={`${item}`}  onClick={() => handleadd(item)} className='cursor-pointer bg-gray-200 py-1 px-2'>
                             {item}
                         </motion.span>)
                     }

@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: ".",
+  title: "AnimateX",
   description: "Animated components created by Ngwa Newton-Raul",
 };
 

@@ -3,6 +3,7 @@ import Counter from "@/components/counter";
 import Navlinks from "@/components/navlinks";
 import Create from "@/components/create";
 import Choose from "@/components/choose";
+import AnimateX from "@/components/animatex";
 
 
 export default function Home() {
@@ -29,6 +30,9 @@ export default function Home() {
       },
   ]
   const ListComponents = [
+    {
+        item: <AnimateX/>
+    },
     {
       item: <CheckOut quantity="4" text="Checkout"/>,
       difficulty: "Easy"
