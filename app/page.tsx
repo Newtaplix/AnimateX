@@ -4,7 +4,7 @@ import Navlinks from "@/components/navlinks";
 import Create from "@/components/create";
 import Choose from "@/components/choose";
 import AnimateX from "@/components/animatex";
-import WhatsApp from "@/components/whatsapp";
+
 
 
 export default function Home() {
@@ -54,10 +54,8 @@ export default function Home() {
     {
       item: <Choose/>,
       difficulty: "Hard"
-    },
-    {
-      item: <WhatsApp/>
     }
+   
            
   ]
   return (
