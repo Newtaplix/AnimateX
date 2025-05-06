@@ -93,7 +93,7 @@ const Carlender = () => {
                 !isOpen ?
                 <motion.div layout variants={Divvariant} initial="initial" animate="animate" exit="initial" layoutId="divcontainer" onClick={() => setIsOpen(true)} style={{ borderRadius: "12px"}} className='px-4 py-2 bg-black text-white flex gap-2 items-center justify-center cursor-pointer'><motion.p layoutId="heading">Events</motion.p></motion.div> 
                 :
-                <motion.div layout layoutId='divcontainer' variants={Divvariant} initial="initial" animate="animate" exit="initial" className='overflow-hidden'>
+                <motion.div layout layoutId='divcontainer' variants={Divvariant} initial="initial" animate="animate" exit="initial" className='overflow-hidden my-10 md:my-0'>
                     <div style={{ borderRadius: "1rem" }} className="flex flex-col justify-between gap-1 w-84 pt-2 bg-black">
                         <div className='flex flex-row relative justify-between items-center bg-black rounded-md w-full py-1 px-3'>
                             <div onClick={() => setIsOpen(false)} className='cursor-pointer flex relative gap-2 items-center text-white overflow-hidden'>
