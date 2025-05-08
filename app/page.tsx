@@ -5,6 +5,7 @@ import Create from "@/components/create";
 import Choose from "@/components/choose";
 import AnimateX from "@/components/animatex";
 import Carlender from "@/components/calender";
+import Imessage from "@/components/imessage";
 
 
 export default function Home() {
@@ -33,6 +34,9 @@ export default function Home() {
   const ListComponents = [
     {
         item: <AnimateX/>
+    },
+    {
+        item: <Imessage/>
     },
     {
       item: <CheckOut quantity="4" text="Checkout"/>,
@@ -67,7 +71,7 @@ export default function Home() {
           ListComponents.map((item, i) => 
             <div key={i} className="w-full flex items-center justify-center p-5 relative">
                 
-                <div className="w-full md:w-170 bg-white min-h-60 md:h-100 lg:h-100 relative shadow-md border border-gray-300 rounded-md mt-10 md:mt-20 flex text-center items-center justify-center">
+                <div className="w-full p-2 md:p-0 md:w-170 bg-white min-h-60 md:h-100 lg:h-100 relative shadow-md border border-gray-300 rounded-md mt-10 md:mt-20 flex text-center items-center justify-center">
                   {item.item}
                 </div>
             </div>

@@ -55,7 +55,7 @@ const Choose = () => {
                 transition={{
                     duration: 0.2
                 }}
-                className='border-2 rounded-md p-2 w-80 border-gray-300 flex-wrap gap-2 flex relative'>
+                className='border-2 rounded-md p-2 w-full md:w-80 border-gray-300 flex-wrap gap-2 flex relative'>
                    
                     {
                         choosenSkillList.length === 0 ?
@@ -93,7 +93,7 @@ const Choose = () => {
                     }
 
                 </motion.div>
-                <motion.div layout className='border-2 rounded-md p-2 w-80 border-gray-300 flex gap-2 flex-wrap mt-4 overflow-clip relative pt-7'>
+                <motion.div layout className='border-2 rounded-md p-2 w-full md:w-80 border-gray-300 flex gap-2 flex-wrap mt-4 overflow-clip relative pt-7'>
                     <span className='absolute top-0 left-0 text-xs bg-gray-100 p-1 text-gray-500 rounded-br-md'>
                         skill list
                     </span>
