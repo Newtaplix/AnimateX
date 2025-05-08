@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import { SendHorizonal } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 interface MessageProps {
     message: string,
@@ -24,7 +24,7 @@ const Imessage = () => {
         setMessages(prev => [...prev, message])
         console.log(messages)
         setIsTyping(false)
-        setCurrentId(prev => prev + 1)
+        setCurrentId(prev => prev + 1)  
         setNumbers(prev => [...prev, currentId])
         setIsSent(true)
     }
@@ -32,17 +32,19 @@ const Imessage = () => {
     // const messages = ["I love you", "Will you marry me!","Booyah!","Dandadan","Solo Leveling Awakening"]
   return (
     <div className='w-full bg-gray-900/80 md:w-100 rounded-md p-2'>
-        <motion.div layout className='flex flex-col items-end min-h-30 max-h-65 overflow-y-scroll scrollbar-hide bg-gray-500/40 rounded-md p-2 gap-2'>
-            {
-                messages.map((item, i) => 
-                    <motion.div layout layoutId={`${i}`} style={{borderRadius: "20px", borderTopRightRadius: "0px"}} className='rounded-l-full max-w-[250px] w-fit text-left rounded-br-full flex-col flex text-white text-[14px] px-3 py-1 bg-black/70' key={item.message + i}>
-                        <p className='text-[12px]'>{item.message}</p>
-                        <span className="text-[10px] w-full text-gray-400 text-right">{item.time}</span>
-                    </motion.div>
-                )
-            }
+        <motion.div layout className='flex flex-col items-end justify-end min-h-45 max-h-50 scrollbar-hide overflow-y-scroll overflow-hidden bg-gray-500/40 rounded-md p-2 gap-2'>
+           <AnimatePresence>
+                {
+                    messages.map((item, i) => 
+                        <motion.div layout layoutId={`${i}`}  style={{borderRadius: "20px", borderTopRightRadius: "0px"}} className='rounded-l-full max-w-[250px] w-fit text-left rounded-br-full flex-col flex text-white text-[14px] px-3 py-1 bg-black/70' key={item.message}>
+                            <p className='text-[12px]'>{item.message}</p>
+                            <span className="text-[10px] w-full text-gray-400 text-right">{item.time}</span>
+                        </motion.div>
+                    )
+                }
+           </AnimatePresence>
         </motion.div>
-        <div className='flex gap-2 mt-10 relative'>
+        <div className='flex gap-2 relative'>
             <div onClick={() => setIsTyping(true)} className='p-2 rounded-full h-fit relative left-0 bg-black flex-1 flex items-center text-left bg-gray-900/79 border-2 border-black'>
                {
                     isTyping ?
