@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import Swoop from './swoop'
 import Shake from './shake'
+import Link from 'next/link'
 
 const AnimateX = () => {
   const [currentItem, setCurrentItem] = useState<number>(0)
@@ -58,6 +59,12 @@ const AnimateX = () => {
           </div>   
        </div>
        <Swoop id={currentItem}/>
+       <div className='flex gap-8 mt-5 items-center justify-center'>
+              <button className='bg-black px-3 py-2 rounded-md text-white text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>
+                <Link href={"/components"}>Components</Link>
+              </button>  
+              <button className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>Tutorials</button> 
+       </div>
        <Shake/>
     </div>
   )

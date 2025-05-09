@@ -18,7 +18,7 @@ const CheckOut = ({text, quantity}:checkOutProp) => {
                 onClick={() => setIsFocus(!isFocus)}
                 onMouseEnter={() => setIsFocus(true)}
                 onMouseLeave={() => setIsFocus(false)}
-                className='flex gap-1 cursor-pointer hover:bg-black font-bold top-0 left-0 overflow-hidden'>{text}
+                className='flex gap-1 bg-black cursor-pointer hover:bg-black font-bold top-0 left-0 overflow-hidden'>{text}
                 <span className='relative p-1'>
                     <ShoppingCart className='size-6'/>
                     <motion.span 
