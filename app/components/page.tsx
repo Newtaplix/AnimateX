@@ -4,51 +4,67 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const ComponentsMainPage = () => {
-  const [isHovered, setIsHovered] = useState<number>(0)
-  const buttonlist = [
+  const [isHovered, setIsHovered] = useState<number>(-1)
+  const componentlist = [
     {
-      name: "Cart",
-      link: "Cart",
-      status: "Available"
+      title: "Stacks",
+      index: "stacks",
+      description: "Stacked components such as calendars, panel etc.",
+      subcomponents: [
+        {
+          name: "Create",
+          link: "create",
+          status: "Available"
+        },
+        {
+          name: "Choose",
+          link: "choose",
+          status: "Available"
+        },
+        {
+          name: "Counter",
+          link: "counter",
+          status: "Available"
+        },
+        {
+          name: "Calendar",
+          link: "calendar",
+          status: "Available"
+        },
+        {
+          name: "Imessage",
+          link: "imessage",
+          status: "Available"
+        },
+      ]
     },
     {
-      name: "New Brain",
-      link: "Github",
-      status: "Unavailable"
+      title: "Buttons",
+      index: "Buttons",
+      description: "Handcrafted animated buttons",
+      subcomponents: [
+        {
+          name: "Cart",
+          link: "cart",
+          status: "Available"
+        },
+      ]
     },
     {
-      name: "Cart",
-      link: "",
-      status: "Available"
-    },
-    {
-      name: "New Brain",
-      link: "Github",
-      status: "Unavailable"
-    },
-    {
-      name: "Cart",
-      link: "",
-      status: "Available"
-    },
-    {
-      name: "New Brain",
-      link: "Github",
-      status: "Unavailable"
-    },
-    {
-      name: "Cart",
-      link: "",
-      status: "Available"
-    },
-    {
-      name: "New Brain",
-      link: "Github",
-      status: "Unavailable"
-    },
+      title: "Navigations",
+      index: "navigation",
+      description: "Navbars to keep your web navigation seamless.",
+      subcomponents: [
+        {
+          name: "Spring",
+          link: "spring",
+          status: "Available"
+        },
+      ]
+    }
   ]
   return (
-   <div className='justify-center flex-1'>
+   <div className='justify-center px-2 flex-1 mt-10'>
       {/** Heroo section for the Components ComponentsMainPage */}
          <div className='w-full h-50 flex flex-col items-center justify-center gap-3'>
             <h1 className='font-bold text-4xl'>Components</h1>
@@ -59,77 +75,43 @@ const ComponentsMainPage = () => {
       {/** Buttons links ---------------------------------------------- */}
 
 
-        <div className='mt-12 mb-14 text-center justify-center w-full px-20'>
-          <h1 className='font-bold text-3xl'>Buttons</h1>
-          <p className='text-gray-400'>Handcrafted animated buttons</p>
-          <div className='grid grid-cols-4 mx-auto gap-3 mt-3 '>
-            {
-              buttonlist.map((button, i)=> 
-              <div
-                  onMouseEnter={() => setIsHovered(i)}
-                  onMouseLeave={() => setIsHovered(-1)}
-                    key={`buttons ${i}`} className="p-2 flex-1 h-22 flex cursor-pointer overflow-hidden relative items-center justify-center rounded-md border">
-                  <motion.div
-                  animate={{
-                    rotate: isHovered === i ? "20deg" : "0deg",
-                    height:  isHovered === i ? "85px" : ""
-                  }}
-                  transition={{
-                    duration: 0.5
-                  }}
-                   className='absolute bg-black w-[500] bg-gray-100 bottom-0 h-10'/>
-                  <Link href={`components/${button.link}`} className='rounded-md p-3 w-full z-10 h-full flex justify-center items-center font-bold md:text-xl'>
-                      <div>
-                          {button.name}
-                      </div>
-                  </Link>
-              </div>
-              )
-            }
+      {
+        componentlist.map((item, i) => 
+            <div key={i} className='mt-12 mb-14 text-left justify-center w-full px-2 md:px-3 lg:px-20'>
+              <h1 className='font-bold text-3xl'>{item.title}</h1>
+              <p className='text-gray-400'>{item.description}</p>
+              <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mx-auto gap-3 mt-3 '>
+                {
+                  item.subcomponents.map((component, i)=> 
+                  <div
+                      onMouseEnter={() => setIsHovered(i)}
+                      onMouseLeave={() => setIsHovered(-1)}
+                        key={`buttons ${i}`} className="p-2 flex-1 h-30 md:h-22 flex cursor-pointer overflow-hidden relative items-center justify-center rounded-md border">
+                      <motion.div
+                      animate={{
+                        rotate: isHovered === i ? "20deg" : "0deg",
+                        height:  isHovered === i ? "85px" : ""
+                      }}
+                      transition={{
+                        duration: 0.5
+                      }}
+                      className='absolute bg-black w-[2000] bg-gray-100 bottom-0 h-[50%] md:h-10'/>
+                      <Link href={`components/${item.title}/${component.link}`} className='rounded-md p-3 w-full z-10 h-full flex justify-center items-center font-bold md:text-xl'>
+                          <div>
+                              {component.name}
+                          </div>
+                      </Link>
+                  </div>
+                  )
+                }
 
-          </div>
-        </div>
+              </div>
+            </div>
+        )
+      }
 
 
         {/** end of button links ------------------------------------- */}
-
-         {/** Buttons links ---------------------------------------------- */}
-
-
-         <div className='mt-12 mb-14 text-center justify-center w-full'>
-          <h1 className='font-bold text-3xl'>Buttons</h1>
-          <p className='text-gray-400'>Handcrafted animated buttons</p>
-          <div className='grid grid-cols-4 mx-auto gap-3 mt-3 w-[80%]'>
-            {
-              buttonlist.map((button, i)=> 
-              <div
-                  onMouseEnter={() => setIsHovered(i)}
-                  onMouseLeave={() => setIsHovered(-1)}
-                    key={`buttons ${i}`} className="p-2 w-44 h-22 flex cursor-pointer overflow-hidden relative items-center justify-center rounded-md border">
-                  <motion.div
-                  animate={{
-                    rotate: isHovered === i ? "20deg" : "0deg",
-                    height:  isHovered === i ? "85px" : ""
-                  }}
-                  transition={{
-                    duration: 0.5
-                  }}
-                   className='absolute bg-black w-[300] bg-gray-100 bottom-0 h-10'/>
-                  <Link href={""} className='rounded-md p-3 w-full z-10 h-full flex justify-center items-center font-bold md:text-xl'>
-                      <div>
-                          {button.name}
-                      </div>
-                  </Link>
-              </div>
-              )
-            }
-
-          </div>
-        </div>
-
-
-        {/** end of button links ------------------------------------- */}
-
 
    </div>
   )

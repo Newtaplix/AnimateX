@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Sidebar from "@/components/sidebar";
 import Statsbar from "@/components/statsbar";
 import Navbar from "@/components/navbar";
+import Phone from "@/components/phone";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,9 +28,10 @@ export default function RootLayout({
       >
         <div className="h-screen w-full bg-white flex gap-2">
             <Sidebar/>
-            <div className="scrollbar-hide overflow-y-scroll relative flex-1">
+            <div className="scrollbar-hide overflow-y-scroll relative w-full md:w-280">
               {children}
               <Navbar/>
+              <Phone/>
             </div>
             <Statsbar/>
         </div>

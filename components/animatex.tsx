@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import Swoop from './swoop'
-import Shake from './shake'
 import Link from 'next/link'
 
 const AnimateX = () => {
@@ -65,7 +64,7 @@ const AnimateX = () => {
               </button>  
               <button className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>Tutorials</button> 
        </div>
-       <Shake/>
+      
     </div>
   )
 }

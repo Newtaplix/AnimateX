@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Counter = () => {

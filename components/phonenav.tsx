@@ -1,13 +1,22 @@
 "use client"
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import Logo from './logo'
 import { useRouter } from 'next/navigation'
 
-const Sidebar = () => {
+const PhoneNav = () => {
     const [isHover, setIsHovered] = useState("noon")
     const route = useRouter()
     const links = [
+        // {
+        //     Maintitle: "Buttons",
+        //     Mainlink: "/buttons",
+        //     subLinks: [
+        //         {
+        //             title: "Cart",
+        //             link: "/components/Buttons/cart"
+        //         }
+        //     ]
+        // },
         {
             Maintitle: "Stacks",
             Mainlink: "/stacks",
@@ -34,16 +43,6 @@ const Sidebar = () => {
                 },
             ]
         },
-        // {
-        //     Maintitle: "Buttons",
-        //     Mainlink: "/buttons",
-        //     subLinks: [
-        //         {
-        //             title: "Cart",
-        //             link: "/components/Buttons/cart"
-        //         }
-        //     ]
-        // },
         {
             Maintitle: "Navigation",
             Mainlink: "/navigation",
@@ -54,7 +53,7 @@ const Sidebar = () => {
                 },
             ]
         },
-    
+      
 
     ]
 
@@ -62,22 +61,19 @@ const Sidebar = () => {
         route.push(link)
     }
   return (
-    <div className='w-[80%] hidden md:flex-col md:flex md:w-50 lg:w-60 absolute top-0 bg-white z-20 left-0 md:relative p-2 h-full border-r-1 flex-col gap-2'>
-        <div className='w-full h-30 flex items-center justify-center mb-5 border-b-1'>
-            <Logo/>
-        </div>
+    <div className='w-full md:hidden pt-14 pl-4 top-0 bg-white  p-2 h-full flex-col gap-2'>
         {
             links.map((link, i) => 
             <div key={i} className='flex flex-col gap-1'>
                 <h1 className='font-bold text-xl flex'>{link.Maintitle}<hr/></h1>
-                <div className='pl-2 flex-col gap-1'>
+                <div className='pl-3 flex-col gap-1'>
                     {
                         link.subLinks.map((sub) => 
                         <motion.p 
                             onMouseEnter={() => setIsHovered(sub.title)} 
                             onMouseLeave={() => setIsHovered("nono")}
                             onClick={() => handleNavigate(sub.link)} 
-                            className="cursor-pointer" 
+                            className="cursor-pointer mb-2" 
                             animate={{
                                 x: isHover === sub.title ? 10 : 0
                             }}
@@ -87,7 +83,7 @@ const Sidebar = () => {
                             key={sub.link}>
                             {sub.title}
                         </motion.p>
-                        	)
+                            )
                     }
                 </div>
 
@@ -99,4 +95,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default PhoneNav
