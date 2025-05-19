@@ -1,31 +1,23 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import Navlinks from '@/components/navs/spring'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import ShakingText from '@/components/texts/shake'
 
 
-const NavigationComponents = () => {
+const TextComponents = () => {
   const path = usePathname()
   const pathlist = path.split("/")
   const currentitem = pathlist[pathlist.length - 1]
-  const list = [
-    {text: "Home", link: "home"},
-    {text: "Contact", link: "contact"},
-    {text: "About", link: "about"},
-    {text: "Message", link: "message"},
-    {text: "Review", link: "review"}
-
-  ]
   const listComponents = [
     {
-      name: "Spring Navbar",
-      component: <Navlinks list={list}/>,
-      description: "A smoothly animated nav bar.",
-      linkname: "spring"
+      name: "Shaking Text",
+      component: <ShakingText/>,
+      description: "Jumpy Jumpy Jumpy.",
+      linkname: "shaking"
     }
   ]
   console.log(currentitem)
@@ -72,4 +64,4 @@ const NavigationComponents = () => {
   )
 }
 
-export default NavigationComponents
+export default TextComponents

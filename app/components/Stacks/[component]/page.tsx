@@ -6,6 +6,7 @@ import Counter from '@/components/Stacks/counter'
 import Choose from '@/components/Stacks/choose'
 import Imessage from '@/components/Stacks/imessage'
 import Carlender from '@/components/Stacks/calender'
+import Inotification from '@/components/Stacks/inotifications'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
@@ -46,17 +47,29 @@ const StackComponents = () => {
         component: <Counter/>,
         description: "An animated counter element",
         linkname: "counter"
+      },
+      {
+        name: "Inotification",
+        component: <Inotification/>,
+        description: "IOS lock sreen notification stack",
+        linkname: "inotification"
       }
   ]
-  console.log(currentitem)
+  
   return (
     <div className='p-2 md:px-10 lg:px-20 mb-20'>
        {
          listComponents.map((item, i) => 
           String(currentitem) === item.linkname &&
           <div key={i} className='mt-20'>
-              <div className="flex items-center gap-3 mb-5">
-                  { path.split("/").map((text, i) => i >= 1 && <span className='flex gap-2 items-center' key={text + i}><ChevronRight size={17} />{text.toLowerCase()}</span> ) } 
+             <div className="flex items-center gap-3 mb-5">
+                  { path.split("/").map((text, i) => i >= 1 && 
+                    i === 1 ? 
+                    <Link href={"/components"} key={text + i}><span className='flex gap-2 items-center'><ChevronRight size={17} />{text.toLowerCase()}</span></Link> :
+
+                    i > 1 ?
+                    <span className='flex gap-2 items-center' key={text + i}><ChevronRight size={17} />{text.toLowerCase()}</span> : null )  
+                } 
               </div>
               <h1 className='text-3xl font-bold'>{item.name}</h1>
               <p className='text-gray-400'>{item.description}</p>

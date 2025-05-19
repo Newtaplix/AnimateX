@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Logo from './logo'
 import { useRouter } from 'next/navigation'
 
+
 const Sidebar = () => {
     const [isHover, setIsHovered] = useState("noon")
     const route = useRouter()
@@ -32,18 +33,44 @@ const Sidebar = () => {
                     title: "Imessage",
                     link: "/components/Stacks/imessage"
                 },
+                {
+                    title: "Inotification",
+                    link: "/components/Stacks/inotification"
+                }
             ]
         },
-        // {
-        //     Maintitle: "Buttons",
-        //     Mainlink: "/buttons",
-        //     subLinks: [
-        //         {
-        //             title: "Cart",
-        //             link: "/components/Buttons/cart"
-        //         }
-        //     ]
-        // },
+        {
+            Maintitle: "Buttons",
+            Mainlink: "/buttons",
+            subLinks: [
+                {
+                    title: "Checkout",
+                    link: "/components/Buttons/cart"
+                },
+                // {
+                //     title: "Second Brain",
+                //     link: "/components/Buttons/secondbrain"
+                // }
+                {
+                    title: "Toast",
+                    link: "/components/Buttons/toast"
+                },
+                {
+                    title: "Vercel",
+                    link: "/components/Buttons/vercel"
+                }
+            ]
+        },
+        {
+            Maintitle: "Texts & Inputs",
+            Mainlink: "/texts",
+            subLinks: [
+                {
+                    title: "Shake",
+                    link: "/components/Texts/shaking"
+                }
+            ]
+        },
         {
             Maintitle: "Navigation",
             Mainlink: "/navigation",

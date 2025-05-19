@@ -36,6 +36,11 @@ const ComponentsMainPage = () => {
           link: "imessage",
           status: "Available"
         },
+        {
+          name: "Inotification",
+          link: "inotification",
+          status: "Available"
+        },
       ]
     },
     {
@@ -46,6 +51,28 @@ const ComponentsMainPage = () => {
         {
           name: "Cart",
           link: "cart",
+          status: "Available"
+        },
+        {
+          name: "Toast",
+          link: "toast",
+          status: "Available"
+        },
+        {
+          name: "Rainbow",
+          link: "vercel",
+          status: "Available"
+        },
+      ]
+    },
+    {
+      title: "Inputs & Text",
+      index: "texts",
+      description: "Animated input forms and some crazy texts.",
+      subcomponents: [
+        {
+          name: "Shake",
+          link: "shake",
           status: "Available"
         },
       ]
@@ -95,7 +122,7 @@ const ComponentsMainPage = () => {
                       transition={{
                         duration: 0.5
                       }}
-                      className='absolute bg-black w-[2000] bg-gray-100 bottom-0 h-[50%] md:h-10'/>
+                      className='absolute w-[2000] bg-gray-100 bottom-0 h-[50%] md:h-10'/>
                       <Link href={`components/${item.title}/${component.link}`} className='rounded-md p-3 w-full z-10 h-full flex justify-center items-center font-bold md:text-xl'>
                           <div>
                               {component.name}

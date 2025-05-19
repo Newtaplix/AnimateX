@@ -45,12 +45,12 @@ const Imessage = () => {
            </AnimatePresence>
         </motion.div>
         <div className='flex gap-2 relative'>
-            <div onClick={() => setIsTyping(true)} className='p-2 rounded-full h-fit relative left-0 bg-black flex-1 flex items-center text-left bg-gray-900/79 border-2 border-black'>
+            <div onClick={() => setIsTyping(true)} className='p-2 rounded-full h-fit relative left-0 flex-1 flex items-center text-left bg-gray-900/79 border-2 border-black'>
                {
                     isTyping ?
                         numbers.map((_,i) => 
                         i === currentId &&
-                                <div key={i} className='w-fit flex flex-col w-10'>
+                                <div key={i} className='w-fit flex flex-col'>
                                     <motion.input layout aria-multiline  layoutId={`${currentId}`} autoFocus onFocus={(e) => {
                                     if(isSent){
                                         e.target.value = ""
