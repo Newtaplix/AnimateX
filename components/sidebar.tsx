@@ -55,10 +55,10 @@ const Sidebar = () => {
                     title: "Toast",
                     link: "/components/Buttons/toast"
                 },
-                {
-                    title: "Vercel",
-                    link: "/components/Buttons/vercel"
-                }
+                // {
+                //     title: "Vercel",
+                //     link: "/components/Buttons/vercel"
+                // }
             ]
         },
         {
@@ -78,6 +78,16 @@ const Sidebar = () => {
                 {
                     title: "Spring",
                     link: "/components/Navigations/spring"
+                },
+            ]
+        },
+        {
+            Maintitle: "Images",
+            Mainlink: "/images",
+            subLinks: [
+                {
+                    title: "Flowstack",
+                    link: "/components/Images/flowstack"
                 },
             ]
         },

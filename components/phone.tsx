@@ -24,7 +24,7 @@ const Phone = () => {
                         borderTopLeftRadius: "48px",
                         borderBottomLeftRadius: "0px",
                         borderBottomRightRadius: "0px"
-                    }} className="bg-black h-1/2 border z-50 border-gray-300 border-b-none overflow-x-hidden overflow-y-scroll shadow-t-md w-full fixed bottom-0 right-0">
+                    }} className="bg-black h-1/2 border z-50 border-gray-300 border-b-none overflow-hidden shadow-t-md w-full fixed bottom-0 right-0">
                         <motion.span><X size={28} onClick={() => setisOpen(false)} className='absolute top-4 right-4 bg-gray-400 rounded-full p-1' /></motion.span>
                         <PhoneNav/>
                     </motion.div>

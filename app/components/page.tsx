@@ -8,7 +8,7 @@ const ComponentsMainPage = () => {
   const componentlist = [
     {
       title: "Stacks",
-      index: "stacks",
+      index: "Stacks",
       description: "Stacked components such as calendars, panel etc.",
       subcomponents: [
         {
@@ -58,33 +58,45 @@ const ComponentsMainPage = () => {
           link: "toast",
           status: "Available"
         },
-        {
-          name: "Rainbow",
-          link: "vercel",
-          status: "Available"
-        },
+        // {
+        //   name: "Rainbow",
+        //   link: "vercel",
+        //   status: "Available"
+        // },
       ]
     },
     {
       title: "Inputs & Text",
-      index: "texts",
+      index: "Texts",
       description: "Animated input forms and some crazy texts.",
       subcomponents: [
         {
           name: "Shake",
-          link: "shake",
+          link: "shaking",
           status: "Available"
         },
       ]
     },
     {
       title: "Navigations",
-      index: "navigation",
+      index: "Navigations",
       description: "Navbars to keep your web navigation seamless.",
       subcomponents: [
         {
           name: "Spring",
           link: "spring",
+          status: "Available"
+        },
+      ]
+    },
+    {
+      title: "Images",
+      index: "Images",
+      description: "Animated Components with Images",
+      subcomponents: [
+        {
+          name: "Flowstack",
+          link: "flowstack",
           status: "Available"
         },
       ]
@@ -123,7 +135,7 @@ const ComponentsMainPage = () => {
                         duration: 0.5
                       }}
                       className='absolute w-[2000] bg-gray-100 bottom-0 h-[50%] md:h-10'/>
-                      <Link href={`components/${item.title}/${component.link}`} className='rounded-md p-3 w-full z-10 h-full flex justify-center items-center font-bold md:text-xl'>
+                      <Link href={`components/${item.index}/${component.link}`} className='rounded-md p-3 w-full z-10 h-full flex justify-center items-center font-bold md:text-xl'>
                           <div>
                               {component.name}
                           </div>

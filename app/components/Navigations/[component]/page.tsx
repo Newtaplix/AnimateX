@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
-import Image from 'next/image'
 import Navlinks from '@/components/navs/spring'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import MyInfo from '@/components/myinfo'
+
 
 
 const NavigationComponents = () => {
@@ -51,10 +52,7 @@ const NavigationComponents = () => {
               </div>
               <div className='mt-3'>
                   <p className='text-gray-400 flex gap-2'>Created by:</p>
-                  <div className='pl-3 flex gap-2'>
-                    <Image width={0} height={0} src={""} alt=''/>
-                    <span className='underline'>Ngwa Newton-Raul</span>
-                  </div>
+                 <MyInfo/>
                   <div className='w-full md:w-200 mt-5 flex justify-between'>
                     {
                         i > 0 &&

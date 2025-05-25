@@ -1,61 +1,26 @@
 "use client"
 import React from 'react'
-import Create from '@/components/Stacks/create'
-import Counter from '@/components/Stacks/counter'
-import Choose from '@/components/Stacks/choose'
-import Imessage from '@/components/Stacks/imessage'
-import Carlender from '@/components/Stacks/calender'
-import Inotification from '@/components/Stacks/inotifications'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import FlowStack from '@/components/images/flowstack'
 import MyInfo from '@/components/myinfo'
 
 
-const StackComponents = () => {
+const ImageComponents = () => {
   const path = usePathname()
   const pathlist = path.split("/")
   const currentitem = pathlist[pathlist.length - 1]
   const listComponents = [
     {
-      name: "Create",
-      component: <Create/>,
-      description: "A motion animated activity creation panel.",
-      linkname: "create"
-    },
-    {
-      name: "Imessage",
-      component: <Imessage/>,
-      description: "The IOS Imessage messaging animation.",
-      linkname: "imessage"
-    },
-    {
-        name: "Events Calendar",
-        component: <Carlender/>,
-        description: "A motion animated events calendar.",
-        linkname: "calendar"
-      },
-      {
-        name: "Choose",
-        component: <Choose/>,
-        description: "An animated skill choosing component.",
-        linkname: "choose"
-      },
-      {
-        name: "Counter",
-        component: <Counter/>,
-        description: "An animated counter element",
-        linkname: "counter"
-      },
-      {
-        name: "Inotification",
-        component: <Inotification/>,
-        description: "IOS lock sreen notification stack",
-        linkname: "inotification"
-      }
+      name: "Flowstack",
+      component: <FlowStack/>,
+      description: "Animated image layout transitions with Motion",
+      linkname: "flowstack"
+    }
   ]
-  
+  console.log(currentitem)
   return (
     <div className='p-2 md:px-10 lg:px-20 mb-20'>
        {
@@ -80,13 +45,13 @@ const StackComponents = () => {
                   <p className='text-gray-400 flex gap-2'>Created by:</p>
                   <MyInfo/>
                   <div className='w-full md:w-200 mt-5 flex justify-between'>
-                     {
+                    {
                         i > 0 &&
                         <Link href={`/components/${pathlist[2]}/${listComponents[i - 1].linkname}`}><Button className='text-black border bg-white hover:bg-gray-200'><ChevronLeft/>{listComponents[i - 1].name}</Button></Link>
-                     }
-                     {
+                    }
+                    {
                         i === listComponents.length - 1 ? null : <Link href={`/components/${pathlist[2]}/${listComponents[i + 1].linkname}`} ><Button className='text-black border bg-white hover:bg-gray-200'>{listComponents[i + 1].name}<ChevronRight/></Button></Link>
-                     }
+                    }
                   </div>
               </div>
             </div>
@@ -96,4 +61,4 @@ const StackComponents = () => {
   )
 }
 
-export default StackComponents
+export default ImageComponents

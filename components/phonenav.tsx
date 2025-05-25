@@ -54,10 +54,10 @@ const PhoneNav = () => {
                     title: "Toast",
                     link: "/components/Buttons/toast"
                 }, 
-                {
-                    title: "Vercel",
-                    link: "/components/Buttons/vercel"
-                }
+                // {
+                //     title: "Vercel",
+                //     link: "/components/Buttons/vercel"
+                // }
 
             ]
         },
@@ -81,6 +81,16 @@ const PhoneNav = () => {
                 },
             ]
         },
+        {
+            Maintitle: "Images",
+            Mainlink: "/images",
+            subLinks: [
+                {
+                    title: "Flowstack",
+                    link: "/components/Images/flowstack"
+                },
+            ]
+        },
       
 
     ]
@@ -89,7 +99,7 @@ const PhoneNav = () => {
         route.push(link)
     }
   return (
-    <div className='w-full md:hidden pt-14 pl-4 top-0 bg-white  p-2 h-full flex-col gap-2'>
+    <div className='w-full md:hidden pt-14 pl-4 top-0 bg-white overflow-y-scroll p-2 h-full flex-col gap-2'>
         {
             links.map((link, i) => 
             <div key={i} className='flex flex-col gap-1'>
