@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import ShakingText from '@/components/texts/shake'
 import MyInfo from '@/components/myinfo'
+import Confirm from '@/components/texts/confirm'
 
 
 const TextComponents = () => {
@@ -18,6 +19,12 @@ const TextComponents = () => {
       component: <ShakingText/>,
       description: "Jumpy Jumpy Jumpy.",
       linkname: "shaking"
+    },
+    {
+      name: "Password Confirm",
+      component: <Confirm/>,
+      description: "Jumpy Jumpy Jumpy.",
+      linkname: "confirm"
     }
   ]
   console.log(currentitem)

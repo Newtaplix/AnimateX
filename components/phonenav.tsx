@@ -54,6 +54,10 @@ const PhoneNav = () => {
                     title: "Toast",
                     link: "/components/Buttons/toast"
                 }, 
+                {
+                    title: "Github",
+                    link: "/components/Buttons/github"
+                },
                 // {
                 //     title: "Vercel",
                 //     link: "/components/Buttons/vercel"
@@ -88,6 +92,10 @@ const PhoneNav = () => {
                 {
                     title: "Flowstack",
                     link: "/components/Images/flowstack"
+                },
+                {
+                    title: "Hover Slide",
+                    link: "/components/Images/hoverslide"
                 },
             ]
         },

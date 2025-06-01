@@ -26,6 +26,10 @@ const Sidebar = () => {
                     link: "/components/Stacks/choose"
                 },
                 {
+                    title: "Valentine",
+                    link: "/components/Stacks/valentine"
+                },
+                {
                     title: "Counter",
                     link: "/components/Stacks/counter"
                 },
@@ -55,6 +59,10 @@ const Sidebar = () => {
                     title: "Toast",
                     link: "/components/Buttons/toast"
                 },
+                {
+                    title: "Github",
+                    link: "/components/Buttons/github"
+                },
                 // {
                 //     title: "Vercel",
                 //     link: "/components/Buttons/vercel"
@@ -68,6 +76,10 @@ const Sidebar = () => {
                 {
                     title: "Shake",
                     link: "/components/Texts/shaking"
+                },
+                {
+                    title: "Confirmation",
+                    link: "/components/Texts/confirm"
                 }
             ]
         },
@@ -89,6 +101,11 @@ const Sidebar = () => {
                     title: "Flowstack",
                     link: "/components/Images/flowstack"
                 },
+                {
+                    title: "Hover Slide",
+                    link: "/components/Images/hoverslide"
+                },
+
             ]
         },
     

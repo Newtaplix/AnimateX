@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import FlowStack from '@/components/images/flowstack'
 import MyInfo from '@/components/myinfo'
+import HoverSlide from '@/components/images/hoverslide'
 
 
 const ImageComponents = () => {
@@ -18,6 +19,12 @@ const ImageComponents = () => {
       component: <FlowStack/>,
       description: "Animated image layout transitions with Motion",
       linkname: "flowstack"
+    },
+    {
+      name: "Hover Slide",
+      component: <HoverSlide/>,
+      description: "Animated image layout transitions with Motion",
+      linkname: "hoverslide"
     }
   ]
   console.log(currentitem)

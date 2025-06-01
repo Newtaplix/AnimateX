@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import MyInfo from '@/components/myinfo'
+import Valentine from '@/components/Stacks/valentine'
 
 
 const StackComponents = () => {
@@ -41,6 +42,12 @@ const StackComponents = () => {
         component: <Choose/>,
         description: "An animated skill choosing component.",
         linkname: "choose"
+      },
+      {
+        name: "Valentine",
+        component: <Valentine/>,
+        description: "Make that special one be your valentine",
+        linkname: "valentine"
       },
       {
         name: "Counter",

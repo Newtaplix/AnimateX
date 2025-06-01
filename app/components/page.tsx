@@ -27,6 +27,11 @@ const ComponentsMainPage = () => {
           status: "Available"
         },
         {
+          name: "Valentine",
+          link: "valentine",
+          status: "Available"
+        },
+        {
           name: "Calendar",
           link: "calendar",
           status: "Available"
@@ -58,6 +63,11 @@ const ComponentsMainPage = () => {
           link: "toast",
           status: "Available"
         },
+        {
+          name: "Github",
+          link: "github",
+          status: "Available"
+        },
         // {
         //   name: "Rainbow",
         //   link: "vercel",
@@ -73,6 +83,11 @@ const ComponentsMainPage = () => {
         {
           name: "Shake",
           link: "shaking",
+          status: "Available"
+        },
+        {
+          name: "Confirmation",
+          link: "confirm",
           status: "Available"
         },
       ]
@@ -97,6 +112,11 @@ const ComponentsMainPage = () => {
         {
           name: "Flowstack",
           link: "flowstack",
+          status: "Available"
+        },
+        {
+          name: "Hover Slide",
+          link: "hoverslide",
           status: "Available"
         },
       ]
@@ -129,7 +149,9 @@ const ComponentsMainPage = () => {
                       <motion.div
                       animate={{
                         rotate: isHovered === i ? "20deg" : "0deg",
-                        height:  isHovered === i ? "85px" : ""
+                        y: isHovered === i ? "-30px" : "0" ,
+                        // height:  isHovered === i ? "85px" : "",
+                        scale: isHovered === i ? 3 : 1
                       }}
                       transition={{
                         duration: 0.5

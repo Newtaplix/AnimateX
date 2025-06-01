@@ -6,9 +6,10 @@ import { usePathname } from 'next/navigation'
 import CheckOut from '@/components/buttons/checkout'
 // import SecondBrain from '@/components/buttons/secondbrain'
 import Toast from '@/components/buttons/toast'
-import Vercel from '@/components/buttons/vercel'
+// import Vercel from '@/components/buttons/vercel'
 import Link from 'next/link'
 import MyInfo from '@/components/myinfo'
+import Github from '@/components/buttons/github'
 
 
 const ButtonComponents = () => {
@@ -34,12 +35,19 @@ const ButtonComponents = () => {
       description: "Framer animated Toast button.",
       linkname: "toast"
     },
+    // {
+    //   name: "Rainbow",
+    //   component: <Vercel/>,
+    //   description: "Inspired by vercel's button.",
+    //   linkname: "vercel"
+    // },
     {
-      name: "Rainbow",
-      component: <Vercel/>,
-      description: "Inspired by vercel's button.",
-      linkname: "vercel"
+      name: "Github",
+      component: <Github/>,
+      description: "Github's enterprise free trial start button.",
+      linkname: "github"
     },
+
   ]
   console.log(currentitem)
   return (
