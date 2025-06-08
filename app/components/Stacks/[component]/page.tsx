@@ -5,6 +5,7 @@ import Counter from '@/components/Stacks/counter'
 import Choose from '@/components/Stacks/choose'
 import Imessage from '@/components/Stacks/imessage'
 import Carlender from '@/components/Stacks/calender'
+import Steps from '@/components/Stacks/steps'
 import Inotification from '@/components/Stacks/inotifications'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -19,6 +20,12 @@ const StackComponents = () => {
   const pathlist = path.split("/")
   const currentitem = pathlist[pathlist.length - 1]
   const listComponents = [
+    {
+      name: "Steps",
+      component: <Steps/>,
+      description: "Activity steps component",
+      linkname: "steps"
+    },
     {
       name: "Create",
       component: <Create/>,

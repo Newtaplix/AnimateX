@@ -14,6 +14,10 @@ const Sidebar = () => {
             Mainlink: "/stacks",
             subLinks: [
                 {
+                    title: "Steps",
+                    link: "/components/Stacks/steps"
+                },
+                {
                     title: "Create",
                     link: "/components/Stacks/create"
                 },

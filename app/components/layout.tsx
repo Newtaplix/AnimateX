@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Sidebar from "@/components/sidebar";
 import Statsbar from "@/components/statsbar";
-import Navbar from "@/components/navbar";
-import Phone from "@/components/phone";
+import Navbar from "@/components/navbar"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,7 +30,6 @@ export default function RootLayout({
             <div className="scrollbar-hide overflow-y-scroll relative w-full md:w-280">
               {children}
               <Navbar/>
-              <Phone/>
             </div>
             <Statsbar/>
         </div>

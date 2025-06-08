@@ -12,6 +12,11 @@ const ComponentsMainPage = () => {
       description: "Stacked components such as calendars, panel etc.",
       subcomponents: [
         {
+          name: "Steps",
+          link: "steps",
+          status: "Available"
+        },
+        {
           name: "Create",
           link: "create",
           status: "Available"
