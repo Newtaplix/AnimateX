@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
-import { Github} from 'lucide-react'
+import { Github, Star} from 'lucide-react'
+import Link from 'next/link'
 import Logo from './logo'
 const Navbar = () => {
   return (
@@ -9,7 +10,12 @@ const Navbar = () => {
                 <div className="">
                     <Logo/>
                 </div>
-               <div className="bg-white p-2 rounded-md"> <Github/></div>
+              <Link href="https://github.com/Newtaplix/AnimateX">
+                <div className="bg-white p-2 rounded-md relative border rounded-md"> 
+                      <Github/>
+                      <span className="absolute bottom-0 right-0 text-yellow-500"><Star size={16} fill="yellow"/></span>
+                </div>
+              </Link>
            </div>
     </div>
   )

@@ -62,7 +62,9 @@ const AnimateX = () => {
               <button className='bg-black px-3 py-2 rounded-md text-white text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>
                 <Link href={"/components"}>Components</Link>
               </button>  
-              <button className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>Tutorials</button> 
+              <button className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>
+                <Link className="w-full h-full items-center text-center" href="https://github.com/Newtaplix/AnimateX">Star on Github</Link>
+                </button> 
        </div>
       
     </div>
