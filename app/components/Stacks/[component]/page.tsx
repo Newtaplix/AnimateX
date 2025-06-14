@@ -4,7 +4,6 @@ import Create from '@/components/Stacks/create'
 import Counter from '@/components/Stacks/counter'
 import Choose from '@/components/Stacks/choose'
 import Imessage from '@/components/Stacks/imessage'
-import Carlender from '@/components/Stacks/calender'
 import Steps from '@/components/Stacks/steps'
 import Inotification from '@/components/Stacks/inotifications'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -13,6 +12,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import MyInfo from '@/components/myinfo'
 import Valentine from '@/components/Stacks/valentine'
+import Premium from '@/components/Stacks/premium'
 
 
 const StackComponents = () => {
@@ -26,6 +26,12 @@ const StackComponents = () => {
       description: "Activity steps component",
       linkname: "steps"
     },
+     {
+      name: "Premium",
+      component: <Premium/>,
+      description: "Animated Premuim price switch component",
+      linkname: "premuim"
+    },
     {
       name: "Create",
       component: <Create/>,
@@ -38,12 +44,7 @@ const StackComponents = () => {
       description: "The IOS Imessage messaging animation.",
       linkname: "imessage"
     },
-    {
-        name: "Events Calendar",
-        component: <Carlender/>,
-        description: "A motion animated events calendar.",
-        linkname: "calendar"
-      },
+
       {
         name: "Choose",
         component: <Choose/>,

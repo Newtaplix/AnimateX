@@ -16,6 +16,11 @@ const ComponentsMainPage = () => {
           link: "steps",
           status: "Available"
         },
+         {
+          name: "Premuim",
+          link: "premuim",
+          status: "Available"
+        },
         {
           name: "Create",
           link: "create",
@@ -36,11 +41,7 @@ const ComponentsMainPage = () => {
           link: "valentine",
           status: "Available"
         },
-        {
-          name: "Calendar",
-          link: "calendar",
-          status: "Available"
-        },
+      
         {
           name: "Imessage",
           link: "imessage",
