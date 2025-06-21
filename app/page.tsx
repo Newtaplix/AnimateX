@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import Feedback from "@/components/feedback";
 import Creators from "@/components/creators";
 import Testimonials from "@/components/testimonials";
+import MobileCards from "@/components/cards_mobile";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
           </div>
           <span className="text-gray-700 mb-10">What we bring to your site.</span>
           <Cards/>
+          <MobileCards/>
       </div>
       <Previews/>
       <Feedback/>

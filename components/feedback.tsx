@@ -16,7 +16,7 @@ const Feedback = () => {
                 style={{
                     borderRadius: "50%"
                 }}
-                className='fixed overflow-hidden w-12 h-12 flex items-center cursor-pointer justify-center z-30 right-10 bg-black bottom-20'>
+                className='fixed overflow-hidden w-12 h-12 flex items-center cursor-pointer justify-center z-30 right-2 bottom-2 md:right-10 bg-black md:bottom-0'>
                         <motion.div layoutId='icon' className="text-white"><MessageCircleIcon/></motion.div>
                     </motion.div>
                 }
@@ -26,7 +26,7 @@ const Feedback = () => {
                     style={{
                         borderRadius: "12px"
                     }}
-                    className='fixed overflow-hidden shadow-md flex flex-col p-2 pb-4 items-center bg-black text-gray-300 w-[97%] md:w-100 justify-center z-30 right-0 md:right-5  gray_border bottom-20'>
+                    className='fixed overflow-hidden shadow-md flex flex-col p-2 pb-4 items-center bg-black text-gray-300 w-[97%] md:w-100 justify-center z-30 right-0 bottom-5 md:right-5  gray_border md:bottom-20'>
                             <div className='p-2 flex justify-between w-full py-3 mb-4 items-center'>
                                 <h1 className='flex gap-2 items-center'><motion.span layoutId='icon'><MessageCircleIcon/></motion.span>Feedback</h1>
                                 <motion.div 

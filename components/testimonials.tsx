@@ -6,12 +6,12 @@ const Testimonials = () => {
         "Smooth, Futuristic and insanely satisfying. I could refresh the page all day just to watch the transitions.",
         "I've never seen UI animations this clean and intentional. Everything feels handcrafted with care",
         "The motion work here is next level it brings personality to the interface without overwhelming the user",
-        "Its rare to find animations that's both functional and artistic. These hit the sweet spot perfectly!",
-        "These animations don't just move they breathe. Every component feels alive truely inspiring work!",
-        "Smooth, Futuristic and insanely satisfying. I could refresh the page all day just to watch the transitions.",
-        "I've never seen UI animations this clean and intentional. Everything feels handcrafted with care",
-        "The motion work here is next level it brings personality to the interface without overwhelming the user",
-        "Its rare to find animations that's both functional and artistic. These hit the sweet spot perfectly!",
+        // "Its rare to find animations that's both functional and artistic. These hit the sweet spot perfectly!",
+        // "These animations don't just move they breathe. Every component feels alive truely inspiring work!",
+        // "Smooth, Futuristic and insanely satisfying. I could refresh the page all day just to watch the transitions.",
+        // "I've never seen UI animations this clean and intentional. Everything feels handcrafted with care",
+        // "The motion work here is next level it brings personality to the interface without overwhelming the user",
+        // "Its rare to find animations that's both functional and artistic. These hit the sweet spot perfectly!",
 
     ]
   return (

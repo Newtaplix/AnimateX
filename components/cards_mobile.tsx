@@ -4,7 +4,7 @@ import { Snail, Wand, Command,Code,Zap } from 'lucide-react'
 import {  motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
-const Cards = () => {
+const MobileCards = () => {
     const quotes = [
         {
             quote: "Every pixels deserves to dance - we make sure it moves with purpurse and style",
@@ -24,14 +24,14 @@ const Cards = () => {
             icon: <Zap/>
         },
         {
-            quote: "Animations so smooth you'll forget your're looking at code.",
+            quote: "Animationns so smooth you'll forget your're looking at code.",
             icon: <Code/>
         }
     ]
-    const [isHovered, setIsHovered] = useState(true)
+    const [isHovered, setIsHovered] = useState(false)
   return (
     <>
-      <div onMouseEnter={() => setIsHovered(true)} className='w-full hidden md:flex gap-2 relative h-70'>
+      <div onMouseEnter={() => setIsHovered(false)} className='w-full flex md:hidden gap-2 relative h-70'>
           {
             quotes.map((item, i) => 
             <motion.div
@@ -63,4 +63,4 @@ const Cards = () => {
   )
 }
 
-export default Cards
+export default MobileCards

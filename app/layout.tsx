@@ -12,6 +12,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "AnimateX",
   description: "Animated components created by Ngwa Newton-Raul",
+  icons:{
+    icon:"/myfav.ico"
+  }
 };
 
 export default function RootLayout({

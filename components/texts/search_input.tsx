@@ -12,7 +12,7 @@ const Search_Input = () => {
             <div className='relative w-full h-full'> 
                 {
                     !isTyping &&
-                    <span className='absolute left-2 top-1/2 -translate-y-1/2'>{placeholder}</span>
+                    <span className='absolute left-2 top-1/2 text-xs -translate-y-1/2'>{placeholder}</span>
                 }
                  <input onFocus={() => setIsTyping(true)} onBlur={() => setIsTyping(false)} type="text" className='px-1 h-full p-1 w-full outline-none'/>
             </div>
