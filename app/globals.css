@@ -120,6 +120,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  .gray_border{
+    @apply border-1 h-fit rounded-md border-gray-300/50
+  }
+  .btn{
+    @apply bg-black px-3 py-2 rounded-md text-white text-center w-40 flex items-center justify-center shadow-md cursor-pointer
+  }
 }
 
 .scrollbar-hide::-webkit-scrollbar{
