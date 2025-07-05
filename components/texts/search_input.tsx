@@ -6,13 +6,13 @@ const Search_Input = () => {
     const placeholder = "Find Something"
     const [isTyping, setIsTyping] = useState(false)
   return (
-    <div className='w-full gray_border flex justify-between items-center pap-1 text-gray-400 px-2'>
+    <div className='w-full gray_border flex justify-between items-center text-gray-400 px-2 py-1'>
        <div className='flex-1 h-fit flex items-center gap-2'>
             <Search/>
             <div className='relative w-full h-full'> 
                 {
                     !isTyping &&
-                    <span className='absolute left-2 top-1/2 text-xs -translate-y-1/2'>{placeholder}</span>
+                    <span className='absolute left-2 top-1/2 text-[17px] -translate-y-1/2'>{placeholder}</span>
                 }
                  <input onFocus={() => setIsTyping(true)} onBlur={() => setIsTyping(false)} type="text" className='px-1 h-full p-1 w-full outline-none'/>
             </div>

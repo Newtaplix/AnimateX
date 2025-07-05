@@ -136,3 +136,12 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.tc{
+  @apply text-gray-400;
+}
+.hc{
+  @apply text-gray-200;
+}
+.blurspot{
+  @apply absolute w-50 h-50 rounded-full blur-[18px] -z-10;
+}

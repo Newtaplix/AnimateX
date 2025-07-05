@@ -18,6 +18,10 @@ const Sidebar = () => {
                     link: "/components/Stacks/steps"
                 },
                 {
+                    title: "Cards",
+                    link: "/components/Stacks/cards"
+                },
+                {
                     title: "Premium",
                     link: "/components/Stacks/premuim"
                 },

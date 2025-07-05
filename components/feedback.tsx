@@ -16,7 +16,7 @@ const Feedback = () => {
                 style={{
                     borderRadius: "50%"
                 }}
-                className='fixed overflow-hidden w-12 h-12 flex items-center cursor-pointer justify-center z-30 right-2 bottom-2 md:right-10 bg-black md:bottom-0'>
+                className='fixed overflow-hidden w-12 h-12 flex items-center cursor-pointer justify-center z-30 right-2 bottom-2 md:right-5 bg-black md:bottom-10'>
                         <motion.div layoutId='icon' className="text-white"><MessageCircleIcon/></motion.div>
                     </motion.div>
                 }

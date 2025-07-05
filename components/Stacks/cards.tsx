@@ -24,14 +24,15 @@ const Cards = () => {
             icon: <Zap/>
         },
         {
-            quote: "Animationns so smooth you'll forget your're looking at code.",
+            quote: "Animations so smooth you'll forget your're looking at code.",
             icon: <Code/>
         }
     ]
     const [isHovered, setIsHovered] = useState(false)
+    const [current, setCurrent] = useState(-1)
   return (
     <>
-      <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className='w-full flex gap-2 relative h-80'>
+      <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className='w-full flex gap-2 relative h-full'>
           {
             quotes.map((item, i) => 
             <motion.div
@@ -41,16 +42,22 @@ const Cards = () => {
                 rotate: `${((i + 2) * 2) - 5}deg`
             }}
             animate={{
-                x: isHovered ? (Math.floor(((i - 2)* 240)))  : 0,
+                x: isHovered ? (Math.floor(((i - 2)* 180)))  : 0,
                 rotate: isHovered ?`${Math.floor(((i - 2) * 2))}deg` : `${((i + 2) * 2) - 5}deg`,
             }}
             transition={{
                 duration: 0.5,
                 ease: "easeInOut",
-                delay: 0.3,
+                delay: 0.1,
                 type: "spring"
             }}
-             key={i} className={cn('p-2 flex flex-col right-0 left-0 mx-auto items-center text-center w-60 h-70 justify-center border-1 border-gray-300/50 cursor-pointer rounded-md shadow-md bg-white absolute' )}>
+            whileHover={{
+                y: isHovered && i === current ? -20 : 0,
+                transition: {
+                    duration: 0.4
+                }
+            }}
+             key={i} onMouseEnter={() => setCurrent(i)} onMouseLeave={() => setCurrent(-1)} className={cn('p-2 flex flex-col right-0 left-0 mx-auto items-center text-center w-45 h-55 justify-center border-1 border-gray-300/50 cursor-pointer rounded-md shadow-md bg-white absolute' )}>
                 <div className='p-4 rounded-full w-20 h-20 flex items-center justify-center bg-gray-300'>
                    {item.icon} 
                 </div>

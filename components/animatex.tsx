@@ -59,6 +59,11 @@ const AnimateX = () => {
           </div>   
        </div>
        <Swoop id={currentItem}/>
+       <p className='tc text-center max-w-full md:max-w-[700px] mx-auto'>
+              This is more than just a library. Its a motion playground. Packed with custom-built,
+              fully animated UI components, crafted with Framer Motion and styled with Tailwind. Every 
+              component is smooth, responsive and ready to light up your next project. 
+       </p>
        <div className='flex gap-8 mt-5 items-center justify-center'>
                 <Link className='btn' href={"/components"}>Components</Link> 
               <button className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>

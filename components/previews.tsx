@@ -1,81 +1,112 @@
 "use client"
-import React from 'react'
-import Image from 'next/image'
+import React, { useState } from 'react'
+import Create from './Stacks/create'
+import Steps from './Stacks/steps'
+import Github from './buttons/github'
+import Premium from './Stacks/premium'
+import Choose from './Stacks/choose'
+import FlowStack from './images/flowstack'
+import Confirm from './texts/confirm'
+import CheckOut from './buttons/checkout'
+import Navlinks from './navs/spring'
+import Counter from './Stacks/counter'
+import { PlusCircle } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+import Toast from './buttons/toast'
 const Previews = () => {
-  const components = [
-    {
-      name: "Steps",
-      link: "/components/stacks/steps",
-      image: "/snippets/steps.png",
-      about: "Animated steps component"
-    },
+  const [current, setCurrent] = useState(<Steps/>)
+  const [onIt, setOnit] = useState(0)
+  const list = [
+    {text: "Home", link: "home"},
+    {text: "Contact", link: "contact"},
+    {text: "About", link: "about"},
+    {text: "Message", link: "message"},
+    {text: "Review", link: "review"}
+
+  ]
+  const buttons = [
     {
       name: "Create",
-      link: "/components/stacks/create",
-      image: "/snippets/create.png",
-      about: "Animated create activity panel"
+      component: <Create/>
     },
     {
-      name: "Flowstack",
-      link: "/components/images/flowstack",
-      image: "/snippets/flow.png",
-      about: "Image layout transitions"
+      name: "Github",
+      component: <Github/>
     },
     {
-      name: "Counter",
-      link: "/components/stacks/counter",
-      image: "/snippets/count.png",
-      about: "Smoothly animated counter with blur effects"
+      name: "Premium",
+      component: <Premium/>
     },
     {
-      name: "Cart",
-      link: "/components/buttons/cart",
-      image: "/snippets/cart.png",
-      about: "Checkout cart button"
-    },
-    {
-      name: "Premuim",
-      link: "/components/stacks/premuim",
-      image: "/snippets/premuim.png",
-      about: "Subcription choice component"
+      name: "Choose",
+      component: <Choose/>
     },
     {
       name: "Confirm",
-      link:"/components/Texts/confirm",
-      image: "/snippets/confirm.png",
-      about: "Animated password confirmation"
+      component: <Confirm/>
     },
     {
-      name: "Inotification",
-      link: "/components/Navigations/spring",
-      image: "/snippets/inotifiy.png",
-      about: "IOS notification stack"
+      name: "Flowstack",
+      component: <FlowStack/>
+    },
+    {
+      name: "Checkout",
+      component: <CheckOut text='Checkout' quantity='7'/>
+    },
+    {
+      name: "Navbar",
+      component: <Navlinks list={list}/>
+    },
+    {
+      name: "Counter",
+      component: <Counter/>
+    },
+    {
+      name: "Toasts",
+      component: <Toast/>
     }
   ]
+
   return (
-    <div className='text-center justify-center items-center mt-30'>
-          <div>
-              <h1 className='font-bold text-3xl mb-2'>Components</h1>
-              <p>Is it Stacks, Cards, Buttons, Layouts every user interaction all bundled for you in one place</p>
+    <div className='text-center flex flex-col w-full px-2 lg:flex-row gap-4 items-center'>
+          <div className='text-left flex-1'>
+              <h1 className='font-bold text-3xl mb-2 hc'>Components</h1>
+              <p className='tc'>
+                  A library of clean, animated components designed for modern interfaces
+                   and seamless user experiences.
+              </p>
+              <div>
+                <div className='mt-3'>
+                  <p className='tc'>Samples</p>
+                 <div className='flex-wrap flex gap-2'>
+                    {
+                      buttons.map((item, i) => 
+                      <div onClick={() => {
+                        setCurrent(item.component)
+                        setOnit(i)
+                      }} className={cn('p-[3px] rounded-md border-1 w-fit', onIt === i ? "bg-gray-400/10" : "")} key={i}>
+                          <div className='bg-gray-400/10 px-6 cursor-pointer hc p-2 text-center rounded-md border border-gray-400'>
+                            {item.name}
+                          </div>
+                      </div>)
+                    }
+                    <div 
+                      className={cn('p-[3px] rounded-md border-1 w-fit')}>
+                          <div className='bg-gray-400/10 flex gap-3 px-6 cursor-pointer hc p-2 text-center rounded-md border border-gray-400'>
+                            <PlusCircle/> More
+                          </div>
+                      </div>
+                 </div>
+                </div>
+
+              </div>
           </div>
-          <div className='grid p-2 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 justify-center w-fit gap-3 md:gap-6 mx-auto mt-8'>
-              {
-                components.map((item, i) =>
-                <motion.div whileHover={{
-                  y: -10,
-                }} layout key={i} className='px-1 py-1 duration-5 transition hover:shadow-md cursor-pointer rounded-md bg-gray-300/30 w-50 md:w-60'>
-                  <div className='relative bg-white overflow-hidden rounded-md w-full h-30'>
-                      <Image src={item.image} fill alt='Preview'/>
-                  </div>
-                  <div className='text-left pt-2'>
-                    <h1 className='font-bold text-xl mb-1'>{item.name}</h1>
-                    <p className='hidden md:flex'>{item.about}</p>
-                  </div>
-                </motion.div>
-                )
-              }
-          </div>
+          <motion.div layout 
+          className='flex-1 border w-full border-gray-400 p-4 items-center justify-center flex min-h-[320px] md:h-[400px] rounded-md bg-white'>
+                   {current}
+          </motion.div>
+          
     </div>
   )
 }

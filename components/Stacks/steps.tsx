@@ -82,13 +82,13 @@ const Steps = () => {
                         x: -100
                     }}
                     onClick={() => back()}
-                    className='px-4 cursor-pointer py-2 rounded-full bg-gray-200 items-center w-fit text-center justify-center'>
+                    className='px-2 cursor-pointer py-2 rounded-full bg-gray-200 items-center w-[25%] flex text-center justify-center'>
                         <p>Back</p>
                     </motion.div>
                 }
            </AnimatePresence>
             <motion.div 
-            layout onClick={() => handleClick()} className={cn('absolute cursor-pointer w-full overflow-hidden bg-blue-600 h-10 items-center justify-center text-center text-white px-3 py-2 rounded-full right-0', progress > 1 ? "w-[200px] md:w-[220px]" : "w-[100%]")}>
+            layout onClick={() => handleClick()} className={cn('absolute cursor-pointer w-full overflow-hidden bg-blue-600 h-10 items-center justify-center text-center text-white px-3 py-2 rounded-full right-0', progress > 1 ? "w-[72%]" : "w-[100%]")}>
                   <motion.div layout className='relative w-fit flex items-center justify-center text-center mx-auto px-2 h-6 overflow-y-hidden'>
                         <AnimatePresence>
                             {

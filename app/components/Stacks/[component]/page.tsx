@@ -6,6 +6,7 @@ import Choose from '@/components/Stacks/choose'
 import Imessage from '@/components/Stacks/imessage'
 import Steps from '@/components/Stacks/steps'
 import Inotification from '@/components/Stacks/inotifications'
+import Cards from '@/components/Stacks/cards'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
@@ -25,6 +26,12 @@ const StackComponents = () => {
       component: <Steps/>,
       description: "Activity steps component",
       linkname: "steps"
+    },
+    {
+      name: "Cards",
+      component: <Cards/>,
+      description: "Animated cards stack",
+      linkname: "cards"
     },
      {
       name: "Premium",
