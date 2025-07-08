@@ -2,14 +2,19 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const Github = () => {
+interface gitbutton{
+  onClick?: () => void,
+  text?: string
+}
+const Github = ({ onClick , text="Button"}:gitbutton) => {
     const [isHover, setIsHovered] = useState(false)
   return (
     <button 
     onMouseEnter={() => setIsHovered(true)} 
+    onClick={onClick}
     onMouseLeave={() => setIsHovered(false)}
     className="p-2 px-4 flex gap-2 cursor-pointer items-center bg-black text-white rounded-md">
-        <span>Learn More</span>
+        <span>{text}</span>
        
         <motion.svg xmlns="http://www.w3.org/2000/svg" 
         width="17" 

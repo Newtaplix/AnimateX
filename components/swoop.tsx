@@ -8,7 +8,7 @@ interface swoopProp{
 
 const Swoop = ({id}:swoopProp) => {
     const current = id
-    const words = ["Experience.", "Learn.", "Animate."]
+    const words = ["Experience", "Learn", "Animate"]
   return (
     <div>
         <div className='flex mb-5 w-fit mx-auto px-2'>

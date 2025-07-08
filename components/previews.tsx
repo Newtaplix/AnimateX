@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react'
 import Create from './Stacks/create'
-import Steps from './Stacks/steps'
 import Github from './buttons/github'
 import Premium from './Stacks/premium'
 import Choose from './Stacks/choose'
@@ -10,12 +9,13 @@ import Confirm from './texts/confirm'
 import CheckOut from './buttons/checkout'
 import Navlinks from './navs/spring'
 import Counter from './Stacks/counter'
-import { PlusCircle } from 'lucide-react'
+import { PlusCircle, Blocks } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import Toast from './buttons/toast'
+import Title from './title'
 const Previews = () => {
-  const [current, setCurrent] = useState(<Steps/>)
+  const [current, setCurrent] = useState(<FlowStack/>)
   const [onIt, setOnit] = useState(0)
   const list = [
     {text: "Home", link: "home"},
@@ -69,45 +69,53 @@ const Previews = () => {
   ]
 
   return (
-    <div className='text-center flex flex-col w-full px-2 lg:flex-row gap-4 items-center'>
-          <div className='text-left flex-1'>
-              <h1 className='font-bold text-3xl mb-2 hc'>Components</h1>
-              <p className='tc'>
-                  A library of clean, animated components designed for modern interfaces
-                   and seamless user experiences.
-              </p>
-              <div>
-                <div className='mt-3'>
-                  <p className='tc'>Samples</p>
-                 <div className='flex-wrap flex gap-2'>
-                    {
-                      buttons.map((item, i) => 
-                      <div onClick={() => {
-                        setCurrent(item.component)
-                        setOnit(i)
-                      }} className={cn('p-[3px] rounded-md border-1 w-fit', onIt === i ? "bg-gray-400/10" : "")} key={i}>
-                          <div className='bg-gray-400/10 px-6 cursor-pointer hc p-2 text-center rounded-md border border-gray-400'>
-                            {item.name}
-                          </div>
-                      </div>)
-                    }
-                    <div 
-                      className={cn('p-[3px] rounded-md border-1 w-fit')}>
-                          <div className='bg-gray-400/10 flex gap-3 px-6 cursor-pointer hc p-2 text-center rounded-md border border-gray-400'>
-                            <PlusCircle/> More
-                          </div>
-                      </div>
-                 </div>
-                </div>
+        <div className='mt-34'>
+              <div className='text-center flex flex-col w-full gap-3 md:gap-6 md:w-fit mx-auto'>
+                      <Title icon={<Blocks size={14}/>} title='Components'/>
+                      <h1 className='text-2xl hc md:text-3xl'>Complete blocks for rapid developemt.</h1>
+                      <p className='tc'>
+                          A library of clean, animated components designed for modern interfaces
+                          and seamless user experiences.
+                      </p>
+            </div>
+              <div className='text-center flex flex-col w-full px-2 lg:flex-row gap-2 mt-12 md:w-[80%] mx-auto'>
+                  <div className='text-left flex-1'>
+                   
+                      <div>
+                        
+                        <div className='flex-wrap flex gap-2'>
+                            {
+                              buttons.map((item, i) => 
+                              <div onClick={() => {
+                                setCurrent(item.component)
+                                setOnit(i)
+                              }} className={cn('p-[3px] rounded-md border-1 w-fit', onIt === i ? "bg-gray-400/10" : "")} key={i}>
+                                  <div className='bg-gray-400/10 px-6 cursor-pointer hc p-2 text-center rounded-md border border-gray-400'>
+                                    {item.name}
+                                  </div>
+                              </div>)
+                            }
+                            <div 
+                              className={cn('p-[3px] rounded-md border-1 w-fit')}>
+                                  <div className='bg-gray-400/10 flex gap-3 px-6 cursor-pointer hc p-2 
+                                  text-center rounded-md border border-gray-400'>
+                                    <PlusCircle/> More
+                                  </div>
+                              </div>
+                        </div>
+                        
 
-              </div>
-          </div>
-          <motion.div layout 
-          className='flex-1 border w-full border-gray-400 p-4 items-center justify-center flex min-h-[320px] md:h-[400px] rounded-md bg-white'>
-                   {current}
-          </motion.div>
-          
-    </div>
+                      </div>
+                  </div>
+                  <motion.div layout 
+                  className='flex-1 border w-full border-gray-400 p-4 items-center justify-center 
+                  flex min-h-[320px] md:h-[360px] rounded-md bg-white'>
+                          {current}
+                  </motion.div>
+                  
+            </div>
+        
+        </div>
   )
 }
 

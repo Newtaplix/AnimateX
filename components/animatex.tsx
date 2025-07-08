@@ -4,11 +4,18 @@ import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import Swoop from './swoop'
 import Link from 'next/link'
+import Title from './title'
+import Image from 'next/image'
+import { Sparkles } from 'lucide-react'
+import Github from './buttons/github'
+import { useRouter } from 'next/navigation'
+
 
 
 const AnimateX = () => {
   const [currentItem, setCurrentItem] = useState<number>(0)
   const [direction, setDirection] = useState(1)
+  const router = useRouter()
   const max = 2
   const arr = [
     "green", "red","yellow"
@@ -35,7 +42,8 @@ const AnimateX = () => {
   
   return (
     <div>
-       <div  className='relative px-4 mb-13 w-fit h-fit mx-auto'>
+     <Title icon={<Sparkles size={14}/>} title='Introducing pre-built blocks'/>
+       <div  className='relative px-4 mb-13 mt-12 w-fit h-fit mx-auto'>
          <div className="px-4 py-2 rounded-md w-fit mx-auto font-bold bg-white blur-[0.4px] relative z-20">
               AnimateX
           </div> 
@@ -65,12 +73,19 @@ const AnimateX = () => {
               component is smooth, responsive and ready to light up your next project. 
        </p>
        <div className='flex gap-8 mt-5 items-center justify-center'>
-                <Link className='btn' href={"/components"}>Components</Link> 
-              <button className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>
-                <Link className="w-full h-full items-center text-center" href="https://github.com/Newtaplix/AnimateX">Star on Github</Link>
-                </button> 
+                
+                <Github text='Components' onClick={() => router.push("/components")}/>
+                <Link className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer' href="https://github.com/Newtaplix/AnimateX">Star on Github</Link>
+                
        </div>         
-      
+      <div className='flex gap-2 tc mx-auto w-fit bg-black/40 text-[14px] items-center justify-center mt-10 px-4 rounded-full py-[3px]'>
+        <span>Built with</span>
+        <div className='flex gap-1'>
+              <Image src={"/next2.svg"} width={20} height={20} alt='N'/>
+              <Image src={"/tail.svg"} width={20} height={20} alt='N'/>
+              <Image src={"/typescript.svg"} width={20} height={20} alt='N'/>
+        </div>
+      </div>
     </div>
   )
 }

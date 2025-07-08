@@ -18,10 +18,15 @@ const arrowVariant: Variants = {
     }
 }
 
-const GBTButton = () => {
+interface gitbutton{
+    onClick?: () => void
+}
+const GBTButton = ({ onClick }:gitbutton) => {
     const [isHover, setIsHovered] = useState(false)
   return (
-    <motion.button onMouseLeave={() => setIsHovered(false)} onMouseEnter={() => setIsHovered(true)} className='bg-black gap-1 px-3 py-2 rounded-md text-white text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>
+    <motion.button onClick={onClick} onMouseLeave={() => setIsHovered(false)} 
+    onMouseEnter={() => setIsHovered(true)} 
+    className='bg-black gap-1 px-3 py-2 rounded-md text-white text-center w-40 flex items-center justify-center shadow-md cursor-pointer'>
         Components
         <AnimatePresence>
             {
