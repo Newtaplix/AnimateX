@@ -31,7 +31,7 @@ const Premium = () => {
 
     }
   return (
-    <div className="flex flex-row border w-full md:w-[60%] h-16 p-1 lg:w-[50%] justify-between p-0 items-center overflow-hidden rounded-full shadow-md">
+    <div className="flex flex-row border w-full md:w-[60%] h-16 p-1 lg:w-[70%] justify-between p-0 items-center overflow-hidden rounded-full shadow-md">
         <div onClick={() => setType(true)} className='flex-1 cursor-pointer p-2 py-3 h-full flex relative items-center justify-center'>
             <motion.span
             initial={{

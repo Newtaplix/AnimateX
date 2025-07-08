@@ -89,16 +89,16 @@ const Previews = () => {
                               <div onClick={() => {
                                 setCurrent(item.component)
                                 setOnit(i)
-                              }} className={cn('p-[3px] rounded-md border-1 w-fit', onIt === i ? "bg-gray-400/10" : "")} key={i}>
-                                  <div className='bg-gray-400/10 px-6 cursor-pointer hc p-2 text-center rounded-md border border-gray-400'>
+                              }} className={cn('p-[3px] rounded-[9px] border-1 w-fit border-gray-400/5', onIt === i ? "bg-gray-400/10" : "")} key={i}>
+                                  <div className='bg-gray-400/10 px-6 cursor-pointer hc p-2 text-center rounded-[6px] border border-gray-400/5'>
                                     {item.name}
                                   </div>
                               </div>)
                             }
                             <div 
-                              className={cn('p-[3px] rounded-md border-1 w-fit')}>
+                              className={cn('p-[3px] rounded-[9px] border-1 w-fit border-gray-400/5')}>
                                   <div className='bg-gray-400/10 flex gap-3 px-6 cursor-pointer hc p-2 
-                                  text-center rounded-md border border-gray-400'>
+                                  text-center rounded-[6px] border border-gray-400/5'>
                                     <PlusCircle/> More
                                   </div>
                               </div>
