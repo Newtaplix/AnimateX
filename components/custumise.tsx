@@ -4,6 +4,17 @@ import Title from './title'
 import { Bolt, Lock, X, PictureInPicture2} from 'lucide-react'
 import Notify from './notify'
 import Format from './format'
+import { Fira_Mono } from "next/font/google";
+
+
+const Fira = Fira_Mono({
+    subsets: ["latin"],
+    variable: "--font-fira",
+    weight: ["400", "500", "700"],
+  });
+  
+
+
 const Customise = () => {
   const [isAllowed, setIsallowed] = useState(false)
   const [text, setText] = useState("Default State")
@@ -40,7 +51,7 @@ const Customise = () => {
                     
                     <span className='hc px-3 py-1 bg-gray-600/9 ml-4 mt-2 rounded-t-md'>page.tsx</span>
                     <div className='w-full px-2 py-2 h-fit md:max-h-[440px] mt-[2px] bg-gray-600/9 rounded-lg flex flex-col md:flex-row overflow-x-scroll md:overflow-x-hidden overflow-y-hidden'>
-                          <div className='flex-1 h-full border-r-1 border-gray-300/7 tc'>
+                          <div className={` ${Fira.className} flex-1 h-full border-r-1 text-[14px] border-gray-300/7 tc`}>
                                 <span className='flex gap-3'>
                                     <p>1</p>
                                     <p className='flex gap-2'><Format text='Import' type='import'/> <Format text='React' type='component'/>, <Format type='import' text='{useState}'/> from <Format text='react' type='directory'/></p>
@@ -100,7 +111,7 @@ const Customise = () => {
                                 </span>
                                 <span className='flex gap-3'>
                                     <p>15</p>
-                                    <p className='ml-17 text-green-300'><span>{">"}</span></p>
+                                    <p className='ml-17 text-green-300'><span>{"/>"}</span></p>
                                 </span>
                                  <span className='flex gap-3'>
                                     <p>16</p>
@@ -125,7 +136,7 @@ const Customise = () => {
                             <span className='tc'>/preview</span>
                             <div className='flex flex-col gap-7 items-center items-center overflow-hidden my-auto py-8'>
                                 <Notify message={text} duration={duration} type={type} condition={isAllowed} direction={direction} axis={axis} displacement={displacement}/>
-                                <button className='text-white p-2 rounded-md px-4 bg-black cursor-pointer' onClick={() => setIsallowed(!isAllowed)}>Allow</button>
+                                <button className='text-white p-2 rounded-md px-4 bg-black cursor-pointer' onClick={() => setIsallowed(!isAllowed)}>Notify</button>
                             </div>
                           </div>
                     </div>
