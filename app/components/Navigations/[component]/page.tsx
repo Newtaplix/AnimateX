@@ -2,7 +2,7 @@
 import React from 'react'
 import Navlinks from '@/components/navs/spring'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/refer/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import MyInfo from '@/components/myinfo'

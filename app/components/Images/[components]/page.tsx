@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/refer/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import FlowStack from '@/components/images/flowstack'

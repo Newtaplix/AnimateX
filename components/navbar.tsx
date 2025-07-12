@@ -43,7 +43,9 @@ const Navbar = () => {
                 </div>
            </div>
     </div>
-    <Sidebar isopen={isdropped}/>
+    <div className="md:hidden">
+        <Sidebar isopen={isdropped}/>
+    </div>
    </div>
   )
 }

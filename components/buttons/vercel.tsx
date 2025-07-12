@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { motion } from "framer-motion"
-import { Button } from '../ui/button'
+import { Button } from '../refer/button'
 import { UserPlus } from 'lucide-react'
 
 
