@@ -30,15 +30,15 @@ const Introduction = () => {
     ]
   return (
     <div className='flex gap-4 h-full tc w-full'>
-        <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 pt-20 h-screen'>
-            <div className='border-b-1 border-gray-500 flex gap-4 flex-col py-4'>
+        <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 py-20 h-screen'>
+            <div className='border-b-1 bc flex gap-4 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Introduction</h1>
                 <p>
                 Get to know what AnimateX is and how you can use it.
                 </p>
                 <h1 className='text-3xl font-bold hc'>What is AnimateX</h1>
             </div>
-            <div className='flex flex-col gap-4 hc mt-3 pb-4 border-b-1 border-gray-500'>
+            <div className='flex flex-col gap-4 hc mt-3 pb-4 border-b-1 bc'>
                 <blockquote>
                     AnimateX is a modern animation library focused on delivering smooth, visually striking
                     ui components powered by Framer Motion, Next.js and Tailwind CSS. It was built out of need 
@@ -60,7 +60,7 @@ const Introduction = () => {
                 </blockquote>
 
                 <motion.div id='creator' ref={ref}
-                className='p-2 rounded-md border-1 border-gray-600 relative 
+                className='p-2 rounded-md border-1 bc relative 
                 overflow-hidden bg-white/4 tc '>
                     <p>Created by <span>Ngwa Newton-Raul</span> a developer who wanted more than just functionality. 
                     AnimateX is where <span>Code meets motion</span></p>
@@ -79,7 +79,7 @@ const Introduction = () => {
                     <Text size={14}/>
                     <p>On this page</p>
                 </div>
-                <div className='border-l-2 border-gray-600 ml-1'>
+                <div className='border-l-2 bc ml-1'>
                     {
                         sections.map((item, i) => 
                         <div key={i} onClick={() => setLevel(item.title)} className='flex mt-2 flex-col gap-2'>

@@ -29,7 +29,7 @@ const SetCode = ({code, terminal}:code) => {
   }}
 
   return (
-    <div className='mt-2 w-full rounded-[10px] p-[4px] pt-6 h-fit relative bg-gray-600/9'>
+    <div className='mt-2 w-full rounded-[10px] p-[4px] pt-6 h-fit relative bg-gray-300/9'>
         <motion.div layout onClick={() => copytoclipboard()} className='p-1 px-3 rounded-md absolute flex items-center top-[2px] 
         right-[4px] cursor-pointer text-[14px] gap-2 bg-black'>
           {
