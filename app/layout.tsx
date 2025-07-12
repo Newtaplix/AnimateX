@@ -27,11 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased bg-[#0b0b0f] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]`}
+        className={`${poppins.className} antialiased`}
       >
         
-        <div className="max-w-7xl mx-auto relative">
-           
+        <div className={`${poppins.className} max-w-7xl mx-auto relative`}>
             {children}
         </div>
       </body>
