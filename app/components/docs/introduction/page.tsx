@@ -30,8 +30,8 @@ const Introduction = () => {
     ]
   return (
     <div className='flex gap-4 h-full tc w-full'>
-        <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 py-20 h-screen'>
-            <div className='border-b-1 bc flex gap-4 flex-col py-4'>
+        <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 min-h-screen'>
+            <div className='border-b-1 bc flex gap-4 flex-col mt-20 py-4'>
                 <h1 className='text-3xl font-bold hc'>Introduction</h1>
                 <p>
                 Get to know what AnimateX is and how you can use it.

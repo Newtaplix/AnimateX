@@ -32,9 +32,9 @@ const Setup = () => {
   return (
     <div className='flex gap-4 h-full tc w-full'>
        
-        <div className='w-[100%] md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 py-20 h-screen'>
+        <div className='w-[100%] md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 min-h-screen'>
           {/* getting started */}
-            <div className='border-b-1 bc flex gap-4 flex-col py-4'>
+            <div className='border-b-1 bc flex gap-4 mt-20 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Setup</h1>
                 <p>
                 Here, you will learn how to get start intergrating AnimateX into your projects.
@@ -105,7 +105,7 @@ const Setup = () => {
               </div>  
                 {/* step 4 ------------------------ */}
               <div className='flex gap-2 relative pl-6 border-l-1 border-gray-600'>
-                <div className='w-8 h-8 rounded-full -top-0 hc -left-4 absolute items-center p-4 flex justify-center bc'>4</div>
+                <div className='w-8 h-8 rounded-full -top-0 hc -left-4 absolute items-center p-4 flex justify-center bg-gray-600'>4</div>
                 <div>
                     <blockquote className='flex flex-wrap py-3'>
                         Create a file in the component folder with name of the component you will be copying from AnimateX
