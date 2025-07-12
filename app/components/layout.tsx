@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Sidebar from "@/components/sidebar";
-import Statsbar from "@/components/statsbar";
-import Navbar from "@/components/navbar"
+import Navbar from "@/components/navbar";
+
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,15 +24,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${poppins.className} top-0 w-full h-full bg-[#0b0b0f] tc antialiased`}
       >
-        <div className="h-screen w-full bg-white flex gap-2">
-            <Sidebar/>
-            <div className="scrollbar-hide overflow-y-scroll relative w-full md:w-280">
-              {children}
-              <Navbar/>
+        <div className="h-screen fixed w-full justify-between flex md:gap-4 left-0 top-0 bg-[#0b0b0f]">
+           <div className="w-fit">
+              <Sidebar/>
+           </div>
+            <div className="overflow-hidden w-[100%] md:flex-1 h-full">
+                <div className="w-full px-2 md:px-0 md:max-w-5xl md:mx-auto">
+                  <div className='md:hidden'><Navbar/></div>
+                    {children}
+                </div>
             </div>
-            <Statsbar/>
+          
         </div>
       </body>
     </html>

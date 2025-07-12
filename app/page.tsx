@@ -7,11 +7,13 @@ import Features from "@/components/features";
 import Customise from "@/components/custumise";
 import Community from "@/components/community";
 import Testimonials from "@/components/testimonials";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
  
   return (
     <>
+       <Navbar/>
       <Hero/>
       <Previews/>
       <Features/>

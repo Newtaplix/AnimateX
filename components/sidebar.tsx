@@ -1,163 +1,126 @@
 "use client"
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import React from 'react'
+import { LayoutDashboard, Atom, Rocket, Book, Zap } from 'lucide-react'
 import Logo from './logo'
+import { motion } from "framer-motion"
 import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
+import Search_Input from './texts/search_input'
+import Image from 'next/image'
+import Link from 'next/link'
 
+interface nav{
+    isopen?: boolean
+}
 
-const Sidebar = () => {
-    const [isHover, setIsHovered] = useState("noon")
-    const route = useRouter()
-    const links = [
-        {
-            Maintitle: "Stacks",
-            Mainlink: "/stacks",
-            subLinks: [
-                {
-                    title: "Steps",
-                    link: "/components/Stacks/steps"
-                },
-                {
-                    title: "Cards",
-                    link: "/components/Stacks/cards"
-                },
-                {
-                    title: "Premium",
-                    link: "/components/Stacks/premuim"
-                },
-                {
-                    title: "Create",
-                    link: "/components/Stacks/create"
-                },
-                {
-                    title: "Choose",
-                    link: "/components/Stacks/choose"
-                },
-                {
-                    title: "Valentine",
-                    link: "/components/Stacks/valentine"
-                },
-                {
-                    title: "Counter",
-                    link: "/components/Stacks/counter"
-                },
-                {
-                    title: "Imessage",
-                    link: "/components/Stacks/imessage"
-                },
-                {
-                    title: "Inotification",
-                    link: "/components/Stacks/inotification"
-                }
-            ]
-        },
-        {
-            Maintitle: "Buttons",
-            Mainlink: "/buttons",
-            subLinks: [
-                {
-                    title: "Checkout",
-                    link: "/components/Buttons/cart"
-                },
-                // {
-                //     title: "Second Brain",
-                //     link: "/components/Buttons/secondbrain"
-                // }
-                {
-                    title: "Toast",
-                    link: "/components/Buttons/toast"
-                },
-                {
-                    title: "Github",
-                    link: "/components/Buttons/github"
-                },
-                // {
-                //     title: "Vercel",
-                //     link: "/components/Buttons/vercel"
-                // }
-            ]
-        },
-        {
-            Maintitle: "Texts & Inputs",
-            Mainlink: "/texts",
-            subLinks: [
-                {
-                    title: "Shake",
-                    link: "/components/Texts/shaking"
-                },
-                {
-                    title: "Confirmation",
-                    link: "/components/Texts/confirm"
-                }
-            ]
-        },
-        {
-            Maintitle: "Navigation",
-            Mainlink: "/navigation",
-            subLinks: [
-                {
-                    title: "Spring",
-                    link: "/components/Navigations/spring"
-                },
-            ]
-        },
-        {
-            Maintitle: "Images",
-            Mainlink: "/images",
-            subLinks: [
-                {
-                    title: "Flowstack",
-                    link: "/components/Images/flowstack"
-                },
-                {
-                    title: "Hover Slide",
-                    link: "/components/Images/hoverslide"
-                },
-
-            ]
-        },
+const Sidebar = ({ isopen }:nav) => {
     
-
-    ]
-
-    const handleNavigate = (link:string) => {
-        route.push(link)
+    const router = useRouter()
+    const param = usePathname()
+    const route = (link:string) =>  {
+        
+        router.push(link)
     }
+   
+  const links = [
+    {
+        main: "Introduction",
+        icon: <Zap size={14}/>,
+        links: [
+            {
+                title: "Getting Started",
+                icon: <Book size={14}/>,
+                link: "/components/docs/introduction"
+            },
+            {
+                title: "Setup",
+                icon: <Rocket size={14}/>,
+                link: "/components/docs/setup"
+            }
+        ]
+    },
+    {
+        main: "UI",
+        icon: "",
+        links: [
+            {
+                title: "Accordion",
+                icon: "",
+                link: "/accordion"
+            },
+            {
+                title: "Avartar",
+                icon: "",
+                link: "/accordion"
+            },
+            {
+                title: "Alert",
+                icon: "",
+                link: "/accordion"
+            },
+            {
+                title: "Badge",
+                icon: "",
+                link: "/accordion"
+            }
+
+        ]
+    }
+  ]
   return (
-    <div className='w-[80%] hidden md:flex-col md:flex md:w-50 lg:w-60 absolute top-0 bg-white z-20 left-0 md:relative p-2 h-full border-r-1 flex-col gap-2'>
-        <div className='w-full h-30 flex items-center justify-center mb-5 border-b-1'>
-            <Logo/>
+   <motion.div layout className={cn('w-80 border-r-1 tc border-gray-600 h-full main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
+    isopen ? "translate-x-0" : "-translate-x-[100%]"
+   )}>
+        <div className='hc flex justify-between w-full items-center p-2 md:pt-6 border-b-1 border-gray-600'>
+            <Logo width={4} height={4}/>
+            <LayoutDashboard size={18}/>
         </div>
-        {
-            links.map((link, i) => 
-            <div key={i} className='flex flex-col gap-1'>
-                <h1 className='font-bold text-xl flex'>{link.Maintitle}<hr/></h1>
-                <div className='pl-2 flex-col gap-1'>
-                    {
-                        link.subLinks.map((sub) => 
-                        <motion.p 
-                            onMouseEnter={() => setIsHovered(sub.title)} 
-                            onMouseLeave={() => setIsHovered("nono")}
-                            onClick={() => handleNavigate(sub.link)} 
-                            className="cursor-pointer" 
-                            animate={{
-                                x: isHover === sub.title ? 10 : 0
-                            }}
-                            transition={{
-                                duration: 0.5
-                            }}
-                            key={sub.link}>
-                            {sub.title}
-                        </motion.p>
-                        	)
-                    }
-                </div>
-
+        <div className='w-full p-2 px-1 hidden md:flex'><Search_Input/></div>
+        <div className='pl-3 px-1 h-full'>
+            <div className='flex gap-2 pt-3 p-1 pl-1 items-center tc'>
+                <Atom size={18}/>
+                <p className='hc'>UI</p>
             </div>
-            )
-        }
-
-    </div>
+            <div className="pl-3 text-[14px] h-full overflow-y-scroll scrollbar-hide">
+               
+                {
+                    links.map((item) => 
+                    <div key={item.main} className="pt-3 border-l-2 border-gray-600">
+                        <div className=" px-2 hc flex gap-2 items-center">
+                            {item.icon}
+                            <p>{item.main}</p>
+                        </div>
+                        <div>
+                            {
+                                item.links.map((link, i) => 
+                                <div key={i} onClick={() => route(link.link)} 
+                                className={cn("px-2 flex gap-2 py-1 items-center cursor-pointer rounded-r-sm relative", 
+                                link.link === param && "text-purple-400 bg-white/4")}>
+                                    {link.icon}
+                                    <p>{link.title}</p>
+                                    {
+                                        link.link === param &&
+                                        <motion.div layoutId="keyio" className="absolute top-0 -left-[2px] w-[2px] rounded-full 
+                                        bg-purple-400 h-full"/>
+                                    }
+                                </div>
+                                )
+                            }
+                        </div>
+                    </div>
+                    )
+                }
+            </div>
+        </div>
+        <div className='justify-end flex items-center px-0'>
+            <div className='bg-gray-300/5 p-1 rounded-tl-md'>
+                <Link href="https://github.com/Newtaplix/AnimateX" className='w-6 h-6 rounded-full overflow-hidden flex items-center relative'>
+                    <Image src={"/github.svg"} alt='git' fill/>
+                </Link>
+            </div>
+        </div>
+   </motion.div>
   )
 }
 

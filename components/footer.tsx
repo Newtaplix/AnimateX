@@ -1,11 +1,14 @@
+"use client"
 import React from 'react'
 import { Copyright,Heart, Link } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 const Footer = () => {
+  const router = useRouter()
   return (
     <div className='w-full right-0 borde-t-2 p-2 bottom-0 text-gray-500 md:w-[80%] md:mx-auto mt-30 items-center border-t-gray-400 flex flex-col'>
       <div className='flex justify-center flex-col tc gap-4 w-fit mx-auto text-center'>
-          <span className='underline flex gap-2'><Link size={14}/>Documentation</span>
+          <span onClick={() => router.push("/components/docs/introduction")} className='underline flex gap-2 hover:hc'><Link size={14}/>Documentation</span>
       </div>
       
       <div className='relative flex w-full text-center justify-center'>

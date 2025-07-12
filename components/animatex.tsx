@@ -74,7 +74,7 @@ const AnimateX = () => {
        </p>
        <div className='flex gap-8 mt-5 items-center justify-center'>
                 
-                <Github text='Components' onClick={() => router.push("/components")}/>
+                <Github text='Components' onClick={() => router.push("/components/docs/introduction")}/>
                 <Link className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer' href="https://github.com/Newtaplix/AnimateX">Star on Github</Link>
                 
        </div>         
