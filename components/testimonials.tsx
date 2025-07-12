@@ -67,10 +67,10 @@ const Testimonials = () => {
             <Title icon={<Heart size={14} color="red"/>} title="Visit the wall of Love"/>
             <h1 className='text-2xl md:text-3xl hc'>See what developers are saying.</h1>
         </div>
-        <div className='flex flex-col md:flex-wrap mt-6 gap-3 md:gap-0 justify-center h-fit md:max-h-[480px] gap-0 max-w-full md:max-w-[80%] mx-auto'>
+        <div className='flex flex-col md:flex-wrap mt-6 gap-3 md:gap-0 justify-center h-fit md:max-h-[490px] lg:max-h-[480px] gap-0 max-w-full md:max-w-[80%] mx-auto'>
             {
                 testimonials.map((item, i) =>
-                    <div key={i} className={cn('p-2 flex-1 hc w-88 h-fit px-4 border-transparent md:border-gray-500 m-0',
+                    <div key={i} className={cn('p-2 flex-1 hc w-full md:w-60 lg:w-88 h-fit px-4 border-transparent md:border-gray-500 m-0',
                         i === 0 || i === 1 ? "border-b-1 border-r-1" : i === 3 || i === 4  ? "border-b-1 border-r-1" :
                          i === 2 || i === 5 ? "border-r-1" : i=== 4 ? "border-b-1 border-t-1" : i === 6 ? "border-b-1" : 
                          i === 8 ? "border-t-1" : ""

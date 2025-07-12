@@ -32,7 +32,7 @@ const Setup = () => {
   return (
     <div className='flex gap-4 h-full tc w-full'>
        
-        <div className='w-[100%] md:w-[70%] overflow-y-scroll scrollbar-hide pb-2 pt-10 md:pt-20 h-screen'>
+        <div className='w-[100%] md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 pt-20 h-screen'>
           {/* getting started */}
             <div className='border-b-1 border-gray-500 flex gap-4 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Setup</h1>

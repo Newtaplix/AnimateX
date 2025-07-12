@@ -6,6 +6,7 @@ import Search_Input from './texts/search_input'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import Sidebar from './sidebar'
+import Image from 'next/image'
 
 const Navbar = () => {
   const [isdropped, SetIsDropped] = useState(false)
@@ -38,8 +39,13 @@ const Navbar = () => {
                             }}
                             ><ChevronRight size={24}/></motion.span>
                           </div>
-                  
+                            <div className='gap-3 hidden md:flex'>
+                              <div><Image src={"/github.svg"} alt='git' width={24} height={24}/></div>
+                              <div><Image src={"/X.svg"} alt='git' width={24} height={24}/></div>
+                              <div><Image src={"/discord.svg"} alt='git' width={24} height={24}/></div>
+                            </div>
                       </div>
+                      
                 </div>
            </div>
     </div>
