@@ -113,7 +113,7 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
 
 
 export const PropContainer = ({code, component, copy=true}:componentProp) => {
-  const [current, setCurrent] = useState("code")
+  const [current, setCurrent] = useState("component")
   const [copycode, SetCopyCode] = useState(false)
 
   const CopytoClipBoard = (code:string) => {
@@ -125,6 +125,13 @@ export const PropContainer = ({code, component, copy=true}:componentProp) => {
     <div className='w-full rounded-[14px] p-[6px] bg-gray-300/4'>
         <div className='w-full justify-between hc flex items-center '>
           <div className='flex'>
+              <div onClick={() => setCurrent("component")} className={cn('p-2 px-3 cursor-pointer relative', current === "component"? "hc" : "tc" )}>
+              {
+                  current === "component" &&
+                  <motion.div layoutId='swap2' className='absolute bg-purple-600 h-[2px] w-full rounded-full bottom-0 right-0'/>
+              }
+                Preview
+              </div>
               <div onClick={() => setCurrent("code")} className={cn('p-2 px-3 cursor-pointer relative', current === "code"? "hc" : "tc" )}>
               {
                   current === "code" &&
@@ -132,13 +139,7 @@ export const PropContainer = ({code, component, copy=true}:componentProp) => {
               }
                 Code
               </div>
-              <div onClick={() => setCurrent("component")} className={cn('p-2 px-3 cursor-pointer relative', current === "code"? "hc" : "tc" )}>
-              {
-                  current === "component" &&
-                  <motion.div layoutId='swap2' className='absolute bg-purple-600 h-[2px] w-full rounded-full bottom-0 right-0'/>
-              }
-                Preview
-              </div>
+              
           </div>
          {
             copy && 

@@ -167,5 +167,5 @@
   @apply bg-[#0b0b0f];
 }
 .bc{
-  @apply border-gray-600;
+  @apply border-gray-300/4;
 }

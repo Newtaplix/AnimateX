@@ -54,7 +54,7 @@ const Sidebar = ({ isopen }:nav) => {
     }
   ]
   return (
-   <motion.div layout className={cn('w-80 md:w-60 lg:w-80 border-r-1 tc border-gray-600 h-full main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
+   <motion.div layout className={cn('w-80 md:w-60 lg:w-80 border-r-1 tc bc h-full main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
     isopen ? "translate-x-0" : "-translate-x-[100%]"
    )}>
         <div className='hc flex justify-between w-full items-center p-2 md:pt-6 border-b-1 border-gray-600'>
