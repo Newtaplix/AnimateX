@@ -16,7 +16,7 @@ interface accordion{
 
 const variants = {
     light: "text-black rounded-md bg-white shadow-sm",
-    dark: "text-gray-200 rounded-md bg-gray-200/4",
+    dark: "text-gray-200 rounded-md bg-gray-200/9",
 }
 
 export const Accordion = ({iconType= "drop", className, title, children, variant }:accordion) => {
