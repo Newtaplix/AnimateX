@@ -121,7 +121,7 @@
     @apply bg-[#0b0b0f] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] text-foreground;
   }
   .gray_border{
-    @apply border-1 h-fit rounded-md border-gray-300/50
+    @apply border-1 h-fit rounded-md border-gray-300/5;
   }
   .btn{
     @apply bg-black px-3 py-2 rounded-md text-white text-center w-40 flex items-center justify-center shadow-md cursor-pointer
@@ -167,5 +167,5 @@
   @apply bg-[#0b0b0f];
 }
 .bc{
-  @apply border-gray-300/4;
+  @apply border-gray-300/5;
 }

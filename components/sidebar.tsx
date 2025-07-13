@@ -57,7 +57,7 @@ const Sidebar = ({ isopen }:nav) => {
    <motion.div layout className={cn('w-80 md:w-60 lg:w-80 border-r-1 tc bc h-full main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
     isopen ? "translate-x-0" : "-translate-x-[100%]"
    )}>
-        <div className='hc flex justify-between w-full items-center p-2 md:pt-6 border-b-1 border-gray-600'>
+        <div className='hc flex justify-between w-full items-center p-2 md:pt-6 border-b-1 bc'>
             <Logo width={4} height={4}/>
             <LayoutDashboard size={18}/>
         </div>
@@ -71,7 +71,7 @@ const Sidebar = ({ isopen }:nav) => {
                
                 {
                     links.map((item) => 
-                    <div key={item.main} className="pt-3 border-l-2 border-gray-600">
+                    <div key={item.main} className="pt-3 border-l-2 bc">
                         <div className=" px-2 hc flex gap-2 items-center">
                             {item.icon}
                             <p>{item.main}</p>

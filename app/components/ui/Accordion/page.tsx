@@ -48,7 +48,9 @@ const AccordionPage = () => {
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
                 <h1 className='text-3xl font-bold hc'>Accordion</h1>
                 <p>
-                    A fully customisable animated Accordion.
+                    A fully customisable animated Accordion. Perfect for organisng large chunks of information 
+                    in a clean, interactive way. Powered by Framer Motion, each toggle is fluid and responsive, 
+                    making it ideal for FAQs, guides, or any interface that needs expandable panels. 
                 </p>
                 <ComponentContainer 
                     component={<Accordion variant='dark' className='w-full md:w-[480px]' iconType='drop' title='AnimateX first Component'>

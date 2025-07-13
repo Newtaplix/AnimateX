@@ -9,7 +9,7 @@ const Search_Input = () => {
             <input placeholder='Search Something' type="text" className='px-1 h-full p-1 w-full outline-none'/>
        </div>
         <div className=' h-fit'>
-            <span className='bg-gray-300 rounded-md text-black px-2 py-1 text-center flex items-center border-1 text-xs border-gray-300/50'>Ctrl + K</span>
+            <span className='bg-gray-300/7 tc rounded-md text-black px-2 py-1 text-center flex items-center text-xs '>Ctrl + K</span>
         </div>
     </div>
   )
