@@ -47,7 +47,7 @@ const Sidebar = ({ isopen }:nav) => {
             {
                 title: "Accordion",
                 icon: "",
-                link: "/accordion"
+                link: "/components/ui/Accordion"
             },
             {
                 title: "Avartar",

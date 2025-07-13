@@ -131,6 +131,21 @@
 .scrollbar-hide::-webkit-scrollbar{
   display: none;
 }
+.scroll-dark::-webkit-scrollbar{
+  background: #0b0b0f;
+  width: 6px;
+  border-radius: 6px;
+}
+.scroll-bar::-webkit-scrollbar-button{
+  background: #0b0b0f;
+  opacity: 4;
+}
+.scroll-button::-webkit-scrollbar-thumb{
+  background-color: gray;
+  opacity: 4;
+  width: 4px;
+  border-radius: 12px;
+}
 
 .scrollbar-hide{
   -ms-overflow-style: none;

@@ -4,7 +4,7 @@ import { Text, Heart, Folder } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import Github from '@/components/buttons/github'
 import Link from 'next/link'
-import SetCode from '@/components/docs/setcode'
+import {SetCode} from '@/components/docs/setcode'
 
 
 const Setup = () => {
