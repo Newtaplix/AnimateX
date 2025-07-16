@@ -59,7 +59,7 @@ export const Feedback = ({openLabel, buttonText,
                 borderRadius: "12px"
             }}
             transition={{
-                duration: 0.2,
+                duration: 0.3,
                 stiffness: 0.1
             }}
             onClick={() => setIsOpen(true)} className='p-2 flex bg-gray-200/8 overflow-hidden cursor-pointer items-center'>
@@ -89,7 +89,7 @@ export const Feedback = ({openLabel, buttonText,
                 borderRadius: "12px"
             }}
             transition={{
-                duration: 0.2,
+                duration: 0.3,
                 stiffness: 0.1
             }}
             layoutId='zap' 

@@ -160,7 +160,7 @@ const FeedbackPage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/Accordion' next='/components/ui/Fade' prevText='Accordion' nexText='Fade'/>
+            <LinksDiv previous='/components/ui/Accordion' next='/components/ui/fade' prevText='Accordion' nexText='Fade'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>
