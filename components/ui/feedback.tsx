@@ -93,7 +93,7 @@ export const Feedback = ({openLabel, buttonText,
                 stiffness: 0.1
             }}
             layoutId='zap' 
-            className='relative overflow-hidden p-2 bg-gray-200/8 w-100 flex flex-col gap-2'>
+            className='relative overflow-hidden p-2 bg-gray-200/8 w-80 md:w-100 flex flex-col gap-2'>
                 <div className='flex justify-between'>
                     <p>{blockName}</p>
                     <AnimatePresence>
