@@ -8,7 +8,7 @@ import CheckOut from '@/components/buttons/checkout'
 import Toast from '@/components/buttons/toast'
 // import Vercel from '@/components/buttons/vercel'
 import Link from 'next/link'
-import MyInfo from '@/components/myinfo'
+import MyInfo from '@/components/main/myinfo'
 import Github from '@/components/buttons/github'
 
 

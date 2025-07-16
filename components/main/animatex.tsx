@@ -7,8 +7,8 @@ import Link from 'next/link'
 import Title from './title'
 import Image from 'next/image'
 import { Sparkles } from 'lucide-react'
-import Github from './buttons/github'
 import { useRouter } from 'next/navigation'
+import Github from '../buttons/github'
 
 
 

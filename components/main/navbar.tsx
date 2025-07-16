@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { ChevronRight} from 'lucide-react'
 import Logo from './logo'
-import Search_Input from './texts/search_input'
+import Search_Input from '../texts/search_input'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import Sidebar from './sidebar'

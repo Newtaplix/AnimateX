@@ -1,3 +1,91 @@
+"use client"
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+
+
+interface fade{
+    children?: React.ReactNode,
+    repeat?: boolean,
+    amountx?: number,
+    amounty?:number,
+    view?: number,
+    className?: string,
+    duration? : number
+}
+export const Fade = ({children, repeat=false, amounty=0, className, amountx=0, view=0.5, duration=0.5}:fade) => {
+    const ref = useRef(null)
+    const once = !repeat ? true : false 
+    const isInView = useInView(ref, {once: once, amount:view})
+  
+  return (
+    <motion.div
+    className={className}
+    initial={{
+        y: amounty,
+        x: amountx,
+        opacity: 0
+    }} 
+    animate={{
+        y: isInView ? 0 : amounty, 
+        x: isInView ? 0 : amountx, 
+        opacity: isInView ? 1 : 0
+    }}
+    transition={{
+        duration: duration
+    }}
+    ref={ref}>
+        {children}
+    </motion.div>
+  )
+}
+
+
+export const FadeCode = `
+"use client"
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+
+
+interface fade{
+    children?: React.ReactNode,
+    repeat?: boolean,
+    amountx?: number,
+    amounty?:number,
+    view?: number,
+    axis?: axis,
+    className?:string,
+    duration? : number
+}
+export const Fade = ({children, repeat=false, amounty=0, amountx=0, view=0.5, duration=0.5}:fade) => {
+    const ref = useRef(null)
+    const once = !repeat ? true : false 
+    const isInView = useInView(ref, {once: once, amount:view})
+  
+  return (
+    <motion.div
+    className={className}
+    initial={{
+        y: amounty,
+        x: amountx,
+        opacity: 0
+    }} 
+    animate={{
+        y: isInView ? 0 : amounty, 
+        x: isInView ? 0 : amountx, 
+        opacity: isInView ? 1 : 0
+    }}
+    transition={{
+        duration: duration
+    }}
+    ref={ref}>
+        {children}
+    </motion.div>
+  )
+}
+
+`
+
+export const UseCode = `
 import React from 'react'
 import { Fade } from './fade'
 
@@ -36,3 +124,4 @@ const page = () => {
 }
 
 export default page
+`

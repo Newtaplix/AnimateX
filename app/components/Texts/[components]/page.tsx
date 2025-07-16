@@ -5,7 +5,7 @@ import { Button } from '@/components/refer/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import ShakingText from '@/components/texts/shake'
-import MyInfo from '@/components/myinfo'
+import MyInfo from '@/components/main/myinfo'
 import Confirm from '@/components/texts/confirm'
 
 

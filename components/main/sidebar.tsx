@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import Search_Input from './texts/search_input'
+import Search_Input from '../texts/search_input'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -53,6 +53,18 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Feedback",
                 icon: "",
                 link: "/components/ui/feedback"
+            }
+            ,
+            {
+                title: "Fade",
+                icon: "",
+                link: "/components/ui/fade"
+            }
+            ,
+            {
+                title: "Pulse",
+                icon: "",
+                link: "/components/ui/pulse"
             },
             {
                 title: "Zoop",

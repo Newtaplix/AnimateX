@@ -1,12 +1,12 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { Text, Heart, MessageCircle } from 'lucide-react'
+import { Text, MessageCircle } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
-import Github from '@/components/buttons/github'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
 import { Feedback, FeedBackCode, UseCase } from '@/components/ui/feedback'
+import LinksDiv from '@/components/main/LinksDiv'
 const FeedbackPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
@@ -160,16 +160,7 @@ const FeedbackPage = () => {
                   </div>
             </div>
            
-            <div className=' border-t-1 text-center bc py-3 flex-col gap-2 mt-10'>
-                <div className="justify-between flex items-center">
-                  <Github text='Setup'/>
-                  <Github text='Profile Slider'/>
-                </div>
-                <div className="text-center flex flex-col items-center mt-4 justify-center">
-                  <p className='underline text-[14px] flex gap-2'>Created with <Heart size={14} color='red'/> by Ngwa Newton-Raul</p>
-                  <p className='underline text-[14px] gap-2 '>Star on Github.</p>
-                </div>
-            </div>
+            <LinksDiv previous='/components/ui/Accordion' next='/components/ui/Fade' prevText='Accordion' nexText='Fade'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>

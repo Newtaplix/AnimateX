@@ -1,8 +1,8 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { Text, Heart } from 'lucide-react'
+import { Text } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
-import Github from '@/components/buttons/github'
+import LinksDiv from '@/components/main/LinksDiv'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
@@ -119,16 +119,7 @@ const AccordionPage = () => {
                   </div>
             </div>
            
-            <div className=' border-t-1 text-center bc py-3 flex-col gap-2 mt-10'>
-                <div className="justify-between flex items-center">
-                  <Github text='Setup'/>
-                  <Github text='Profile Slider'/>
-                </div>
-                <div className="text-center flex flex-col items-center mt-4 justify-center">
-                  <p className='underline text-[14px] flex gap-2'>Created with <Heart size={14} color='red'/> by Ngwa Newton-Raul</p>
-                  <p className='underline text-[14px] gap-2 '>Star on Github.</p>
-                </div>
-            </div>
+          <LinksDiv previous='/components/docs/setup' next='/components/ui/feedback' prevText='Setup' nexText='Feedback'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>

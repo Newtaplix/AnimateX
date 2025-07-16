@@ -5,7 +5,7 @@ import { Button } from '@/components/refer/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import FlowStack from '@/components/images/flowstack'
-import MyInfo from '@/components/myinfo'
+import MyInfo from '@/components/main/myinfo'
 import HoverSlide from '@/components/images/hoverslide'
 
 
