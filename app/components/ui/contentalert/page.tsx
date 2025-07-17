@@ -48,7 +48,7 @@ const ContentAlertPage = () => {
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Accordion</h1>
+                <h1 className='text-3xl font-bold hc'>Content Alert</h1>
                 <p>
                    A fully animated and customizable content update alert notifier with user profile.
                 </p>
