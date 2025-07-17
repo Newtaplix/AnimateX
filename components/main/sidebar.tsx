@@ -50,6 +50,11 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/Accordion"
             },
             {
+                title: "Content Alert",
+                icon: "",
+                link: "/components/ui/contentalert"
+            },
+            {
                 title: "Feedback",
                 icon: "",
                 link: "/components/ui/feedback"

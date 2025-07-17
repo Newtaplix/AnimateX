@@ -102,7 +102,7 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
                       </Prism>
                     
                     </div>
-                    : <div className='p-2 w-full flex items-center justify-center'>{component}</div>
+                    : <div className='p-2 w-full flex items-center relative justify-center'>{component}</div>
 
                   }
               
@@ -159,7 +159,7 @@ export const PropContainer = ({code, component, copy=true}:componentProp) => {
                           {code.trim()}
                       </Prism>
                     
-                    </div> : <div className='p-2 w-full flex items-center justify-center'>{component}</div>
+                    </div> : <div className='p-2 w-full flex items-center relative justify-center'>{component}</div>
                     
 
                   }
