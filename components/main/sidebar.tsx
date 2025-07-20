@@ -76,6 +76,11 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/zoop"
             },
+            {
+                title: "Press Button",
+                icon: "",
+                link: "/components/ui/pressbtn"
+            },
            
 
         ]
