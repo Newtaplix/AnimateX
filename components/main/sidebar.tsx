@@ -81,6 +81,11 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/pressbtn"
             },
+            {
+                title: "Swipe Cards",
+                icon: "",
+                link: "/components/ui/swipecards"
+            },
            
 
         ]

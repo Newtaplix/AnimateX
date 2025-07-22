@@ -91,7 +91,7 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
             </div>
          }
         </div>
-        <div className='h-[400px] main rounded-[8px] w-full flex items-center overflow-hidden justify-center'>
+        <div className='h-[400px] main rounded-[8px] w-full relative flex items-center overflow-hidden justify-center'>
               
                     {
                     current === "code" ? 
@@ -102,7 +102,7 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
                       </Prism>
                     
                     </div>
-                    : <div className='p-2 w-full flex items-center relative justify-center'>{component}</div>
+                    : <div className='p-2 w-full h-full flex items-center relative justify-center'>{component}</div>
 
                   }
               
