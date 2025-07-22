@@ -31,12 +31,15 @@ const Sidebar = ({ isopen }:nav) => {
             {
                 title: "Getting Started",
                 icon: <Book size={14}/>,
-                link: "/components/docs/introduction"
+                link: "/components/docs/introduction",
+                tag: null
+
             },
             {
                 title: "Setup",
                 icon: <Rocket size={14}/>,
-                link: "/components/docs/setup"
+                link: "/components/docs/setup",
+                tag: ""
             }
         ]
     },
@@ -47,45 +50,61 @@ const Sidebar = ({ isopen }:nav) => {
             {
                 title: "Accordion",
                 icon: "",
-                link: "/components/ui/Accordion"
+                link: "/components/ui/Accordion",
+                tag: ''
+                
             },
             {
                 title: "Content Alert",
                 icon: "",
-                link: "/components/ui/contentalert"
+                link: "/components/ui/contentalert",
+                tag: ''
             },
             {
                 title: "Feedback",
                 icon: "",
-                link: "/components/ui/feedback"
+                link: "/components/ui/feedback",
+                tag: ''
             }
             ,
             {
                 title: "Fade",
                 icon: "",
-                link: "/components/ui/fade"
+                link: "/components/ui/fade",
+                tag: ''
             }
             ,
             {
                 title: "Pulse",
                 icon: "",
-                link: "/components/ui/pulse"
+                link: "/components/ui/pulse",
+                tag: ''
             },
             {
                 title: "Zoop",
                 icon: "",
-                link: "/components/ui/zoop"
+                link: "/components/ui/zoop",
+                tag: ''
             },
             {
                 title: "Press Button",
                 icon: "",
-                link: "/components/ui/pressbtn"
+                link: "/components/ui/pressbtn",
+                tag: ''
             },
             {
                 title: "Swipe Cards",
                 icon: "",
-                link: "/components/ui/swipecards"
+                link: "/components/ui/swipecards",
+                tag: ''
+                
             },
+            {
+                title: "Swipe Cards 2",
+                icon: "",
+                link: "/components/ui/cards2",
+                tag: "New"
+            }
            
 
         ]
@@ -121,7 +140,8 @@ const Sidebar = ({ isopen }:nav) => {
                                 className={cn("px-2 flex gap-2 py-1 items-center cursor-pointer rounded-r-sm relative", 
                                 link.link === param && "text-purple-400 bg-white/4")}>
                                     {link.icon}
-                                    <p>{link.title}</p>
+                                    <p className='flex gap-2'>{link.title}
+                                       {link.tag ?  <span className='p-[2px] px-[4px] border-1 text-xs border-gray-200/6 bg-gray-200/6 flex items-center rounded-full text-gray-400'>{link.tag}</span> : null}</p>
                                     {
                                         link.link === param &&
                                         <motion.div layoutId="keyio" className="absolute top-0 -left-[2px] w-[2px] rounded-full 

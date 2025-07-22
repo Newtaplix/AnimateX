@@ -83,6 +83,7 @@ export const Cards = ({id, url, cardList, setCards}:cards) => {
       opacity,
       boxShadow: isInfront ? "2px 2px 12px 2px black": "1px 1px 12px 1px black",
       scale: isInfront ? 1 : 0.95,
+      transition: "0.125 transform"
     }}
    
     className='absolute w-50 h-64 rounded-md cursor-pointer overflow-hidden'>

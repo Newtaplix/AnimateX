@@ -28,7 +28,6 @@ const SwipeCardsPage = () => {
     }
 }, [isInView, isInView1, isInView2])
 
-
   const sections = [
     {
       title: "Preview",
