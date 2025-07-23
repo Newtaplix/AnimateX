@@ -70,10 +70,10 @@ export const Card = ({children, className, index, arr, update}:simplecard) => {
             rotate,
             opacity: isTop ? opacity : 1,
             scale: isTop ? 1 : 0.95,
-            transition:  "0.3s transform",
+            transition: "0.19s transform",
         }}
       
-        className={className + " " + "absolute left-0 top-1/2 -translate-y-1/2 right-0 mx-auto"} >
+        className={className + " " + "absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer right-0 mx-auto"} >
             {children}
         </motion.div>
     )

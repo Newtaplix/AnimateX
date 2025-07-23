@@ -104,6 +104,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/cards2",
                 tag: "New"
+            },
+            {
+                title: "Password Confirm",
+                icon: "",
+                link: "/components/ui/confirm",
+                tag: "New"
             }
            
 

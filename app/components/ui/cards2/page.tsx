@@ -161,7 +161,7 @@ const Cards2page = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/pulse' next='' prevText='Pulse' nexText=''/>
+            <LinksDiv previous='/components/ui/pulse' next='/components/ui/confirm' prevText='Pulse' nexText='Password Confirm'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>
