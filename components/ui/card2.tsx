@@ -47,7 +47,7 @@ export const Card = ({children, className, index, arr, update}:simplecard) => {
     })
 
     const handledragEnd = (() => {
-       if(Math.abs(x.get()) > 75){
+       if(Math.abs(x.get()) > 65){
             if(arr && update && index){
                 update((prev) => {
                     const currentCard = prev[index]
