@@ -104,7 +104,7 @@ const PasswordConfirmPage = () => {
                               <td className='p-2'>model</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>"password"</td>
+                              <td>password</td>
                             </tr>
                         </tbody>
 
