@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 
 const Page = () => {
-  const [confirm, setConfirm] = useState("")  
+
  
   return (
     <TiltCard className='overflow-hidden'>

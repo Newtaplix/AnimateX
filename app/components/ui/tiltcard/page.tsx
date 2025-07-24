@@ -101,13 +101,13 @@ const PasswordConfirmPage = () => {
                               <td className='p-2'>className</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>'absolute inset-4 rounded-md bg-gray-800'</td>
+                              <td>absolute inset-4 rounded-md bg-gray-800</td>
                             </tr>
                             <tr className='border-t-1 bc'>
                               <td className='p-2'>shadowStyle</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>'w-60 h-75 rounded-md bg-gray-200/5 relative'</td>
+                              <td>w-60 h-75 rounded-md bg-gray-200/5 relative</td>
                             </tr>
                         </tbody>
 
