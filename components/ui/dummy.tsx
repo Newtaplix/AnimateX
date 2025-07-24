@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 
 const Page = () => {
-
  
   return (
     <TiltCard className='overflow-hidden'>

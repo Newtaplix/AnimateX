@@ -73,7 +73,7 @@ export const Input = ({ className, onChange, model="password", confirm}:inputPro
                 style={{ letterSpacing :  6}}
                 
                 className={className + " " + "h-full relative z-30 bg-transparent w-full outline-0 px-2"}/> 
-                <div className='bg-transparent top-1/2 -translate-y-1/2 flex px-1 items-center absolute z-20 w-full h-full w-fit top-0'>
+                <div className='bg-transparent top-1/2 -translate-y-1/2 flex px-1 items-center absolute z-20 w-full h-full'>
                  <AnimatePresence>
                     {
                         splitted.map((l,i) => 
