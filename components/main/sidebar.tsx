@@ -110,6 +110,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/confirm",
                 tag: "New"
+            },
+            {
+                title: "Tilt Card",
+                icon: "",
+                link: "/components/ui/tiltcard",
+                tag: "New"
             }
            
 

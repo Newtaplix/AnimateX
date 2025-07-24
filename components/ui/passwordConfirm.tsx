@@ -38,6 +38,7 @@ export const Input = ({ className, onChange, model="password", confirm}:inputPro
     const InputArr = userInput.split("")
 
     const [splitted, setSplitted] = useState<string[]>([])
+   
         
     useEffect(() => {
         const text = confirm.slice(0, userInput.length).split("")
@@ -65,10 +66,12 @@ export const Input = ({ className, onChange, model="password", confirm}:inputPro
                         onChange(e)
                     }
                     setPass(e.target.value)
+                    
                 }} 
                 placeholder='Input Password'
                 type='password'
-                style={{ letterSpacing : 6}}
+                style={{ letterSpacing :  6}}
+                
                 className={className + " " + "h-full relative z-30 bg-transparent w-full outline-0 px-2"}/> 
                 <div className='bg-transparent top-1/2 -translate-y-1/2 flex px-1 items-center absolute z-20 w-full h-full w-fit top-0'>
                  <AnimatePresence>
@@ -102,11 +105,14 @@ export const Input = ({ className, onChange, model="password", confirm}:inputPro
                 <input onChange={(e) => {
                 if(onChange){
                     onChange(e)
+                   
                 }
+                
             }} placeholder='Confirm Password' 
             style={{
-                letterSpacing: 6
+                letterSpacing:  6 
             }}
+           
                 type='password'
                 className={className + " " + "h-full relative z-30 bg-transparent w-full outline-0 px-2"}/>
             </div>

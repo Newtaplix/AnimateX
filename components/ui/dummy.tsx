@@ -1,15 +1,25 @@
 "use client"
 import React, { useState } from 'react'
-import { Input, PasswordConfirm } from './passwordConfirm'
+import { TiltCard } from './tiltcard'
+import Image from 'next/image'
+
 
 const Page = () => {
   const [confirm, setConfirm] = useState("")  
  
   return (
-    <PasswordConfirm>
-          <Input confirm={confirm} className='text-gray-200'/>                     
-          <Input confirm="" className='text-gray-200' onChange={(e) => setConfirm(e ? e.target.value : "")} model='confirm'/>
-      </PasswordConfirm>
+    <TiltCard className='overflow-hidden'>
+      <div className='h-full bg-white text-center w-full flex-col flex p-2 items-center justify-center'>
+          <div className='w-24 overflow-hidden border-3 border-gray-400 h-24 rounded-full relative'>
+              <Image src={"/images.jpeg"} fill alt='pic'/>
+          </div>
+          <div className="text-black">
+              <p>@Newton</p>
+              <p className="text-gray-500 text-[12px]">~Software Developer</p>
+          </div>
+          <p className='text-xs text-black mt-3'>Hi there! Am a software developer and I love building animations on the web.</p>
+      </div>
+    </TiltCard>
   )
 }
 
