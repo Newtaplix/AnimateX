@@ -116,6 +116,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/tiltcard",
                 tag: "New"
+            },
+            {
+                title: "Hover Aura",
+                icon: "",
+                link: "/components/ui/hoveraura",
+                tag: "New"
             }
            
 
