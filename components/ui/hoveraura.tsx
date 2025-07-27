@@ -45,7 +45,7 @@ export const HoverAura = ({children, blurColor = "aqua", blurSize=12, className}
             height: "100%",
              width: "100%"}}
             
-              onMouseMove={(e) => handleMouseMoving(e)} className={className ? className + " " + "z-20" : defaultstyle}>
+              onMouseMove={(e) => handleMouseMoving(e)} className={className ? className + " " + "z-20 pointer-events-none" : defaultstyle}>
             {children}
         </div>
     </div>

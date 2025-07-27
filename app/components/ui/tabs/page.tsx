@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { HorizontalScroll2 } from '@/components/ui/horizontalScroll'
+import { Tabs } from '@/components/ui/tabs'
 import LinksDiv from '@/components/main/LinksDiv'
 
 const HorizontalScrollPage = () => {
@@ -42,21 +42,29 @@ const HorizontalScrollPage = () => {
       link: "#level3"
     }
   ]
+
+  const arr = [{
+    title: "Tab 1",
+    content: <div className='w-full h-full bg-red-400 flex flex-shrink-0 items-center justify-center text-black text-4xl'>Tab 1</div>
+},{
+    title: "Tab 2",
+    content:<div className='w-full h-full bg-green-400 flex items-center flex-shrink-0 justify-center text-black text-4xl'>Tab 2</div>
+},{
+    title: "Tab 3",
+    content: <div className='w-full h-full bg-yellow-400 flex-shrink-0 flex items-center justify-center text-black text-4xl'>Tab 3</div>
+}]
   return (
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Pulse</h1>
+                <h1 className='text-3xl font-bold hc'>Tabs</h1>
                 <p>
-                    A smooth, rthythmic scaling animation that mimics a heartbeat or ripple effect.
-                     Ideal for highlighting live status indicators, notifications, or call-to-action buttons.
+                    Animated tabs component
                 </p>
                 <ComponentContainer 
-                    component={<div className='w-full h-[350px] overflow-y-scroll'>
-                      <div className="flex items-center justify-center h-90 bg-gray-200/7">Scroll Down</div>
-                      <HorizontalScroll2/>
-                      <div className="flex items-center justify-center h-90 bg-gray-200/7">Scroll Up</div>
-                    </div>}
+                    component={
+                    <Tabs tabs={arr}/>
+                    }
                     code={""}
                 />
             </div>

@@ -122,7 +122,14 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/hoveraura",
                 tag: "New"
-            }
+            },
+            {
+                title: "Tabs",
+                icon: "",
+                link: "/components/ui/tabs",
+                tag: ''
+                
+            },
            
 
         ]
@@ -142,8 +149,7 @@ const Sidebar = ({ isopen }:nav) => {
                 <Atom size={18}/>
                 <p className='hc'>UI</p>
             </div>
-            <div className="pl-3 text-[14px] h-full overflow-y-scroll scrollbar-hide">
-               
+            <div className="pl-3 text-[14px] h-[85%] overflow-x-hidden scroll-dark relative scroll-bar scroll-button overflow-y-scroll ">
                 {
                     links.map((item) => 
                     <div key={item.main} className="pt-3 border-l-2 bc">

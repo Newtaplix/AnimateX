@@ -5,10 +5,10 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { Zoop, ZoopCode, UseCaseCode } from '@/components/ui/zoop'
+import { ScrollStack } from '@/components/ui/scrollstack'
 import LinksDiv from '@/components/main/LinksDiv'
 
-const ZoopButtonPage = () => {
+const ScroolStackPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -46,22 +46,18 @@ const ZoopButtonPage = () => {
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Zoop</h1>
-                <p>
-                    A fully customisable animated Stagger animation or I like to call it a Zoop animation.
-                    Perfect for your hero sections, links and even buttons giving users an amazing hover experience. 
-                </p>
+                <h1 className='text-3xl font-bold hc'>Hover Aura</h1>
                 <ComponentContainer 
-                    component={<Zoop text={`Hover Me`} className='text-2xl 4xl bg-transparent' />}
-                    code={ZoopCode}
+                    component={<ScrollStack/>}
+                    code={""}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={UseCaseCode} 
-                component={<Zoop text='AnimateX' />} />
+                <PropContainer code={""} 
+                component={<></>} />
             </div>
 
 
@@ -80,34 +76,22 @@ const ZoopButtonPage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>onClick</td>
-                              <td>function</td>
+                              <td className='p-2'>blurColor</td>
+                              <td>number</td>
                               <td>none</td>
                               <td>none</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>Text</td>
+                              <td className='p-2'>blurSize</td>
                               <td>string</td>
                               <td>none</td>
                               <td>none</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>ClassName</td>
+                              <td className='p-2'>className</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>overflow-hidden relative</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>duration</td>
-                              <td>number</td>
-                              <td>none</td>
-                              <td>0.25</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>stagger</td>
-                              <td>number</td>
-                              <td>none</td>
-                              <td>0.025</td>
+                              <td>w-full h-full relative</td>
                             </tr>
                         </tbody>
 
@@ -116,7 +100,7 @@ const ZoopButtonPage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/pulse' next='' prevText='Pulse' nexText=''/>
+            <LinksDiv previous='/components/ui/tiltcard' next='' prevText='Tilt Card' nexText=''/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>
@@ -148,4 +132,4 @@ const ZoopButtonPage = () => {
   )
 }
 
-export default ZoopButtonPage
+export default ScroolStackPage

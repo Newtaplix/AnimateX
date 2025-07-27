@@ -136,6 +136,7 @@
   width: 6px;
   border-radius: 6px;
 }
+
 .scroll-bar::-webkit-scrollbar-button{
   background: #0b0b0f;
   opacity: 4;
