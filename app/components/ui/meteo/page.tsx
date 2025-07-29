@@ -5,10 +5,10 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { Tabs, Case } from '@/components/ui/tabs'
+import { Meteor, Code , Use} from '@/components/ui/meteobg'
 import LinksDiv from '@/components/main/LinksDiv'
 
-const HorizontalScrollPage = () => {
+const PulsePage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -42,38 +42,34 @@ const HorizontalScrollPage = () => {
       link: "#level3"
     }
   ]
-
-  const arr = [{
-    title: "Tab 1",
-    content: <div className='w-full h-full bg-red-400 flex flex-shrink-0 items-center justify-center text-black text-4xl'>Tab 1</div>
-},{
-    title: "Tab 2",
-    content:<div className='w-full h-full bg-green-400 flex items-center flex-shrink-0 justify-center text-black text-4xl'>Tab 2</div>
-},{
-    title: "Tab 3",
-    content: <div className='w-full h-full bg-yellow-400 flex-shrink-0 flex items-center justify-center text-black text-4xl'>Tab 3</div>
-}]
   return (
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Tabs</h1>
+                <h1 className='text-3xl font-bold hc'>Meteo Shower</h1>
                 <p>
-                    Animated tabs component
+                    Background effect that stimulates a stream of shooting start straking across the screen. Perfect for 
+                    cosmic themes, hero sections, or adding an ambient sparkle to any UI.
                 </p>
                 <ComponentContainer 
-                    component={
-                    <Tabs index='bui' tabs={arr}/>
-                    }
-                    code={""}
+                    component={<Meteor/>}
+                    code={Code}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={""} 
-                component={<Case/>} />
+                <PropContainer code={Use} 
+                component={
+                <Meteor meteoColor='yellow'>
+                    <div className='w-full h-full flex items-center justify-center'>
+                        <div className='w-fit h-fit rounded-full text-white text-4xl md:text-9xl relative'>
+                            <h1 className='z-10'>SpaceX</h1>
+                            <div className='absolute z-20 h-[55%] bg-[#0b0b0f] w-full blur-[18px] -bottom-5 left-0'/>
+                        </div>
+                    </div>
+                </Meteor>} />
             </div>
 
 
@@ -92,29 +88,24 @@ const HorizontalScrollPage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>className</td>
+                              <td className='p-2'>duration</td>
+                              <td>number</td>
+                              <td>none</td>
+                              <td>2</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>meteoColor</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>absolute inset-0 z-10</td>
+                              <td>white</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>displacement</td>
+                              <td className='p-2'>meteoCount</td>
                               <td>number</td>
                               <td>none</td>
-                              <td>1</td>
+                              <td>7</td>
                             </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>speed</td>
-                              <td>number</td>
-                              <td>none</td>
-                              <td>0.6</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>pulseDelay</td>
-                              <td>number</td>
-                              <td>none</td>
-                              <td>0.4</td>
-                            </tr>
+                            
                         </tbody>
 
                      </table>
@@ -154,4 +145,4 @@ const HorizontalScrollPage = () => {
   )
 }
 
-export default HorizontalScrollPage
+export default PulsePage

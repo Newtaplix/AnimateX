@@ -103,31 +103,38 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Swipe Cards 2",
                 icon: "",
                 link: "/components/ui/cards2",
-                tag: "New"
+                tag: ""
             },
             {
                 title: "Password Confirm",
                 icon: "",
                 link: "/components/ui/confirm",
-                tag: "New"
+                tag: ""
             },
             {
                 title: "Tilt Card",
                 icon: "",
                 link: "/components/ui/tiltcard",
-                tag: "New"
+                tag: ""
             },
             {
                 title: "Hover Aura",
                 icon: "",
                 link: "/components/ui/hoveraura",
-                tag: "New"
+                tag: ""
             },
             {
                 title: "Tabs",
                 icon: "",
                 link: "/components/ui/tabs",
                 tag: ''
+                
+            },
+            {
+                title: "Meteor Shower",
+                icon: "",
+                link: "/components/ui/meteo",
+                tag: 'New'
                 
             },
            
