@@ -110,7 +110,7 @@ const ContentAlertPage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/tiltcard' next='' prevText='Tilt Card' nexText=''/>
+            <LinksDiv previous='/components/ui/tiltcard' next='/components/ui/tabs' prevText='Tilt Card' nexText='Tabs'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>

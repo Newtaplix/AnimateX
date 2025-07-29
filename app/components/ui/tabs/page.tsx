@@ -122,7 +122,7 @@ const HorizontalScrollPage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/fade' next='/components/ui/zoop' prevText='Fade' nexText='Zoop'/>
+            <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/meteo' prevText='Hover Aura' nexText='Meteor'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>

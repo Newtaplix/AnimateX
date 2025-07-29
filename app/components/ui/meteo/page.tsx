@@ -64,7 +64,7 @@ const PulsePage = () => {
                 component={
                 <Meteor meteoColor='yellow'>
                     <div className='w-full h-full flex items-center justify-center'>
-                        <div className='w-fit h-fit rounded-full text-white text-4xl md:text-9xl relative'>
+                        <div className='w-fit h-fit rounded-full text-white text-7xl md:text-9xl relative'>
                             <h1 className='z-10'>SpaceX</h1>
                             <div className='absolute z-20 h-[55%] bg-[#0b0b0f] w-full blur-[18px] -bottom-5 left-0'/>
                         </div>
@@ -113,7 +113,7 @@ const PulsePage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/fade' next='/components/ui/zoop' prevText='Fade' nexText='Zoop'/>
+            <LinksDiv previous='/components/ui/tabs' next='' prevText='Tabs' nexText=''/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>

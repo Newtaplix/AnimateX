@@ -84,6 +84,7 @@ const AnimateX = () => {
               <Image src={"/next2.svg"} width={20} height={20} alt='N'/>
               <Image src={"/tail.svg"} width={20} height={20} alt='N'/>
               <Image src={"/typescript.svg"} width={20} height={20} alt='N'/>
+              <Image src={"/framer.png"} width={20} height={20} alt='N'/>
         </div>
       </div>
     </div>
