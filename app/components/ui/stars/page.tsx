@@ -5,10 +5,10 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { Meteor, Code , Use} from '@/components/ui/meteobg'
+import { StarsGlimmer } from '@/components/ui/starsglimmer'
 import LinksDiv from '@/components/main/LinksDiv'
 
-const PulsePage = () => {
+const StarsBGpage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -52,24 +52,17 @@ const PulsePage = () => {
                     cosmic themes, hero sections, or adding an ambient sparkle to any UI.
                 </p>
                 <ComponentContainer 
-                    component={<Meteor/>}
-                    code={Code}
+                    component={<StarsGlimmer/>}
+                    code={""}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={Use} 
+                <PropContainer code={""} 
                 component={
-                <Meteor meteoColor='yellow'>
-                    <div className='w-full h-full flex items-center justify-center'>
-                        <div className='w-fit h-fit rounded-full text-white text-7xl md:text-9xl relative'>
-                            <h1 className='z-10'>SpaceX</h1>
-                            <div className='absolute z-20 h-[55%] bg-[#0b0b0f] w-full blur-[18px] -bottom-5 left-0'/>
-                        </div>
-                    </div>
-                </Meteor>} />
+                <></>} />
             </div>
 
 
@@ -145,4 +138,4 @@ const PulsePage = () => {
   )
 }
 
-export default PulsePage
+export default StarsBGpage

@@ -5,10 +5,10 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { Meteor, Code , Use} from '@/components/ui/meteobg'
+import { AuraButton, Codes, UseCase } from '@/components/ui/aurabutton'
 import LinksDiv from '@/components/main/LinksDiv'
 
-const PulsePage = () => {
+const AuraButtonPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -46,30 +46,26 @@ const PulsePage = () => {
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Meteo Shower</h1>
+                <h1 className='text-3xl font-bold hc'>Button Aura</h1>
                 <p>
-                    Background effect that stimulates a stream of shooting start straking across the screen. Perfect for 
-                    cosmic themes, hero sections, or adding an ambient sparkle to any UI.
+                    Smooth aura effect on button hover.
                 </p>
                 <ComponentContainer 
-                    component={<Meteor/>}
-                    code={Code}
+                    component={<AuraButton/>}
+                    code={Codes}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={Use} 
+                <PropContainer code={UseCase} 
                 component={
-                <Meteor meteoColor='yellow'>
-                    <div className='w-full h-full flex items-center justify-center'>
-                        <div className='w-fit h-fit rounded-full text-white text-7xl md:text-9xl relative'>
-                            <h1 className='z-10'>SpaceX</h1>
-                            <div className='absolute z-20 h-[55%] bg-[#0b0b0f] w-full blur-[18px] -bottom-5 left-0'/>
-                        </div>
-                    </div>
-                </Meteor>} />
+                <AuraButton 
+                auraColor='white'
+                auraTrans={10}
+                className='bg-blue-700 text-white cursor-pointer p-2 px-4 rounded-md' 
+                text='Button'/>} />
             </div>
 
 
@@ -88,22 +84,28 @@ const PulsePage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>duration</td>
-                              <td>number</td>
+                              <td className='p-2'>className</td>
+                              <td>string</td>
                               <td>none</td>
-                              <td>2</td>
+                              <td>none</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>meteoColor</td>
+                              <td className='p-2'>auraColor</td>
                               <td>string</td>
                               <td>none</td>
                               <td>white</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>meteoCount</td>
-                              <td>number</td>
+                              <td className='p-2'>text</td>
+                              <td>string</td>
                               <td>none</td>
-                              <td>7</td>
+                              <td>none</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>onClick</td>
+                              <td>{`() => void`}</td>
+                              <td>none</td>
+                              <td>none</td>
                             </tr>
                             
                         </tbody>
@@ -113,7 +115,7 @@ const PulsePage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/tabs' next='/components/ui/aurabutton' prevText='Tabs' nexText='Aura Button'/>
+            <LinksDiv previous='/components/ui/meteo' next='' prevText='Meteo Shower' nexText=''/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>
@@ -145,4 +147,4 @@ const PulsePage = () => {
   )
 }
 
-export default PulsePage
+export default AuraButtonPage

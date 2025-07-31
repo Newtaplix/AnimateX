@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { LayoutDashboard, Atom, Rocket, Book, Zap } from 'lucide-react'
+import { LayoutDashboard, Atom, Rocket, Book, Zap, Text, Blocks, Drama, MousePointer,Square, TextCursor } from 'lucide-react'
 import Logo from './logo'
 import { motion } from "framer-motion"
 import { useRouter } from 'next/navigation'
@@ -44,8 +44,48 @@ const Sidebar = ({ isopen }:nav) => {
         ]
     },
     {
-        main: "UI",
-        icon: "",
+        main: "Buttons",
+        icon: <MousePointer size={14}/>,
+        links: [
+            {
+                title: "Press Button",
+                icon: "",
+                link: "/components/ui/pressbtn",
+                tag: ''
+            },
+            {
+                title: "Aura Button",
+                icon: "",
+                link: "/components/ui/aurabutton",
+                tag: 'New'
+                
+            },
+            {
+                title: "Pulse",
+                icon: "",
+                link: "/components/ui/pulse",
+                tag: ''
+            },
+            {
+                title: "Shimmer Button",
+                icon: "",
+                link: "/components/ui/shimmerbtn",
+                tag: ''
+            },
+            
+            {
+                title: "Fade",
+                icon: "",
+                link: "/components/ui/fade",
+                tag: ''
+            }
+            ,
+           
+           
+        ]
+    },{
+        main: "Blocks",
+        icon: <Blocks size={14}/>,
         links: [
             {
                 title: "Accordion",
@@ -66,32 +106,12 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/feedback",
                 tag: ''
             }
-            ,
-            {
-                title: "Fade",
-                icon: "",
-                link: "/components/ui/fade",
-                tag: ''
-            }
-            ,
-            {
-                title: "Pulse",
-                icon: "",
-                link: "/components/ui/pulse",
-                tag: ''
-            },
-            {
-                title: "Zoop",
-                icon: "",
-                link: "/components/ui/zoop",
-                tag: ''
-            },
-            {
-                title: "Press Button",
-                icon: "",
-                link: "/components/ui/pressbtn",
-                tag: ''
-            },
+        ]
+    },
+    {
+        main: "Cards",
+        icon: <Square size={14}/>,
+        links: [
             {
                 title: "Swipe Cards",
                 icon: "",
@@ -106,16 +126,22 @@ const Sidebar = ({ isopen }:nav) => {
                 tag: ""
             },
             {
-                title: "Password Confirm",
-                icon: "",
-                link: "/components/ui/confirm",
-                tag: ""
-            },
-            {
                 title: "Tilt Card",
                 icon: "",
                 link: "/components/ui/tiltcard",
                 tag: ""
+            }
+        ]
+    },
+    {
+        main: "Backgrounds",
+        icon: <Drama size={14}/>,
+        links: [
+            {
+                title: "Meteor Shower",
+                icon: "",
+                link: "/components/ui/meteo",
+                tag: 'New'
             },
             {
                 title: "Hover Aura",
@@ -123,40 +149,49 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/hoveraura",
                 tag: ""
             },
-            {
-                title: "Tabs",
-                icon: "",
-                link: "/components/ui/tabs",
-                tag: ''
-                
-            },
-            {
-                title: "Meteor Shower",
-                icon: "",
-                link: "/components/ui/meteo",
-                tag: 'New'
-                
-            },
-           
-
         ]
-    }
+    },{
+        main: "Inputs",
+        icon: <TextCursor size={14}/>,
+        links: [
+            {
+                title: "Password Confirm",
+                icon: "",
+                link: "/components/ui/confirm",
+                tag: ""
+            }
+        ]
+    },
+    {
+        main: "Texts",
+        icon: <Text size={14}/>,
+        links: [
+            {
+                title: "Zoop",
+                icon: "",
+                link: "/components/ui/zoop",
+                tag: ''
+            },
+        ]
+    },
   ]
   return (
-   <motion.div layout className={cn('w-80 md:w-60 lg:w-80 border-r-1 tc bc h-full main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
+   <motion.div layout className={cn('w-80 md:w-60 lg:w-80 gap-4 border-r-1 tc bc h-screen main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
     isopen ? "translate-x-0" : "-translate-x-[100%]"
    )}>
-        <div className='hc flex justify-between w-full items-center p-2 md:pt-6 border-b-1 bc'>
-            <Logo width={4} height={4}/>
-            <LayoutDashboard size={18}/>
-        </div>
-        <div className='w-full p-2 px-1 hidden md:flex'><Search_Input/></div>
-        <div className='pl-3 px-1 h-full'>
-            <div className='flex gap-2 pt-3 p-1 pl-1 items-center tc'>
+       <div className='min-h-fit max-h-[25%]'>
+            <div className='hc flex justify-between w-full items-center p-2 border-b-1 bc'>
+                <Logo width={4} height={4}/>
+                <LayoutDashboard size={18}/>
+            </div>
+            <div className='w-full p-2 px-1 hidden md:flex'><Search_Input/></div>
+       </div>
+        <div className='pl-3 px-1 h-[75%]'>
+            <div className='flex gap-2 p-1 pl-1 items-center tc'>
                 <Atom size={18}/>
                 <p className='hc'>UI</p>
             </div>
-            <div className="pl-3 text-[14px] h-[85%] overflow-x-hidden scroll-dark relative scroll-bar scroll-button overflow-y-scroll ">
+            <div className="pl-3 text-[14px] overflow-x-hidden pb-5 h-[100%] scroll-dark relative scroll-bar scroll-button overflow-y-scroll ">
                 {
                     links.map((item) => 
                     <div key={item.main} className="pt-3 border-l-2 bc">
@@ -187,9 +222,10 @@ const Sidebar = ({ isopen }:nav) => {
                 }
             </div>
         </div>
-        <div className='justify-end flex items-center px-0'>
+        <div className='justify-end flex relative mt-auto items-center px-0'>
             <div className='bg-gray-300/5 p-1 rounded-tl-md'>
-                <Link href="https://github.com/Newtaplix/AnimateX" className='w-6 h-6 rounded-full overflow-hidden flex items-center relative'>
+                <Link href="https://github.com/Newtaplix/AnimateX" 
+                className='w-6 h-6 rounded-full overflow-hidden flex items-center relative'>
                     <Image src={"/github.svg"} alt='git' fill/>
                 </Link>
             </div>

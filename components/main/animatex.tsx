@@ -73,10 +73,8 @@ const AnimateX = () => {
               component is smooth, responsive and ready to light up your next project. 
        </p>
        <div className='flex gap-8 mt-5 items-center justify-center'>
-                
                 <Github text='Components' onClick={() => router.push("/components/docs/introduction")}/>
-                <Link className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer' href="https://github.com/Newtaplix/AnimateX">Star on Github</Link>
-                
+                <Link className='bg-gray-100 px-3 py-2 rounded-md text-black text-center w-40 flex items-center justify-center shadow-md cursor-pointer' href="https://github.com/Newtaplix/AnimateX">Star on Github</Link>             
        </div>         
       <div className='flex gap-2 tc mx-auto w-fit bg-black/40 text-[14px] items-center justify-center mt-10 px-4 rounded-full py-[3px]'>
         <span>Built with</span>
@@ -84,7 +82,7 @@ const AnimateX = () => {
               <Image src={"/next2.svg"} width={20} height={20} alt='N'/>
               <Image src={"/tail.svg"} width={20} height={20} alt='N'/>
               <Image src={"/typescript.svg"} width={20} height={20} alt='N'/>
-              <Image src={"/framer.png"} width={20} height={20} alt='N'/>
+              <Image src={"/framer.png"} width={18} height={15} alt='N'/>
         </div>
       </div>
     </div>
