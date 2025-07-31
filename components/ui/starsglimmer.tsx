@@ -3,10 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { useAnimate, AnimationSequence, motion } from 'framer-motion'
 
 
-interface prop{
-  children: React.ReactNode
-}
-
 export const StarsGlimmer = () => {
     const [scope, animate] = useAnimate()
     const [isTaped, setIsTaped] = useState(false)
