@@ -14,7 +14,7 @@ const LinksDiv = ({previous="", next="", prevText, nexText}:linksProp) => {
     const router = useRouter()
   return (
     <div className=' border-t-1 text-center bc py-3 flex-col gap-2 mt-10'>
-        <div className="justify-between flex items-center">
+        <div className="justify-between hidden flex items-center">
             <Github onClick={() => router.push(previous)} text={prevText}/>
             <Github onClick={() => router.push(next)} text={nexText}/>
         </div>

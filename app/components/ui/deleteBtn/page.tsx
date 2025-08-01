@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { Tabs, Case } from '@/components/ui/tabs'
+import { DeleteButton, Code, Case } from '@/components/ui/delete'
 import LinksDiv from '@/components/main/LinksDiv'
 
 const HorizontalScrollPage = () => {
@@ -42,38 +42,25 @@ const HorizontalScrollPage = () => {
       link: "#level3"
     }
   ]
-
-  const arr = [{
-    title: "Tab 1",
-    content: <div className='w-full h-full bg-red-400 flex flex-shrink-0 items-center justify-center text-black text-4xl'>Tab 1</div>
-},{
-    title: "Tab 2",
-    content:<div className='w-full h-full bg-green-400 flex items-center flex-shrink-0 justify-center text-black text-4xl'>Tab 2</div>
-},{
-    title: "Tab 3",
-    content: <div className='w-full h-full bg-yellow-400 flex-shrink-0 flex items-center justify-center text-black text-4xl'>Tab 3</div>
-}]
   return (
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Tabs</h1>
+                <h1 className='text-3xl font-bold hc'>Delete Button</h1>
                 <p>
-                    Animated tabs component
+                    Smoothly animated delete button with Gooey Effects.
                 </p>
                 <ComponentContainer 
-                    component={
-                    <Tabs index='bui' tabs={arr}/>
-                    }
-                    code={""}
+                    component={<DeleteButton/>}
+                    code={Code}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={""} 
-                component={<Case/>} />
+                <PropContainer code={Case} 
+                component={<DeleteButton/>} />
             </div>
 
 
@@ -92,28 +79,16 @@ const HorizontalScrollPage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>className</td>
-                              <td>string</td>
+                              <td className='p-2'>checkCommand</td>
+                              <td>function</td>
                               <td>none</td>
-                              <td>absolute inset-0 z-10</td>
+                              <td>none</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>displacement</td>
-                              <td>number</td>
+                              <td className='p-2'>cancleCommand</td>
+                              <td>function</td>
                               <td>none</td>
-                              <td>1</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>speed</td>
-                              <td>number</td>
                               <td>none</td>
-                              <td>0.6</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>pulseDelay</td>
-                              <td>number</td>
-                              <td>none</td>
-                              <td>0.4</td>
                             </tr>
                         </tbody>
 
@@ -122,7 +97,7 @@ const HorizontalScrollPage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/meteo' prevText='Hover Aura' nexText='Meteor'/>
+            <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/circular' prevText='Hover Aura' nexText='Circular'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>

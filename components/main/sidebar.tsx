@@ -1,14 +1,12 @@
 "use client"
 import React from 'react'
-import { LayoutDashboard, Atom, Rocket, Book, Zap, Text, Blocks, Drama, MousePointer,Square, TextCursor } from 'lucide-react'
+import { LayoutDashboard, Atom, Rocket, Book, Zap, Menu, Text, Blocks, Drama, MousePointer,Square, TextCursor } from 'lucide-react'
 import Logo from './logo'
 import { motion } from "framer-motion"
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import Search_Input from '../texts/search_input'
-import Image from 'next/image'
-import Link from 'next/link'
 
 interface nav{
     isopen?: boolean
@@ -72,6 +70,12 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/shimmerbtn",
                 tag: ''
             },
+            {
+                title: "Delete",
+                icon: "",
+                link: "/components/ui/deleteBtn",
+                tag: 'New'
+            },
             
             {
                 title: "Fade",
@@ -82,6 +86,17 @@ const Sidebar = ({ isopen }:nav) => {
             ,
            
            
+        ]
+    },{
+        main: "Menus",
+        icon: <Menu size={14}/>,
+        links: [
+            {
+                title: "Circular",
+                icon: "",
+                link: "/components/ui/circular",
+                tag: ""
+            }
         ]
     },{
         main: "Blocks",
@@ -149,6 +164,12 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/hoveraura",
                 tag: ""
             },
+            {
+                title: "Stars Glimmer",
+                icon: "",
+                link: "/components/ui/stars",
+                tag: "New"
+            },
         ]
     },{
         main: "Inputs",
@@ -176,7 +197,7 @@ const Sidebar = ({ isopen }:nav) => {
     },
   ]
   return (
-   <motion.div layout className={cn('w-80 md:w-60 lg:w-80 gap-4 border-r-1 tc bc h-screen main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
+   <motion.div layout className={cn('w-[80%] md:w-60 lg:w-80 gap-4 border-r-1 tc bc h-screen main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
     isopen ? "translate-x-0" : "-translate-x-[100%]"
    )}>
        <div className='min-h-fit max-h-[25%]'>
@@ -186,7 +207,7 @@ const Sidebar = ({ isopen }:nav) => {
             </div>
             <div className='w-full p-2 px-1 hidden md:flex'><Search_Input/></div>
        </div>
-        <div className='pl-3 px-1 h-[75%]'>
+        <div className='pl-3 px-1 h-[85%] mb-4 md:h-[80%]'>
             <div className='flex gap-2 p-1 pl-1 items-center tc'>
                 <Atom size={18}/>
                 <p className='hc'>UI</p>
@@ -220,14 +241,6 @@ const Sidebar = ({ isopen }:nav) => {
                     </div>
                     )
                 }
-            </div>
-        </div>
-        <div className='justify-end flex relative mt-auto items-center px-0'>
-            <div className='bg-gray-300/5 p-1 rounded-tl-md'>
-                <Link href="https://github.com/Newtaplix/AnimateX" 
-                className='w-6 h-6 rounded-full overflow-hidden flex items-center relative'>
-                    <Image src={"/github.svg"} alt='git' fill/>
-                </Link>
             </div>
         </div>
    </motion.div>

@@ -1,14 +1,14 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { Text } from 'lucide-react'
+import { Drama, File, Folder, MousePointer, Pen, Puzzle, Text } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { ScrollStack } from '@/components/ui/scrollstack'
+import { CircularMenu, codes, UseCase } from '@/components/ui/circular'
 import LinksDiv from '@/components/main/LinksDiv'
 
-const ScroolStackPage = () => {
+const CircularMenuPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -27,7 +27,6 @@ const ScroolStackPage = () => {
     }
 }, [isInView, isInView1, isInView2])
 
-
   const sections = [
     {
       title: "Preview",
@@ -42,22 +41,57 @@ const ScroolStackPage = () => {
       link: "#level3"
     }
   ]
+
+  const list = [
+    {
+        icon: <Pen size={34}/>,
+        func: () => {},
+    },
+    {
+        icon: <Text size={34}/>,
+        func: () => {},
+    },
+    {
+        icon: <File size={34}/>,
+        func: () => {},
+    },
+    {
+        icon: <Folder size={34}/>,
+        func: () => {},
+    },
+    {
+        icon: <MousePointer size={34}/>,
+        func: () => {},
+    },
+    {
+        icon: <Drama size={34}/>,
+        func: () => {},
+    },
+    {
+      icon: <Puzzle size={34}/>,
+      func: () => {},
+  },
+]
   return (
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Hover Aura</h1>
+                <h1 className='text-3xl font-bold hc'>Circular Menu</h1>
+                <p>
+                    A circular menu convineint for your websites that lets users navigate through our most important 
+                    options with ease, all arranged in a convenient and intuitive radial layout.
+                </p>
                 <ComponentContainer 
-                    component={<ScrollStack/>}
-                    code={""}
+                    component={<CircularMenu items={list}/>}
+                    code={codes}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={""} 
-                component={<></>} />
+                <PropContainer code={UseCase} 
+                component={<CircularMenu displacement={140} items={list}/>} />
             </div>
 
 
@@ -76,22 +110,28 @@ const ScroolStackPage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>blurColor</td>
+                              <td className='p-2'>items</td>
+                              <td>Array`icon, function`</td>
+                              <td>none</td>
+                              <td>none</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>displacement</td>
                               <td>number</td>
                               <td>none</td>
-                              <td>none</td>
+                              <td>110</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>blurSize</td>
+                              <td className='p-2'>iconStyles</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>none</td>
+                              <td>absolute left-0 z-10 top-0</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>className</td>
+                              <td className='p-2'>toggleBtnStyles</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>w-full h-full relative</td>
+                              <td>z-20 overflow-hidden relative</td>
                             </tr>
                         </tbody>
 
@@ -132,4 +172,4 @@ const ScroolStackPage = () => {
   )
 }
 
-export default ScroolStackPage
+export default CircularMenuPage

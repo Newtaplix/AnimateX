@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { StarsGlimmer } from '@/components/ui/starsglimmer'
+import { StarsGlimmer, code, Use } from '@/components/ui/starsglimmer'
 import LinksDiv from '@/components/main/LinksDiv'
 
 const StarsBGpage = () => {
@@ -46,23 +46,28 @@ const StarsBGpage = () => {
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Meteo Shower</h1>
+                <h1 className='text-3xl font-bold hc'>Stars Glimmer</h1>
                 <p>
-                    Background effect that stimulates a stream of shooting start straking across the screen. Perfect for 
-                    cosmic themes, hero sections, or adding an ambient sparkle to any UI.
+                    Smoothly animated star glimmer background. with smooth entry and fade effects.
                 </p>
                 <ComponentContainer 
                     component={<StarsGlimmer/>}
-                    code={""}
+                    code={code}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={""} 
+                <PropContainer code={Use} 
                 component={
-                <></>} />
+                <StarsGlimmer glimColor='white'>
+                  <div className='w-full h-full flex items-center text-white bg-black/6 text-center flex-col justify-center'>
+                      <h1 className='text-4xl'>Welcome to NextGen</h1>
+                      <p className='md:w-[70%] mx-auto w-full mt-3'>Where the future your desire is no longer just a fantasy but we bring it straight to your front door.</p>
+                  </div>
+
+                </StarsGlimmer>} />
             </div>
 
 
@@ -81,22 +86,16 @@ const StarsBGpage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>duration</td>
-                              <td>number</td>
-                              <td>none</td>
-                              <td>2</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>meteoColor</td>
+                              <td className='p-2'>glimColor</td>
                               <td>string</td>
                               <td>none</td>
                               <td>white</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>meteoCount</td>
+                              <td className='p-2'>glimCount</td>
                               <td>number</td>
                               <td>none</td>
-                              <td>7</td>
+                              <td>20</td>
                             </tr>
                             
                         </tbody>
