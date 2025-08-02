@@ -76,16 +76,7 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/deleteBtn",
                 tag: 'New'
             },
-            
-            {
-                title: "Fade",
-                icon: "",
-                link: "/components/ui/fade",
-                tag: ''
-            }
-            ,
-           
-           
+              
         ]
     },{
         main: "Menus",
@@ -96,6 +87,18 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/circular",
                 tag: ""
+            },
+            {
+                title: "Gooey",
+                icon: "",
+                link: "/components/ui/gooey",
+                tag: "New"
+            },
+            {
+                title: "Pill",
+                icon: "",
+                link: "/components/ui/pill",
+                tag: "New"
             }
         ]
     },{
@@ -169,6 +172,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/stars",
                 tag: "New"
+            },
+            {
+                title: "Fade",
+                icon: "",
+                link: "/components/ui/fade",
+                tag: ''
             },
         ]
     },{

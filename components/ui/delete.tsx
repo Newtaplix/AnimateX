@@ -15,7 +15,7 @@ export const DeleteButton = ({checkCommand, cancleCommand}:props) => {
             x: 0,
             scale: 0.8,
             transition:{
-                duration: 0.2
+                duration: 0.2,
             }
         },
         open1: {
@@ -31,7 +31,7 @@ export const DeleteButton = ({checkCommand, cancleCommand}:props) => {
             x: 62,
             scale: 1,
             transition: {
-                duration: 0.4,
+                duration: 1,
                 type: "spring",
                 damping: 14
             }

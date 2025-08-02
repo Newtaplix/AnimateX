@@ -1,13 +1,13 @@
 "use client"
 import React from 'react'
-import { DeleteButton } from './delete'
+import { GooeyMenu } from './gooey'
 
 
 
 
 const Page = () => {
   return (
-    <DeleteButton/>
+    <GooeyMenu direction='right'/>
   )
 }
 
