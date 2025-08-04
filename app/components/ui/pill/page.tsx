@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { PillMenu } from '@/components/ui/pillMenu'
+import { PillMenu, Code, UseCase } from '@/components/ui/pillMenu'
 import LinksDiv from '@/components/main/LinksDiv'
 
 const PillMenuPage = () => {
@@ -78,14 +78,14 @@ const PillMenuPage = () => {
                 </p>
                 <ComponentContainer 
                     component={<PillMenu id='but' list={links}/>}
-                    code={""}
+                    code={Code}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={""} 
+                <PropContainer code={UseCase} 
                 component={
                 <PillMenu  id='bin'
                 pillStyle='rounded-md bg-black p-2 px-4'

@@ -1,34 +1,23 @@
 "use client"
 import { AnimatePresence, motion } from 'framer-motion'
-import { Drama, MousePointer, Folder, Puzzle, X, Menu } from 'lucide-react'
+import { X, Menu } from 'lucide-react'
 import React, { useState } from 'react'
 
 type opt = "up" | "down" | "left" | "right" | string
 
+interface list{
+    icon: React.ReactNode,
+    func: () => void
+}
+
 interface props{
-    direction?: opt
+    direction?: opt,
+    list: list[], 
 }
 
 
-export const GooeyMenu = ({direction ="right"}:props) => {
-    const list = [
-        {
-            icon: <Folder size={34}/>,
-            func: () => {},
-        },
-        {
-            icon: <MousePointer size={34}/>,
-            func: () => {},
-        },
-        {
-            icon: <Drama size={34}/>,
-            func: () => {},
-        },
-        {
-          icon: <Puzzle size={34}/>,
-          func: () => {},
-      },
-    ]
+export const GooeyMenu = ({direction ="right", list}:props) => {
+
     const [isOpen, setIsOpen] = useState(false)
     const Items = {
         open: (i:number) => ({
@@ -122,35 +111,24 @@ export const GooeyMenu = ({direction ="right"}:props) => {
 export const Code = `
 "use client"
 import { AnimatePresence, motion } from 'framer-motion'
-import { Drama, MousePointer, Folder, Puzzle, X, Menu } from 'lucide-react'
+import { X, Menu } from 'lucide-react'
 import React, { useState } from 'react'
 
-type opt = "up" | "down" | "left" | "right"
+type opt = "up" | "down" | "left" | "right" | string
+
+interface list{
+    icon: React.ReactNode,
+    func: () => void
+}
 
 interface props{
-    direction?: opt
+    direction?: opt,
+    list: list[], 
 }
 
 
-export const GooeyMenu = ({direction ="right"}:props) => {
-    const list = [
-        {
-            icon: <Folder size={34}/>,
-            func: () => {},
-        },
-        {
-            icon: <MousePointer size={34}/>,
-            func: () => {},
-        },
-        {
-            icon: <Drama size={34}/>,
-            func: () => {},
-        },
-        {
-          icon: <Puzzle size={34}/>,
-          func: () => {},
-      },
-    ]
+export const GooeyMenu = ({direction ="right", list}:props) => {
+
     const [isOpen, setIsOpen] = useState(false)
     const Items = {
         open: (i:number) => ({
@@ -237,17 +215,39 @@ export const GooeyMenu = ({direction ="right"}:props) => {
     </div>
    </>
   )
-}`
+}
+
+`
 
 
 export const UseCase = `
 "use client"
 import React from 'react'
 import { GooeyMenu } from './gooey'
+import { Drama, Folder, MousePointer, Puzzle } from 'lucide-react'
 
 const Page = () => {
+  const list = [
+    {
+        icon: <Folder size={34}/>,
+        func: () => {},
+    },
+    {
+        icon: <MousePointer size={34}/>,
+        func: () => {},
+    },
+    {
+        icon: <Drama size={34}/>,
+        func: () => {},
+    },
+    {
+      icon: <Puzzle size={34}/>,
+      func: () => {},
+  },
+]
+
   return (
-    <GooeyMenu direction='right'/>
+    <GooeyMenu list={list} direction='right'/>
   )
 }
 

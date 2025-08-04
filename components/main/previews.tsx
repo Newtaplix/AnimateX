@@ -1,71 +1,80 @@
 "use client"
-import React, { useState } from 'react'
-import Create from '../Stacks/create'
-import Github from '../buttons/github'
-import Premium from '../Stacks/premium'
-import Choose from '../Stacks/choose'
-import FlowStack from '../images/flowstack'
-import Confirm from '../texts/confirm'
-import CheckOut from '../buttons/checkout'
-import Navlinks from '../navs/spring'
-import Counter from '../Stacks/counter'
-import { PlusCircle, Blocks } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
-import Toast from '../buttons/toast'
+import React from 'react'
+import { Blocks, Folder, MousePointer, Drama, Puzzle, File, Text} from 'lucide-react'
+import { DeleteButton } from '../ui/delete'
+import { CircularMenu } from '../ui/circular'
 import Title from './title'
+import { Meteor } from '../ui/meteobg'
+import { AuraButton } from '../ui/aurabutton'
+import { TiltCard } from '../ui/tiltcard'
+import { Zoop } from '../ui/zoop'
 const Previews = () => {
-  const [current, setCurrent] = useState(<FlowStack/>)
-  const [onIt, setOnit] = useState(0)
-  const list = [
-    {text: "Home", link: "home"},
-    {text: "Contact", link: "contact"},
-    {text: "About", link: "about"},
-    {text: "Message", link: "message"},
-    {text: "Review", link: "review"}
-
-  ]
+  const list2 = [
+    {
+        icon: <File size={24}/>,
+        func: () => {},
+    },
+    {
+      icon: <Text size={24}/>,
+      func: () => {},
+  },
+    {
+        icon: <Folder size={24}/>,
+        func: () => {},
+    },
+    {
+        icon: <MousePointer size={24}/>,
+        func: () => {},
+    },
+    {
+        icon: <Drama size={24}/>,
+        func: () => {},
+    },
+    {
+      icon: <Puzzle size={24}/>,
+      func: () => {},
+  }
+] 
   const buttons = [
     {
-      name: "Create",
-      component: <Create/>
+      name: "Meteor Shower",
+      component:  
+      <Meteor meteoColor='yellow'>
+        <div className='w-full h-full flex items-center justify-center'>
+            <div className='w-fit h-fit rounded-full text-white text-2xl md:text-2xl relative'>
+                <h1 className='z-10'>SpaceX</h1>
+                <div className='absolute z-20 h-[55%] bg-[#0b0b0f] w-full blur-[18px] -bottom-5 left-0'/>
+            </div>
+        </div>
+    </Meteor>,
+    link: "/components/ui/meteo"
     },
     {
-      name: "Github",
-      component: <Github/>
+      name: "Delete Button",
+      component: <DeleteButton/>,
+      link: "/components/ui/delete"
     },
     {
-      name: "Premium",
-      component: <Premium/>
+      name: "Circular Menu",
+      component: <CircularMenu displacement={70} items={list2}/>,
+      link: "/components/ui/circular"
     },
     {
-      name: "Choose",
-      component: <Choose/>
+      name: "Aura Button",
+      component: <AuraButton text='HoverMe'/>,
+      link: "/components/ui/aurabutton"
     },
     {
-      name: "Confirm",
-      component: <Confirm/>
+      name: "Tilt Card",
+      component: <TiltCard shadowStyle='w-full h-full' className='flex items-center justify-center text-white'> Hover Me</TiltCard>,
+      link: "/components/ui/tiltcard"
     },
     {
-      name: "Flowstack",
-      component: <FlowStack/>
-    },
-    {
-      name: "Checkout",
-      component: <CheckOut text='Checkout' quantity='7'/>
-    },
-    {
-      name: "Navbar",
-      component: <Navlinks list={list}/>
-    },
-    {
-      name: "Counter",
-      component: <Counter/>
-    },
-    {
-      name: "Toasts",
-      component: <Toast/>
+      name: "Zoop",
+      component: <Zoop className='text-white' text='HoverMe'/>,
+      link: "/components/ui/zoop"
     }
+
   ]
 
   return (
@@ -78,41 +87,22 @@ const Previews = () => {
                           and seamless user experiences.
                       </p>
             </div>
-              <div className='text-center flex flex-col w-full px-2 lg:flex-row gap-2 mt-12 md:w-[80%] mx-auto'>
-                  <div className='text-left flex-1'>
-                   
-                      <div>
-                        
-                        <div className='flex-wrap flex gap-2'>
-                            {
-                              buttons.map((item, i) => 
-                              <div onClick={() => {
-                                setCurrent(item.component)
-                                setOnit(i)
-                              }} className={cn('p-[3px] rounded-[9px] border-1 w-fit border-gray-400/5', onIt === i ? "bg-gray-400/10" : "")} key={i}>
-                                  <div className='bg-gray-400/10 px-6 cursor-pointer hc p-2 text-center rounded-[6px] border border-gray-400/5'>
-                                    {item.name}
-                                  </div>
-                              </div>)
-                            }
-                            <div 
-                              className={cn('p-[3px] rounded-[9px] border-1 w-fit border-gray-400/5')}>
-                                  <div className='bg-gray-400/10 flex gap-3 px-6 cursor-pointer hc p-2 
-                                  text-center rounded-[6px] border border-gray-400/5'>
-                                    <PlusCircle/> More
-                                  </div>
-                              </div>
-                        </div>
-                        
+              <div className='text-center grid grid-cols-1 md:grid-cols-2 w-full px-2 lg:grid-cols-3 gap-2 mt-12 md:w-[80%] mx-auto'>
+               {
+                buttons.map((component, i) => 
+                 <div key={i} className="rounded-md bg-gray-200/4 p-2 mt-4 flex h-60 w-full md:w-80 flex-col gap-2">
+                    <div className="w-full h-full rounded-md flex items-center h-150 justify-center p-2 main">
+                          {component.component}
+                    </div>
+                    <div className='text-white'>
+                      <a href={component.link}>{component.name}</a>
+                    </div>
 
-                      </div>
-                  </div>
-                  <motion.div layout 
-                  className='flex-1 border w-full border-gray-400 p-4 items-center justify-center 
-                  flex min-h-[320px] md:h-[360px] rounded-md bg-white'>
-                          {current}
-                  </motion.div>
-                  
+                </div>
+
+                )
+               }
+                                
             </div>
         
         </div>

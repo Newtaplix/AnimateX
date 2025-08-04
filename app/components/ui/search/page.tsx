@@ -1,16 +1,14 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { Puzzle, Drama, MousePointer, Folder, Text } from 'lucide-react'
+import { Text } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { GooeyMenu, Code, UseCase } from '@/components/ui/gooey'
+import { SearchInput } from '@/components/ui/searchInput'
 import LinksDiv from '@/components/main/LinksDiv'
 
-type opt = "up" | "down" | "left" | "right" | string
-
-const MeltingButtonPage = () => {
+const SearchPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -29,6 +27,7 @@ const MeltingButtonPage = () => {
     }
 }, [isInView, isInView1, isInView2])
 
+
   const sections = [
     {
       title: "Preview",
@@ -43,82 +42,28 @@ const MeltingButtonPage = () => {
       link: "#level3"
     }
   ]
-
-  const buttons =  [
-    {
-      l:"L",
-      opt: "left"
-    },
-    {
-      l:"R",
-      opt: "right"
-    },
-    {
-      l:"U",
-      opt: "up"
-    },
-    {
-      l:"D",
-      opt: "down"
-    }
-  ]
-  const list = [
-    {
-        icon: <Folder size={34}/>,
-        func: () => {},
-    },
-    {
-        icon: <MousePointer size={34}/>,
-        func: () => {},
-    },
-    {
-        icon: <Drama size={34}/>,
-        func: () => {},
-    },
-    {
-      icon: <Puzzle size={34}/>,
-      func: () => {},
-  },
-]
-
-  const [direction, setDirection] = useState<opt>("right")
   return (
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Gooey Menu</h1>
+                <h1 className='text-3xl font-bold hc'>Password Confirm</h1>
                 <p>
-                    Smoothly animated menu with a Gooey effect giving that smooth, flashy feeling to users.
+                   A fully animated password confirmation input component. Helping users find errors in their passwords
+                    without even having to try submitting data.
                 </p>
                 <ComponentContainer 
                     component={
-                      <div className='h-full w-full'>
-                        <div className='flex items-center justify-center p-2'>
-                            <div className='flex gap-2'>
-                                {
-                                  buttons.map((but, i)=> 
-                                  <div key={i}
-                                  onClick={() => setDirection(but.opt)} 
-                                  className={cn('p-2 shadow-xs shadow-white rounded-md bg-black cursor-pointer text-white w-10 h-10 flex items-center justify-center', 
-                                    direction === but.opt ? "bg-white text-black" : "")}>{but.l}</div>)
-                                }
-                            </div>
-                        </div>
-                        <div className='h-full w-full flex items-center justify-center'>
-                              <GooeyMenu list={list} direction={`${direction}`}/>
-                        </div>
-
-                      </div>
-                    }
-                    code={Code}
+                   <SearchInput/>}
+                    code={""}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={UseCase} 
-                component={<GooeyMenu list={list} direction='right'/>} />
+                <PropContainer code={""} 
+                component={  
+                <SearchInput/>} />
             </div>
 
 
@@ -137,18 +82,23 @@ const MeltingButtonPage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>direction</td>
+                              <td className='p-2'>className</td>
                               <td>string</td>
-                              <td>up | right | left | down</td>
-                              <td>right</td>
+                              <td>none</td>
+                              <td>none</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>list</td>
-                              <td>array[func:function, icon:React.ReactNode]</td>
-                              <td>none</td>
+                              <td className='p-2'>confirm</td>
+                              <td>string</td>
+                              <td>required**</td>
                               <td>none</td>
                             </tr>
-                          
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>model</td>
+                              <td>string</td>
+                              <td>none</td>
+                              <td>password</td>
+                            </tr>
                         </tbody>
 
                      </table>
@@ -156,7 +106,7 @@ const MeltingButtonPage = () => {
                   </div>
             </div>
            
-            <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/circular' prevText='Hover Aura' nexText='Circular'/>
+            <LinksDiv previous='/components/ui/cards2' next='/components/ui/tiltcard' prevText='Swipe Cards 2' nexText='Tilt Card'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>
@@ -188,4 +138,4 @@ const MeltingButtonPage = () => {
   )
 }
 
-export default MeltingButtonPage
+export default SearchPage

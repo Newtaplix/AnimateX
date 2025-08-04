@@ -8,21 +8,23 @@ import Customise from "@/components/main/custumise";
 import Community from "@/components/main/community";
 import Testimonials from "@/components/main/testimonials";
 import Navbar from "@/components/main/navbar";
+import { Fade } from "@/components/ui/fade";
 
 export default function Home() {
  
   return (
     <>
-       <Navbar/>
+      <Navbar/>
       <Hero/>
-      <Previews/>
+      <Fade amounty={20}>
+          <Previews/>
+      </Fade>
       <Features/>
       <Customise/>
       <Community/>
       <Feedback/>
       <Testimonials/>
       <Footer/>
-
     </>
   );
 }
