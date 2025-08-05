@@ -55,7 +55,7 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Aura Button",
                 icon: "",
                 link: "/components/ui/aurabutton",
-                tag: 'New'
+                tag: ''
                 
             },
             {
@@ -74,7 +74,7 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Delete",
                 icon: "",
                 link: "/components/ui/deleteBtn",
-                tag: 'New'
+                tag: ''
             },
               
         ]
@@ -92,13 +92,13 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Gooey",
                 icon: "",
                 link: "/components/ui/gooey",
-                tag: "New"
+                tag: ""
             },
             {
                 title: "Pill",
                 icon: "",
                 link: "/components/ui/pill",
-                tag: "New"
+                tag: ""
             }
         ]
     },{
@@ -148,6 +148,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/tiltcard",
                 tag: ""
+            },
+            {
+                title: "Infinite Sliding",
+                icon: "",
+                link: "/components/ui/infinite",
+                tag: "New"
             }
         ]
     },
@@ -159,7 +165,7 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Meteor Shower",
                 icon: "",
                 link: "/components/ui/meteo",
-                tag: 'New'
+                tag: ''
             },
             {
                 title: "Hover Aura",
@@ -171,7 +177,7 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Stars Glimmer",
                 icon: "",
                 link: "/components/ui/stars",
-                tag: "New"
+                tag: ""
             },
             {
                 title: "Fade",
@@ -201,6 +207,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/zoop",
                 tag: ''
+            },
+            {
+                title: "Blur Fade",
+                icon: "",
+                link: "/components/ui/textblur",
+                tag: 'New'
             },
         ]
     },

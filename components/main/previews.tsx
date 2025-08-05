@@ -52,7 +52,7 @@ const Previews = () => {
     {
       name: "Delete Button",
       component: <DeleteButton/>,
-      link: "/components/ui/delete"
+      link: "/components/ui/deleteBtn"
     },
     {
       name: "Circular Menu",
