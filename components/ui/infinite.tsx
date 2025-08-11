@@ -7,9 +7,9 @@ export const InfiniteCarousel = () => {
         "green", "yellow","purple","orange"
     ]
   return (
-    <div className='w-full h-full flex items-center relative'>
-         <div className='absolute h-full w-[10%] z-20 -left-10 blur-[18px] bg-black'></div>
-         <div className='absolute h-full w-[10%] z-20 -right-10 blur-[18px] bg-black'></div>
+    <div style={{
+        maskImage: "linear-gradient( to right, black, transparent, black )"
+    }} className='w-full h-full flex items-center relative'>
         <motion.div 
             animate={{
                 x: "-50%"

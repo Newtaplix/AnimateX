@@ -59,6 +59,13 @@ const Sidebar = ({ isopen }:nav) => {
                 
             },
             {
+                title: "Aero Button",
+                icon: "",
+                link: "/components/ui/aerobtn",
+                tag: 'New'
+                
+            },
+            {
                 title: "Pulse",
                 icon: "",
                 link: "/components/ui/pulse",
@@ -244,7 +251,8 @@ const Sidebar = ({ isopen }:nav) => {
                         <div>
                             {
                                 item.links.map((link, i) => 
-                                <div key={i} onClick={() => route(link.link)} 
+                                <div key={i} onClick={() => {
+                                    route(link.link)}} 
                                 className={cn("px-2 flex gap-2 py-1 items-center cursor-pointer rounded-r-sm relative", 
                                 link.link === param && "text-purple-400 bg-white/4")}>
                                     {link.icon}
