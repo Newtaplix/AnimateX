@@ -83,6 +83,12 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/deleteBtn",
                 tag: ''
             },
+            {
+                title: "Arrow Button",
+                icon: "",
+                link: "/components/ui/arrowbtn",
+                tag: 'New'
+            },
               
         ]
     },{

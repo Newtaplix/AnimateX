@@ -1,14 +1,14 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { Send, Text } from 'lucide-react'
+import { Text } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
 import LinksDiv from '@/components/main/LinksDiv'
-import { AeroButton, Code, UseCase } from '@/components/ui/aerobutton'
+import { ArrowButton, Code, UseCase } from '@/components/ui/arrowbtn'
 
-const AeroButtonPage = () => {
+const ArrowButtonPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -46,12 +46,12 @@ const AeroButtonPage = () => {
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Aero Button</h1>
+                <h1 className='text-3xl font-bold hc'>Arrow Button</h1>
                 <p>
-                    Animated buttom with smooth gradient transition, icon entrance and clicking effects
+                    Animated button with smooth arrow and hover trans effects. Good for links and get Hero buttons.
                 </p>
-                <ComponentContainer 
-                    component={<AeroButton/>}
+                <ComponentContainer
+                    component={<ArrowButton className=' p-2 rounded-md'/>}
                     code={Code}
                 />
             </div>
@@ -60,12 +60,13 @@ const AeroButtonPage = () => {
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
                 <PropContainer code={UseCase} 
-                component={<AeroButton 
-                text='Send'
-                width={30}
-                primaryCol='#FF6B6B' 
-                gradientCol='#FFD93D' 
-                className='rounded-full gap-2 text-white p-2'/>} />
+                component={<ArrowButton 
+                    text='Get Started'
+                    bgPrimaryColor='#FFFFFF'
+                    bgSecondaryColor='#3498db'
+                    textPrimaryColor='#3498db'
+                    textSecondaryColor='#FFFFFF'
+                className='rounded-full p-2'/>} />
             </div>
 
 
@@ -87,7 +88,7 @@ const AeroButtonPage = () => {
                               <td className='p-2'>text</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>AeroButton</td>
+                              <td>ArrowButton</td>
                             </tr>
                             <tr className='border-t-1 bc'>
                               <td className='p-2'>onClick</td>
@@ -102,28 +103,34 @@ const AeroButtonPage = () => {
                               <td>none</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>icon</td>
-                              <td>React.ReactNode</td>
-                              <td>none</td>
-                              <td><Send size={24} color='white' fill='white'/></td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
                               <td className='p-2'>width</td>
                               <td>number</td>
                               <td>none</td>
                               <td>40</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>primaryCol</td>
-                              <td>string</td>
+                              <td className='p-2'>bgPrimaryColor</td>
+                              <td>string(hex)</td>
                               <td>none</td>
-                              <td>#FF6B6B</td>
+                              <td>#FFFFFF</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>gradientCol</td>
-                              <td>string</td>
+                              <td className='p-2'>bgSecondaryColor</td>
+                              <td>string(hex)</td>
                               <td>none</td>
-                              <td>#FFD93D</td>
+                              <td>#000000</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>textSecondaryColor</td>
+                              <td>string(hex)</td>
+                              <td>none</td>
+                              <td>#FFFFFF</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>textPrimaryColor</td>
+                              <td>string(hex)</td>
+                              <td>none</td>
+                              <td>#000000</td>
                             </tr>
                             
                         </tbody>
@@ -165,4 +172,4 @@ const AeroButtonPage = () => {
   )
 }
 
-export default AeroButtonPage
+export default ArrowButtonPage
