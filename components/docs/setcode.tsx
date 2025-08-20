@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import { Copy, CircleCheck } from 'lucide-react'
+import { Copy, CircleCheck, Expand, X } from 'lucide-react'
 import { Fira_Mono } from "next/font/google";
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -26,6 +26,7 @@ const Fira = Fira_Mono({
 export const SetCode = ({code, terminal}:code) => {
   const [copied, setCopied] = useState(false)
   const tobeCopied = `${terminal} ${code}`
+ 
 
   const copytoclipboard = async () => {
    try {
@@ -58,6 +59,7 @@ export const SetCode = ({code, terminal}:code) => {
 export const ComponentContainer = ({code, component, copy=true}:componentProp) => {
   const [current, setCurrent] = useState("component")
   const [copycode, SetCopyCode] = useState(false)
+  const [showPreview, setShowPreview] = useState(false)
 
   const CopytoClipBoard = (code:string) => {
     navigator.clipboard.writeText(code)
@@ -83,6 +85,8 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
                 Code
               </div>
           </div>
+
+
          {
             copy && 
             <div onClick={() => CopytoClipBoard(code)} 
@@ -90,8 +94,23 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
                { copycode ? <CircleCheck size={16} color='#00FF00'/> :  <Copy size={16}/>}
             </div>
          }
+
+
         </div>
-        <div className='h-[400px] main rounded-[8px] w-full relative flex items-center overflow-hidden justify-center'>
+
+        {/* full screen preview */}
+         {
+            showPreview &&
+            <div className='w-full h-full fixed flex items-center top-0 left-0 z-80 justify-center p-2 main'>
+                <div className='flex items-center justify-center  w-full h-full relative'>
+                    {component}
+                    <div onClick={() => setShowPreview(false)} 
+                    className='absolute top-2 right-2 p-2 rounded-md cursor-pointer hover:bg-gray-200/7'><X size={24}/></div>
+                </div>
+            </div>
+         }
+
+        <div className='h-[400px] main rounded-[8px] w-full relative flex overflow-hidden items-center justify-center'>
               
                     {
                     current === "code" ? 
@@ -102,7 +121,11 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
                       </Prism>
                     
                     </div>
-                    : <div className='p-2 w-full h-full flex items-center relative justify-center'>{component}</div>
+                    : <div className='p-4 w-full h-full flex items-center relative justify-center'>{component}
+                      <div onClick={() => setShowPreview(true)} 
+                      className='p-2 rounded-md absolute right-0 bottom-0 bg-gray-500/5 cursor-pointer hover:bg-gray-500/8'>
+                        <Expand size={24}/></div>
+                    </div>
 
                   }
               

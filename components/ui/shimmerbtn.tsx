@@ -29,7 +29,7 @@ export const ShimmerButton = ({
     const blur = `${shimmerTrans}px`
 
   return (
-    <button ref={ref} onClick={onClick} className={className + " " + "overflow-hidden relative"}>
+    <motion.button whileTap={{scale: 0.97}} ref={ref} onClick={onClick} className={className + " " + "overflow-hidden relative"}>
        {text}
         <motion.div 
         style={{
@@ -49,7 +49,7 @@ export const ShimmerButton = ({
             ease: "easeInOut"
         }}
         className='absolute h-full w-2 top-0 inset-0'/>
-    </button>
+    </motion.button>
   )
 }
 

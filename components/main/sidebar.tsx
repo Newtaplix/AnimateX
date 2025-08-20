@@ -222,11 +222,29 @@ const Sidebar = ({ isopen }:nav) => {
                 tag: ''
             },
             {
+                title: "Incrementer",
+                icon: "",
+                link: "/components/ui/incrementer",
+                tag: 'New'
+            },
+            {
                 title: "Blur Fade",
                 icon: "",
                 link: "/components/ui/textblur",
                 tag: 'New'
             },
+        ]
+    },
+    {
+        main: "Modals",
+        icon: <Blocks size={14}/>,
+        links: [
+            {
+                title: "Subscription Card",
+                icon: "",
+                link: "/components/ui/subCard",
+                tag: 'New'
+            }
         ]
     },
   ]

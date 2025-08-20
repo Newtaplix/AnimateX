@@ -4,11 +4,10 @@ import { Text } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { SearchInput } from '@/components/ui/searchInput'
+import { ComponentContainer } from '@/components/docs/setcode'
 import LinksDiv from '@/components/main/LinksDiv'
-
-const SearchPage = () => {
+import { SubscriptionCard, SubCode } from '@/components/ui/subscription'
+const AeroButtonPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
@@ -46,67 +45,22 @@ const SearchPage = () => {
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Password Confirm</h1>
+                <h1 className='text-3xl font-bold hc'>Aero Button</h1>
                 <p>
-                   A fully animated password confirmation input component. Helping users find errors in their passwords
-                    without even having to try submitting data.
+                    Animated buttom with smooth gradient transition, icon entrance and clicking effects
                 </p>
                 <ComponentContainer 
-                    component={
-                   <SearchInput/>}
-                    code={""}
+                    component={<SubscriptionCard/>}
+                    code={SubCode}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
-                <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={""} 
-                component={  
-                <SearchInput/>} />
+              
             </div>
 
-
-            {/* props */}
-            <div ref={pageRefs[2]} id="level3" className='flex flex-col mt-6 md:mt-10'>
-                  <h1 className='text-3xl font-bold hc'>Props Overview</h1>
-                  <div>
-                     <table className='w-full mt-2'>
-                        <thead className='hc'>
-                            <tr>
-                              <td className='p-2'>Prop</td>
-                              <td>Type</td>
-                              <td>Options</td>
-                              <td>Default</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>className</td>
-                              <td>string</td>
-                              <td>none</td>
-                              <td>none</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>confirm</td>
-                              <td>string</td>
-                              <td>required**</td>
-                              <td>none</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>model</td>
-                              <td>string</td>
-                              <td>none</td>
-                              <td>password</td>
-                            </tr>
-                        </tbody>
-
-                     </table>
-                      
-                  </div>
-            </div>
-           
-            <LinksDiv previous='/components/ui/cards2' next='/components/ui/tiltcard' prevText='Swipe Cards 2' nexText='Tilt Card'/>
+            <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/circular' prevText='Hover Aura' nexText='Circular'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>
@@ -138,4 +92,4 @@ const SearchPage = () => {
   )
 }
 
-export default SearchPage
+export default AeroButtonPage
