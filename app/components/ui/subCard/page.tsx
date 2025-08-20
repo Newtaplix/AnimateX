@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { Text } from 'lucide-react'
+import { LinkIcon, Text } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -45,9 +45,12 @@ const AeroButtonPage = () => {
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Aero Button</h1>
-                <p>
-                    Animated buttom with smooth gradient transition, icon entrance and clicking effects
+                <h1 className='text-3xl font-bold hc'>Subcription Card</h1>
+                <p className='w-full flex flex-wrap'>
+                    Animated suscription card with price scroll effects and Aura buttons. Made using the
+                    <Link href="/components/ui/incrementer"><LinkIcon size={20}/>Incrementer</Link> and 
+                    <Link href="/components/ui/aurabutton"><LinkIcon size={20}/>Aura Button</Link>
+                     from AnimateX
                 </p>
                 <ComponentContainer 
                     component={<SubscriptionCard/>}
