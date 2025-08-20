@@ -48,8 +48,8 @@ const AeroButtonPage = () => {
           <h1 className='text-3xl font-bold hc'>Subcription Card</h1>
           <p className='w-full flex flex-wrap'>
             Animated suscription card with price scroll effects and Aura buttons. Made using the
-            <Link className='flex justify-center items-center text-purple-400 gap-2' href="/components/ui/incrementer"><LinkIcon size={16} />Incrementer</Link> and
-            <Link className='flex justify-center items-center text-purple-400 gap-2' href="/components/ui/aurabutton"><LinkIcon size={16} />Aura Button</Link> components
+            <Link className='flex underline justify-center items-center text-purple-400 gap-1 mx-1' href="/components/ui/incrementer"><LinkIcon size={16} />Incrementer</Link> and
+            <Link className='flex underline justify-center items-center text-purple-400 gap-1 mx-1' href="/components/ui/aurabutton"><LinkIcon size={16} />Aura Button</Link> components
             from AnimateX
           </p>
           <ComponentContainer
