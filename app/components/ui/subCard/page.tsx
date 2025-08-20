@@ -9,22 +9,22 @@ import LinksDiv from '@/components/main/LinksDiv'
 import { SubscriptionCard, SubCode } from '@/components/ui/subscription'
 const AeroButtonPage = () => {
   const [level, setLevel] = useState("2")
-  const pageRefs = [useRef(null),useRef(null),useRef(null)]
-  const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
-  const isInView1 = useInView(pageRefs[1], {amount: 0.5, once: false})
-  const isInView2 = useInView(pageRefs[2], {amount: 0.5, once: false})
+  const pageRefs = [useRef(null), useRef(null), useRef(null)]
+  const isInView = useInView(pageRefs[0], { amount: 0.5, once: false })
+  const isInView1 = useInView(pageRefs[1], { amount: 0.5, once: false })
+  const isInView2 = useInView(pageRefs[2], { amount: 0.5, once: false })
 
   useEffect(() => {
-    if (isInView){
-        setLevel("0")
+    if (isInView) {
+      setLevel("0")
     }
-    if(isInView1){
-        setLevel("1")
+    if (isInView1) {
+      setLevel("1")
     }
-    if(isInView2){
-        setLevel("2")
+    if (isInView2) {
+      setLevel("2")
     }
-}, [isInView, isInView1, isInView2])
+  }, [isInView, isInView1, isInView2])
 
 
   const sections = [
@@ -43,54 +43,54 @@ const AeroButtonPage = () => {
   ]
   return (
     <div className='flex gap-4 h-full tc w-full'>
-        <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
-            <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Subcription Card</h1>
-                <p className='w-full flex flex-wrap'>
-                    Animated suscription card with price scroll effects and Aura buttons. Made using the
-                    <Link href="/components/ui/incrementer"><LinkIcon size={20}/>Incrementer</Link> and 
-                    <Link href="/components/ui/aurabutton"><LinkIcon size={20}/>Aura Button</Link> components 
-                     from AnimateX
-                </p>
-                <ComponentContainer 
-                    component={<SubscriptionCard/>}
-                    code={SubCode}
-                />
-            </div>
-
-            {/* use case */}
-            <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
-              
-            </div>
-
-            <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/circular' prevText='Hover Aura' nexText='Circular'/>
+      <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
+        <div ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
+          <h1 className='text-3xl font-bold hc'>Subcription Card</h1>
+          <p className='w-full flex flex-wrap'>
+            Animated suscription card with price scroll effects and Aura buttons. Made using the
+            <Link className='flex justify-center items-center text-purple-400 gap-2' href="/components/ui/incrementer"><LinkIcon size={16} />Incrementer</Link> and
+            <Link className='flex justify-center items-center text-purple-400 gap-2' href="/components/ui/aurabutton"><LinkIcon size={16} />Aura Button</Link> components
+            from AnimateX
+          </p>
+          <ComponentContainer
+            component={<SubscriptionCard />}
+            code={SubCode}
+          />
         </div>
-        <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
-            <div>
-                <div className='flex gap-2 items-center'>
-                    <Text size={14}/>
-                    <p>On this page</p>
-                </div>
-                <div className='border-l-2 bc ml-1'>
+
+        {/* use case */}
+        <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
+
+        </div>
+
+        <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/circular' prevText='Hover Aura' nexText='Circular' />
+      </div>
+      <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
+        <div>
+          <div className='flex gap-2 items-center'>
+            <Text size={14} />
+            <p>On this page</p>
+          </div>
+          <div className='border-l-2 bc ml-1'>
+            {
+              sections.map((item, i) =>
+                <div key={i} onClick={() => setLevel(item.title)} className='flex mt-2 flex-col gap-2'>
+                  <Link href={item.link} className={cn('px-2 cursor-pointer relative')}>
+                    {item.title}
                     {
-                        sections.map((item, i) => 
-                        <div key={i} onClick={() => setLevel(item.title)} className='flex mt-2 flex-col gap-2'>
-                            <Link href={item.link} className={cn('px-2 cursor-pointer relative')}>
-                                {item.title}
-                               {
-                                    level === String(i) &&
-                                    <motion.div layoutId="key" className="absolute top-0 -left-[2px] w-[2px] rounded-full 
+                      level === String(i) &&
+                      <motion.div layoutId="key" className="absolute top-0 -left-[2px] w-[2px] rounded-full 
                                     bg-purple-400 h-full"/>
-                               }
-                            </Link>
-                        </div>
-                        )
                     }
-
+                  </Link>
                 </div>
-            </div>
+              )
+            }
 
+          </div>
         </div>
+
+      </div>
     </div>
   )
 }
