@@ -3,9 +3,44 @@ import React, { useEffect } from 'react'
 import { Mail, Layers } from 'lucide-react'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 
+interface MyIconProps{
+    icon: React.ReactNode,
+    targetRef: React.RefObject<HTMLElement | null>,
+    initY: number,
+    initX: number,
+    rotate: string,
+    endX: number
+}
+
+const MyIcon = ({icon, targetRef, initY, initX, rotate, endX}:MyIconProps) => {
+
+    const { scrollYProgress } = useScroll({target: targetRef, offset: ["start start", "end start"]})
+
+    const spring = useSpring(scrollYProgress, {damping: 15, stiffness: 100})
+    const y = useTransform(spring, [0, 1], [initY, 600])
+    const x = useTransform(spring, [0, 1], [initX, endX])
+
+    useEffect(() => {
+        console.log(scrollYProgress.get())
+    }, [scrollYProgress])
+
+  return (
+    <motion.div 
+    initial={{
+        rotate: rotate
+    }}
+
+    style={{ y, x }}
+    className='p-4 w-[74px] h-[74px] flex justify-center items-center top-1/2 -translate-y-1/2 absolute z-20 left-0 tc rounded-[20px] shadow-lg shadow-gray-600/40'>
+        {icon}
+    </motion.div>
+  )
+}
+
 interface IconProps{
     targetRef: React.RefObject<HTMLDivElement | null>
 }
+
 const Icon = ({targetRef}:IconProps) => {
 
     const list= [
@@ -62,39 +97,5 @@ const Icon = ({targetRef}:IconProps) => {
     </>
   )
 }
+
 export default Icon
-
-
-interface MyIconProps{
-    icon: React.ReactNode,
-    targetRef: React.RefObject<HTMLElement | null>,
-    initY: number,
-    initX: number,
-    rotate: string,
-    endX: number
-}
-
-const MyIcon = ({icon, targetRef, initY, initX, rotate, endX}:MyIconProps) => {
-
-    const { scrollYProgress } = useScroll({target: targetRef, offset: ["start start", "end start"]})
-
-    const spring = useSpring(scrollYProgress, {damping: 15, stiffness: 100})
-    const y = useTransform(spring, [0, 1], [initY, 600])
-    const x = useTransform(spring, [0, 1], [initX, endX])
-
-    useEffect(() => {
-        console.log(scrollYProgress.get())
-    }, [scrollYProgress])
-
-  return (
-    <motion.div 
-    initial={{
-        rotate: rotate
-    }}
-
-    style={{ y, x }}
-    className='p-4 w-[74px] h-[74px] flex justify-center items-center top-1/2 -translate-y-1/2 absolute z-20 left-0 tc rounded-[20px] shadow-lg shadow-gray-600/40'>
-        {icon}
-    </motion.div>
-  )
-}
