@@ -6,8 +6,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 interface IconProps{
     targetRef: React.RefObject<HTMLDivElement | null>
 }
-
-export const Icon = ({targetRef}:IconProps) => {
+const Icon = ({targetRef}:IconProps) => {
 
     const list= [
         {
@@ -63,8 +62,7 @@ export const Icon = ({targetRef}:IconProps) => {
     </>
   )
 }
-
-
+export default Icon
 
 
 interface MyIconProps{

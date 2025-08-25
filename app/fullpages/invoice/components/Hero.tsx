@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef } from 'react'
 import { Button } from './button'
-import {Icon} from './icon'
+import Icon from './icon'
 import { InvoiceNavBar } from './navbar'
 
 const Hero = () => {
