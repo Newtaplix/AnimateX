@@ -240,11 +240,18 @@ const Sidebar = ({ isopen }:nav) => {
         icon: <Blocks size={14}/>,
         links: [
             {
+                title: "Avartar",
+                icon: "",
+                link: "/components/ui/avatar",
+                tag: 'New'
+            },
+            {
                 title: "Subscription Card",
                 icon: "",
                 link: "/components/ui/subCard",
                 tag: 'New'
-            }
+            },
+          
         ]
     },
   ]

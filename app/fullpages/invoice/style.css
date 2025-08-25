@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+@import "tw-animate-css";
+@tailwind utilities; 
+
+
+@layer base {
+    .btn{
+        @apply bg-gradient-to-tr from-[#C555CE] hover:bg-[#C555CE] transition-colors duration-5 w-fit flex to-[#F5E1E2] text-white p-2 px-4 rounded-full
+    }
+    .parent{
+        @apply w-full max-w-[1000px] mx-auto
+    }
+    .gradient{
+        @apply bg-gradient-to-tr from-[#C555CE] w-fit flex to-[#F5E1E2] text-transparent bg-clip-text font-bold
+    }
+    .nav{
+        @apply fixed bg-white w-full max-w-[1000px] mx-auto top-2 left-0 right-0 z-50 p-2 px-4 rounded-full flex items-center justify-between
+    }
+    .cn-container{
+        @apply w-full items-center justify-center flex flex-col relative
+    }
+    .h-intro{
+        @apply text-3xl md:text-6xl relative font-bold w-[70%] text-center mb-2
+    }
+    .tc{
+        @apply text-[#C555CE]
+    }
+    .bgc{
+        @apply bg-[#C555CE]
+    }
+    .section{
+        @apply w-full mt-30
+    }
+}
+
+.line-xl{
+    line-height: 74px;
+}
