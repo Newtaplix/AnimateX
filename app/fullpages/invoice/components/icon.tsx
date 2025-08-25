@@ -76,7 +76,7 @@ interface MyIconProps{
     endX: number
 }
 
-export const MyIcon = ({icon, targetRef, initY, initX, rotate, endX}:MyIconProps) => {
+const MyIcon = ({icon, targetRef, initY, initX, rotate, endX}:MyIconProps) => {
 
     const { scrollYProgress } = useScroll({target: targetRef, offset: ["start start", "end start"]})
 
