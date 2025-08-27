@@ -208,6 +208,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/confirm",
                 tag: ""
+            },
+            {
+                title: "OTP",
+                icon: "",
+                link: "/components/ui/otp",
+                tag: "New"
             }
         ]
     },
