@@ -15,6 +15,7 @@ interface code{
 interface componentProp{
     component?: React.ReactNode,
     code: string,
+    codejs?: string,
     copy?: boolean
 }
 const Fira = Fira_Mono({
@@ -56,13 +57,17 @@ export const SetCode = ({code, terminal}:code) => {
 }
 
 
-export const ComponentContainer = ({code, component, copy=true}:componentProp) => {
+export const ComponentContainer = ({code, component, copy=true, codejs}:componentProp) => {
   const [current, setCurrent] = useState("component")
   const [copycode, SetCopyCode] = useState(false)
   const [showPreview, setShowPreview] = useState(false)
 
   const CopytoClipBoard = (code:string) => {
-    navigator.clipboard.writeText(code)
+    if(current === "codejs"){
+      navigator.clipboard.writeText(codejs ? codejs : "")
+    }else{
+      navigator.clipboard.writeText(code)
+    }
     SetCopyCode(true)
     setTimeout(() => SetCopyCode(false), 2000)
   }
@@ -77,13 +82,20 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
               }
                 Preview
               </div>
-              <div onClick={() => setCurrent("code")} className={cn('p-2 px-3 cursor-pointer relative', current === "code"? "hc" : "tc" )}>
+              <div onClick={() => setCurrent("codets")} className={cn('p-2 px-3 cursor-pointer relative', current === "code"? "hc" : "tc" )}>
               {
-                  current === "code" &&
+                  current === "codets" &&
                   <motion.div layoutId='swap1' className='absolute bg-purple-600 h-[2px] w-full rounded-full bottom-0 right-0'/>
               }
-                Code
+                Code <span className='property'>TS</span>
               </div>
+              <div onClick={() => setCurrent("codejs")} className={cn('p-2 px-3 cursor-pointer relative', current === "code"? "hc" : "tc" )}>
+              {
+                  current === "codejs" &&
+                  <motion.div layoutId='swap1' className='absolute bg-purple-600 h-[2px] w-full rounded-full bottom-0 right-0'/>
+              }
+                Code <span className='property'>JS</span>
+              </div> 
           </div>
 
 
@@ -113,15 +125,24 @@ export const ComponentContainer = ({code, component, copy=true}:componentProp) =
         <div className='h-[400px] main rounded-[8px] w-full relative flex overflow-hidden items-center justify-center'>
               
                     {
-                    current === "code" ? 
-
+                    current === "codets" ? 
+                      // tsview
                     <div className='w-full h-full overflow-x-hidden overflow-y-scroll p-2 scroll-dark scroll-bar scroll-button'>
                       <Prism language='tsx' style={oneDark} customStyle={{ padding: "1rem"}}>
                           {code.trim()}
                       </Prism>
                     
                     </div>
-                    : <div className='p-4 w-full h-full flex items-center relative justify-center'>{component}
+                    // jsview
+                    : current === "codejs" ?
+                    <div className='w-full h-full overflow-x-hidden overflow-y-scroll p-2 scroll-dark scroll-bar scroll-button'>
+                      <Prism language='tsx' style={oneDark} customStyle={{ padding: "1rem"}}>
+                          {codejs ? codejs.trim() : ""}
+                      </Prism>
+                    
+                    </div>
+                  // preview view
+                    :<div className='p-4 w-full h-full flex items-center relative justify-center'>{component}
                       <div onClick={() => setShowPreview(true)} 
                       className='p-2 rounded-md absolute right-0 bottom-0 bg-gray-500/5 cursor-pointer hover:bg-gray-500/8'>
                         <Expand size={24}/></div>

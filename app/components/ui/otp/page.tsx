@@ -50,8 +50,8 @@ const OTPPage = () => {
                 <p>
                     Animated OTP component
                 </p>
-                <ComponentContainer 
-                    component={<OTP id="got" otpValue='12345'/>}
+                <ComponentContainer
+                    component={ <OTP id="got" otpValue='12345'/> }
                     code={code}
                 />
             </div>

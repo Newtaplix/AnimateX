@@ -167,6 +167,12 @@ const Sidebar = ({ isopen }:nav) => {
                 icon: "",
                 link: "/components/ui/infinite",
                 tag: "New"
+            },
+            {
+                title: "Squishy Cards",
+                icon: "",
+                link: "/components/ui/squishy",
+                tag: "New"
             }
         ]
     },

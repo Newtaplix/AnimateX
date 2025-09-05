@@ -11,8 +11,29 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  title: "AnimateX",
-  description: "Animated components created by Ngwa Newton-Raul",
+  title: {
+    default: "Components - AnimateX",
+    template: "%s | AnimateX"
+  },
+  description: "Explore our collection of beautiful animated components for React and Next.js. Browse buttons, cards, navigation, and more interactive elements.",
+  keywords: [
+    "React components",
+    "Next.js components", 
+    "animated components",
+    "UI components",
+    "interactive elements",
+    "component library"
+  ],
+  openGraph: {
+    title: 'Components - AnimateX',
+    description: 'Explore our collection of beautiful animated components for React and Next.js. Browse buttons, cards, navigation, and more interactive elements.',
+    images: ['/framer.png'],
+  },
+  twitter: {
+    title: 'Components - AnimateX',
+    description: 'Explore our collection of beautiful animated components for React and Next.js. Browse buttons, cards, navigation, and more interactive elements.',
+    images: ['/framer.png'],
+  },
 };
 
 export default function RootLayout({
