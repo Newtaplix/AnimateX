@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils'
 import { ComponentContainer } from '@/components/docs/setcode'
 import { Avatar } from '@/components/ui/avatar'
 import LinksDiv from '@/components/main/LinksDiv'
-import { Selector } from '@/components/ui/selector'
 
 const AuraButtonPage = () => {
   const [level, setLevel] = useState("2")
@@ -38,7 +37,7 @@ const AuraButtonPage = () => {
                     Avatar animated component. Inspired by Peerlist UI Interaction Challenge
                 </p>
                 <ComponentContainer 
-                    component={<Selector/>}
+                    component={<Avatar/>}
                     code={""}
                 />
             </div>

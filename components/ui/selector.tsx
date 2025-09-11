@@ -1,10 +1,8 @@
 import { Car, Code, Drama, Gamepad, Pizza, Plane, Popcorn } from 'lucide-react'
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 
 export const Selector = () => {
-    const [isSelected, setIsSelected] =  useState()
-
     const items = [
         {
             text: "Gaming",

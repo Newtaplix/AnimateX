@@ -49,7 +49,7 @@ export const RegistrationButton = ({
                 setCurrent(2)
             }
         }
-    }, [loading])
+    }, [loading, isCompleted, isError])
 
   return (
     <m.button layout 
