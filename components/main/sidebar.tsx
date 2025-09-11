@@ -204,6 +204,12 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/fade",
                 tag: ''
             },
+            {
+                title: "Touchpad",
+                icon: "",
+                link: "/components/ui/touchpad",
+                tag: 'New'
+            },
         ]
     },{
         main: "Inputs",
