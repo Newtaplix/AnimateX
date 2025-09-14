@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { AuraButton, Codes, UseCase } from '@/components/ui/aurabutton'
+import { AuraButton, Codes, CodeJS, UseCase } from '@/components/ui/aurabutton'
 import LinksDiv from '@/components/main/LinksDiv'
 
 const AuraButtonPage = () => {
@@ -53,6 +53,7 @@ const AuraButtonPage = () => {
                 <ComponentContainer 
                     component={<AuraButton/>}
                     code={Codes}
+                    codejs={CodeJS}
                 />
             </div>
 

@@ -82,14 +82,14 @@ export const ComponentContainer = ({code, component, copy=true, codejs}:componen
               }
                 Preview
               </div>
-              <div onClick={() => setCurrent("codets")} className={cn('p-2 px-3 cursor-pointer relative', current === "code"? "hc" : "tc" )}>
+              <div onClick={() => setCurrent("codets")} className={cn('p-2 px-3 cursor-pointer relative', current === "codets"? "hc" : "tc" )}>
               {
                   current === "codets" &&
                   <motion.div layoutId='swap1' className='absolute bg-purple-600 h-[2px] w-full rounded-full bottom-0 right-0'/>
               }
                 Code <span className='property'>TS</span>
               </div>
-              <div onClick={() => setCurrent("codejs")} className={cn('p-2 px-3 cursor-pointer relative', current === "code"? "hc" : "tc" )}>
+              <div onClick={() => setCurrent("codejs")} className={cn('p-2 px-3 cursor-pointer relative', current === "codejs"? "hc" : "tc" )}>
               {
                   current === "codejs" &&
                   <motion.div layoutId='swap1' className='absolute bg-purple-600 h-[2px] w-full rounded-full bottom-0 right-0'/>

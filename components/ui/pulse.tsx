@@ -35,7 +35,7 @@ export const Pulse = ({children, className, displacement = 0, speed=0.6, pulseDe
 
 
 
-export const pulseCode = `
+export const Code = `
 import React from 'react'
 import { motion } from 'framer-motion'
 
@@ -47,7 +47,36 @@ interface pulse{
   pulseDelay?: number
 }
 
-export const PulseButton = ({children, className, displacement = 0, speed=0.6, pulseDelay=0.4}:pulse) => {
+export const Pulse = ({children, className, displacement = 0, speed=0.6, pulseDelay=0.4}:pulse) => {
+  const defaultStyles = 'inset-0 z-10 top-0 left-0 absolute'
+  return (
+    <div className="relative flex items-center justify-center">
+        <div className='z-20'>{children}</div>
+        <motion.div 
+        initial={{
+          scale: 1,
+          opacity: 1
+        }}
+        animate={{
+          scale: 1 + displacement,
+          opacity: 0
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: speed,
+          repeatDelay: pulseDelay 
+        }}
+        className={className + " " + defaultStyles} />
+    </div>)
+   
+}
+`
+
+export const CodeJS = `
+import React from 'react'
+import { motion } from 'framer-motion'
+
+export const Pulse = ({children, className, displacement = 0, speed=0.6, pulseDelay=0.4}) => {
   const defaultStyles = 'inset-0 z-10 top-0 left-0 absolute'
   return (
     <div className="relative flex items-center justify-center">
@@ -90,3 +119,5 @@ const page = () => {
 
 export default page
 `
+
+

@@ -12,7 +12,7 @@ import Navbar from "@/components/main/navbar";
 export default function Home() {
  
   return (
-    <>
+    <div className="w-full max-w-7xl mx-auto">
       <Navbar/>
       <Hero/>
       <Previews/>
@@ -22,6 +22,6 @@ export default function Home() {
       <Feedback/>
       <Testimonials/>
       <Footer/>
-    </>
+    </div>
   );
 }

@@ -118,11 +118,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${poppins.className} antialiased`}
-      >
-        
-        <div className={`${poppins.className} max-w-7xl mx-auto relative`}>
+      <body>
+        <div className={`${poppins.className} mx-auto relative antialiased`}>
             {children}
         </div>
       </body>

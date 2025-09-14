@@ -220,6 +220,94 @@ export const GooeyMenu = ({direction ="right", list}:props) => {
 `
 
 
+export const CodeJS = `
+import { AnimatePresence, motion } from 'framer-motion'
+import { X, Menu } from 'lucide-react'
+import React, { useState } from 'react'
+
+export const GooeyMenu = ({direction ="right", list}) => {
+
+    const [isOpen, setIsOpen] = useState(false)
+    const Items = {
+        open: (i) => ({
+            x: direction === "right" ? (i + 1) * 55 : direction === "left" ? (i + 1) * -55 : 0,
+            y: direction === "down" ? (i + 1) * 55 : direction === "up" ? (i + 1) * -55 : 0,
+            scale: 1,
+            transition: {
+                type: "spring", 
+                damping: 13,
+                delay: 0.0512 * i
+            }
+        }),
+        close: (i) => ({
+            x:0,
+            y:0,
+            scale: 0.8,
+            transition: {type: "spring", stiffness: 100, damping: 14, delay: i * 0.0512}
+        })
+    }
+  return (
+   <>
+            
+         {/* svg filter */}
+         <svg className='w-0 h-0 absolute'>
+            <defs>
+                <filter id='goo'>
+                    <feGaussianBlur in='SourceGraphic' stdDeviation={"10"} result='blur'/>
+                    <feColorMatrix in='blur' mode={"matrix"} values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7' result='goo'/>
+                    <feBlend in='SourceGraphic' in2='goo'/>
+                </filter>
+            </defs>
+         </svg>
+
+         <div className='relative flex items-center justify-center'>
+            <div className='relative flex items-center justify-center'>
+                <AnimatePresence>
+                    {
+                        list.map((item, i) => 
+                        <motion.div
+                        key={i}
+                        initial={false}
+                        animate={isOpen ? Items.open(i) : Items.close(i)}
+                        className='absolute cursor-pointer'
+                        onClick={() => {
+                            item.func()
+                            setIsOpen(false)
+                        }}
+                        >
+                            <div className='w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg'>
+                                {item.icon}
+                            </div>
+                        </motion.div>
+                        )
+                    }
+                </AnimatePresence>
+                
+                <motion.div
+                onClick={() => setIsOpen(!isOpen)}
+                className='w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center cursor-pointer shadow-lg'
+                animate={{
+                    rotate: isOpen ? 45 : 0
+                }}
+                >
+                    <AnimatePresence mode="wait">
+                        {
+                            isOpen ? 
+                            <X size={24} color='white'/>
+                            :
+                            <Menu size={24} color='white'/>
+                        }
+                    </AnimatePresence>
+                </motion.div>
+            </div>
+         </div>
+   </>
+  )
+}
+
+`
+
+
 export const UseCase = `
 "use client"
 import React from 'react'
@@ -253,3 +341,5 @@ const Page = () => {
 
 export default Page
 `
+
+

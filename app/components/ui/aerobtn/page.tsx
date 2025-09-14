@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
 import LinksDiv from '@/components/main/LinksDiv'
-import { AeroButton, Code, UseCase } from '@/components/ui/aerobutton'
+import { AeroButton, Code, CodeJS, UseCase } from '@/components/ui/aerobutton'
 
 const AeroButtonPage = () => {
   const [level, setLevel] = useState("2")
@@ -53,6 +53,7 @@ const AeroButtonPage = () => {
                 <ComponentContainer 
                     component={<AeroButton/>}
                     code={Code}
+                    codejs={CodeJS}
                 />
             </div>
 

@@ -5,10 +5,11 @@ interface props{
     value?: number,
     text?:string,
     currency?: string,
+    duration?: number
 }
 
 
-export const Incrementer = ({value=0, text="md", currency}:props) => {
+export const Incrementer = ({value=0, text="md", currency, duration}:props) => {
     const arr1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     const arrList = Array.from({length: 8})
     
@@ -16,14 +17,15 @@ export const Incrementer = ({value=0, text="md", currency}:props) => {
     const sizes = {
         sm: "text-xl md:text-2xl h-[28px] md:h-[26px]",
         md: "text-2xl md:text-4xl h-[28px] md:h-[38px]",
-        lg: "text-4xl md:text-6xl h-[36px] md:h-[60px]"
+        lg: "text-4xl md:text-6xl h-[36px] md:h-[60px]",
+        smm: "text-[14px] h-[20px]"
     }
 
-    const size = text === "sm" ? sizes.sm : text === "md" ? sizes.md : sizes.lg
+    const size = text === "sm" ? sizes.sm : text === "md" ? sizes.md : text === "lg" ? sizes.lg : sizes.smm
 
   return (
                
-                <motion.div layout className={`${size} overflow-hidden flex w-fit text-white`}>
+                <motion.div layout className={`${size} overflow-hidden flex w-fit`}>
                     <AnimatePresence>
                         {
                             arrList.map((_, i) =>
@@ -40,7 +42,8 @@ export const Incrementer = ({value=0, text="md", currency}:props) => {
                                     transition={{
                                         bounce: 0.19,
                                         type: "spring",
-                                        ease: "easeInOut"
+                                        ease: "easeInOut",
+                                        duration: duration
                                     }}
                                     exit={{opacity: 0, width: 0, x: 15, y:15, filter: "blur(18px)"}}
                                     style={{
