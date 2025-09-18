@@ -173,3 +173,6 @@
 .bc{
   @apply border-gray-300/5;
 }
+.slider-code{
+  @apply p-1 flex items-center justify-center hover:bg-gray-200/6 bg-gray-600/5 text-purple-600 h-full flex-1;
+}

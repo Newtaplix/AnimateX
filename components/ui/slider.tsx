@@ -66,7 +66,7 @@ export const Slider = ({tooltipcol="white", maxValue=120, buttonColor="#32CD32",
         whileDrag= "display"
         initial = "hidden"
         className='rounded-full absolute top-1/2 cursor-pointer -translate-y-1/2  left-0'>
-            <div style={{background: `${buttonColor}`}} className='w-6 h-6 rounded-full z-20 relative'></div>
+            <div style={{background: `${buttonColor}`}} className='w-full h-full rounded-full z-20 relative'></div>
             <m.div initial={{rotate: 0}} style={{rotate}} className='absolute h-8 w-full z-10 -top-10 left-0 right-0'>
                 <div className='h-full w-full mx-auto'>
                     <m.div 
@@ -165,7 +165,7 @@ export const Slider = ({tooltipcol="white", maxValue=120, buttonColor="#32CD32",
         whileDrag= "display"
         initial = "hidden"
         className='rounded-full absolute top-1/2 cursor-pointer -translate-y-1/2  left-0'>
-            <div style={{background: \`$\{buttonColor}\`}} className='w-6 h-6 rounded-full z-20 relative'></div>
+            <div style={{background: \`$\{buttonColor}\`}} className='w-full h-full rounded-full z-20 relative'></div>
             <m.div style={{rotate}} className='absolute h-8 w-full z-10 -top-10 left-0 right-0'>
                 <div className='h-full w-full mx-auto'>
                     <m.div 
@@ -250,7 +250,7 @@ export const Slider = ({tooltipcol="white", maxValue=120, buttonColor="#32CD32",
         whileDrag= "display"
         initial = "hidden"
         className='rounded-full absolute top-1/2 cursor-pointer -translate-y-1/2  left-0'>
-            <div style={{background: \`$\{buttonColor}\`}} className='w-6 h-6 rounded-full z-20 relative'></div>
+            <div style={{background: \`$\{buttonColor}\`}} className='w-full h-full rounded-full z-20 relative'></div>
             <m.div style={{rotate}} className='absolute h-8 w-full z-10 -top-10 left-0 right-0'>
                 <div className='h-full w-full mx-auto'>
                     <m.div 
