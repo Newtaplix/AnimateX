@@ -1,24 +1,23 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { Text } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
-import LinksDiv from '@/components/main/LinksDiv'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { Press, Code, CodeJS, UseCase } from '@/components/ui/press'
+import LinksDiv from '@/components/main/LinksDiv'
+import { Text } from 'lucide-react'
+import { Slider, codejs, codets, Case } from '@/components/ui/slider'
 
-const PressButtonPage = () => {
+
+
+const TouchPadPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]
   const isInView = useInView(pageRefs[0], {amount: 0.5, once: false})
   const isInView1 = useInView(pageRefs[1], {amount: 0.5, once: false})
   const isInView2 = useInView(pageRefs[2], {amount: 0.5, once: false})
-  const [num, setNum] = useState(0)
+  const [sliderval, setSliderVal] = useState(0)
 
-  const add = () => {
-    setNum((prev) => prev + 1)
-  }
 
   useEffect(() => {
     if (isInView){
@@ -31,7 +30,6 @@ const PressButtonPage = () => {
         setLevel("2")
     }
 }, [isInView, isInView1, isInView2])
-
 
   const sections = [
     {
@@ -47,36 +45,41 @@ const PressButtonPage = () => {
       link: "#level3"
     }
   ]
+
+
   return (
     <div className='flex gap-4 h-full tc w-full'>
         <div className='w-full md:w-[70%] overflow-y-scroll scrollbar-hide pb-10 h-screen'>
             <div  ref={pageRefs[0]} id="level1" className='flex gap-4 flex-col mt-20 py-4'>
-                <h1 className='text-3xl font-bold hc'>Press</h1>
+                <h1 className='text-3xl font-bold hc'>Slider</h1>
                 <p>
-                    An animated long press button.
+                    Animated slider component with animated tooltip indicator.
                 </p>
                 <ComponentContainer 
-                    component={<div className='flex flex-col gap-2 items-center justify-center'>
-                      <Press text='Press & Hold' className='w-44 cursor-pointer bg-white'/>
-                    </div>}
-                    code={Code}
-                    codejs={CodeJS}
+                    component={
+                            <Slider className='text-black'/>
+                    }
+                    code={codets}
+                    codejs={codejs}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={UseCase} 
-                component={<div className='flex flex-col gap-2 items-center justify-center'>
-                  <span>{num}</span>
-                  <Press 
-                      text='Press & Hold' 
-                      className='w-44 bg-white' 
-                      pressDuration={1} 
-                      onFull={() => add()} 
-                      sliderStyle='bg-red-200'/>
-                </div>} />
+                <PropContainer code={Case} 
+                component={
+                   <div className='w-full h-full flex flex-col gap-3 items-center justify-center'>
+                      
+                        <Slider 
+                        onChange={(value) => setSliderVal(value)} 
+                        className='text-black' 
+                        trackWidth={350} 
+                        maxValue={100} 
+                        buttonColor='#9810fa'/>
+                          <p>{sliderval}</p>
+                   </div>
+                } />
             </div>
 
 
@@ -95,35 +98,60 @@ const PressButtonPage = () => {
                         </thead>
                         <tbody>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>text</td>
-                              <td>string</td>
-                              <td>none</td>
-                              <td>none</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>onFull</td>
-                              <td>function</td>
-                              <td>none</td>
-                              <td>none</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
-                              <td className='p-2'>sliderStyle</td>
-                              <td>string</td>
-                              <td>none</td>
-                              <td>absolute z-10 bg-blue-200 h-full top-0 left-0</td>
-                            </tr>
-                            <tr className='border-t-1 bc'>
                               <td className='p-2'>className</td>
                               <td>string</td>
                               <td>none</td>
-                              <td>p-2 px-4 rounded-md items-center flex justify-center</td>
+                              <td>none</td>
                             </tr>
                             <tr className='border-t-1 bc'>
-                              <td className='p-2'>pressDuration</td>
+                              <td className='p-2'>onChange</td>
+                              <td>func[(value) as param]</td>
+                              <td>none</td>
+                              <td>none</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>buttonColor</td>
+                              <td>string</td>
+                              <td>none</td>
+                              <td>#32CD32</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>buttonSize</td>
                               <td>number</td>
                               <td>none</td>
-                              <td>2</td>
+                              <td>4</td>
                             </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>trackWidth</td>
+                              <td>number</td>
+                              <td>none</td>
+                              <td>300</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>trackHeight</td>
+                              <td>number</td>
+                              <td>none</td>
+                              <td>4</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>maxValue</td>
+                              <td>number</td>
+                              <td>none</td>
+                              <td>120</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>tooltipcol</td>
+                              <td>string</td>
+                              <td>none</td>
+                              <td>white</td>
+                            </tr>
+                            <tr className='border-t-1 bc'>
+                              <td className='p-2'>trackColor</td>
+                              <td>string</td>
+                              <td>none</td>
+                              <td>white</td>
+                            </tr>
+                          
                         </tbody>
 
                      </table>
@@ -131,7 +159,7 @@ const PressButtonPage = () => {
                   </div>
             </div>
            
-          <LinksDiv previous='/components/ui/zoop' next='/components/ui/Accordion' prevText='Zoop' nexText='Accordion'/>
+            <LinksDiv previous='/components/ui/hoveraura' next='/components/ui/circular' prevText='Hover Aura' nexText='Circular'/>
         </div>
         <div className='w-[30%] hidden md:flex md:flex-col relative h-fit tc text-[14px] pt-20'>
             <div>
@@ -163,4 +191,4 @@ const PressButtonPage = () => {
   )
 }
 
-export default PressButtonPage
+export default TouchPadPage

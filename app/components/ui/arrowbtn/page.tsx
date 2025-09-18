@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
 import LinksDiv from '@/components/main/LinksDiv'
-import { ArrowButton, Code, UseCase } from '@/components/ui/arrowbtn'
+import { ArrowButton, Code, CodeJS, UseCase } from '@/components/ui/arrowbtn'
 
 const ArrowButtonPage = () => {
   const [level, setLevel] = useState("2")
@@ -53,6 +53,7 @@ const ArrowButtonPage = () => {
                 <ComponentContainer
                     component={<ArrowButton className=' p-2 rounded-md'/>}
                     code={Code}
+                    codejs={CodeJS}
                 />
             </div>
 

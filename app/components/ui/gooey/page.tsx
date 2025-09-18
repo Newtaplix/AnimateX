@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { GooeyMenu, Code, UseCase } from '@/components/ui/gooey'
+import { GooeyMenu, Code, CodeJS, UseCase } from '@/components/ui/gooey'
 import LinksDiv from '@/components/main/LinksDiv'
 
 type opt = "up" | "down" | "left" | "right" | string
@@ -111,6 +111,7 @@ const MeltingButtonPage = () => {
                       </div>
                     }
                     code={Code}
+                    codejs={CodeJS}
                 />
             </div>
 

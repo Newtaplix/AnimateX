@@ -62,7 +62,7 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Aero Button",
                 icon: "",
                 link: "/components/ui/aerobtn",
-                tag: 'New'
+                tag: ''
                 
             },
             {
@@ -87,7 +87,7 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Arrow Button",
                 icon: "",
                 link: "/components/ui/arrowbtn",
-                tag: 'New'
+                tag: ''
             },
               
         ]
@@ -166,7 +166,7 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Infinite Sliding",
                 icon: "",
                 link: "/components/ui/infinite",
-                tag: "New"
+                tag: ""
             },
             {
                 title: "Squishy Cards",
@@ -204,6 +204,12 @@ const Sidebar = ({ isopen }:nav) => {
                 link: "/components/ui/fade",
                 tag: ''
             },
+            {
+                title: "Touchpad",
+                icon: "",
+                link: "/components/ui/touchpad",
+                tag: 'New'
+            },
         ]
     },{
         main: "Inputs",
@@ -219,6 +225,12 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "OTP",
                 icon: "",
                 link: "/components/ui/otp",
+                tag: ""
+            },
+            {
+                title: "Slider",
+                icon: "",
+                link: "/components/ui/slider",
                 tag: "New"
             }
         ]
@@ -237,13 +249,13 @@ const Sidebar = ({ isopen }:nav) => {
                 title: "Incrementer",
                 icon: "",
                 link: "/components/ui/incrementer",
-                tag: 'New'
+                tag: ''
             },
             {
                 title: "Blur Fade",
                 icon: "",
                 link: "/components/ui/textblur",
-                tag: 'New'
+                tag: ''
             },
         ]
     },
@@ -268,7 +280,7 @@ const Sidebar = ({ isopen }:nav) => {
     },
   ]
   return (
-   <motion.div layout className={cn('w-[80%] md:w-60 lg:w-80 gap-4 border-r-1 tc bc h-screen main fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
+   <motion.div layout className={cn('w-[80%] md:w-60 lg:w-80 gap-4 border-r-1 tc bc h-screen main overflow-hidden fixed z-60 md:flex md:relative md:flex-col transform transition-transform duration-500 left-0 top-0 md:translate-x-0',
     isopen ? "translate-x-0" : "-translate-x-[100%]"
    )}>
        <div className='min-h-fit max-h-[25%]'>

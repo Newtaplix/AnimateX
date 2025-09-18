@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { Pulse, pulseCode, UseCase } from '@/components/ui/pulse'
+import { Pulse, Code, CodeJS, UseCase } from '@/components/ui/pulse'
 import LinksDiv from '@/components/main/LinksDiv'
 
 const PulsePage = () => {
@@ -55,7 +55,8 @@ const PulsePage = () => {
                     component={<Pulse displacement={0.3} speed={1} className='rounded-md bg-gray-200'>
                       <button className='p-2 rounded-md bg-white text-black'>Am Pulsing Here!!</button>
                       </Pulse>}
-                    code={pulseCode}
+                    code={Code}
+                    codejs={CodeJS}
                 />
             </div>
 

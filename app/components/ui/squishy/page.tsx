@@ -8,6 +8,7 @@ import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
 import LinksDiv from '@/components/main/LinksDiv'
 import { Squishy, ReactCode, NextjsCode, UseCse1, UseCase2 } from '@/components/ui/squishy'
 
+
 const AuthButtonPage = () => {
   const [level, setLevel] = useState("2")
   const pageRefs = [useRef(null),useRef(null),useRef(null)]

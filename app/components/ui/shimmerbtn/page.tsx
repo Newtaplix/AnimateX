@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ComponentContainer, PropContainer } from '@/components/docs/setcode'
-import { ShimmerButton, Code, Use } from '@/components/ui/shimmerbtn'
+import { ShimmerButton, Code, CodeJS, UseCase } from '@/components/ui/shimmerbtn'
 import LinksDiv from '@/components/main/LinksDiv'
 
 const FreeCardsPage = () => {
@@ -53,13 +53,14 @@ const FreeCardsPage = () => {
                 <ComponentContainer 
                     component={<ShimmerButton/>}
                     code={Code}
+                    codejs={CodeJS}
                 />
             </div>
 
             {/* use case */}
             <div ref={pageRefs[1]} id="level2" className='flex gap-4 mt-6 md:mt-10 flex-col py-4'>
                 <h1 className='text-3xl font-bold hc'>Use Case</h1>
-                <PropContainer code={Use} 
+                <PropContainer code={UseCase} 
                 component={
                 <ShimmerButton 
                     text='Start Now' 
