@@ -1,9 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@tailwind utilities; 
+@tailwind utilities;
 
+/* Tell Tailwind to respect the .dark class */
 @custom-variant dark (&:is(.dark *));
 
+/* Register variables that map to CSS custom props */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -44,6 +46,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Light theme defaults */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -79,6 +82,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Dark theme overrides */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -118,58 +122,58 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-[#0b0b0f] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] text-foreground;
+    @apply bg-background text-foreground;
   }
-  .gray_border{
+  .gray_border {
     @apply border-1 h-fit rounded-md border-gray-300/5;
   }
-  .btn{
-    @apply bg-black px-3 py-2 rounded-md text-white text-center w-40 flex items-center justify-center shadow-md cursor-pointer
+  .btn {
+    @apply bg-black px-3 py-2 rounded-md text-center w-40 flex items-center justify-center shadow-md cursor-pointer;
   }
+
   .property{
     @apply p-[1px] px-[3px] text-[12px] rounded-md text-purple-600 bg-gray-100/3 border-gray-500/4 border-1
   }
 }
 
-.scrollbar-hide::-webkit-scrollbar{
+/* Scrollbar utilities untouched */
+.scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-.scroll-dark::-webkit-scrollbar{
+.scroll-dark::-webkit-scrollbar {
   background: #0b0b0f;
   width: 6px;
   border-radius: 6px;
 }
-
-.scroll-bar::-webkit-scrollbar-button{
+.scroll-bar::-webkit-scrollbar-button {
   background: #0b0b0f;
   opacity: 4;
 }
-.scroll-button::-webkit-scrollbar-thumb{
+.scroll-button::-webkit-scrollbar-thumb {
   background-color: gray;
   opacity: 4;
   width: 4px;
   border-radius: 12px;
 }
-
-.scrollbar-hide{
+.scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.tc{
+.tc {
   @apply text-gray-400;
 }
-.hc{
+.hc {
   @apply text-gray-200;
 }
-.blurspot{
+.blurspot {
   @apply absolute w-50 h-50 rounded-full blur-[18px] -z-10;
 }
-.instruct{
+.instruct {
   @apply text-gray-200 flex gap-2 p-1 mx-2 rounded-sm bg-white/4 w-fit items-center;
 }
-.main{
-  @apply bg-[#0b0b0f];
+.main {
+  @apply bg-background;
 }
-.bc{
+.bc {
   @apply border-gray-300/5;
 }
