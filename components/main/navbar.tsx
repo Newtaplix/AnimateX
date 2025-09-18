@@ -53,7 +53,7 @@ const Navbar = () => {
               </div>
               <div className="gap-5 hidden md:flex">
                 {socialLinks.map((item, index) => (
-                  <Link href={item.href}>
+                  <Link href={item.href} key={index}>
                     <Image
                       src={item.icon}
                       key={`${index}-${item.name}`}
